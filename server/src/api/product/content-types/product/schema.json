@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true,
+    "timestamps": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "show": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "kg",
+        "g",
+        "quả",
+        "cái"
+      ],
+      "required": true,
+      "default": "cái"
+    }
+  }
+}
