@@ -7,6 +7,267 @@
 	},
 	"item": [
 		{
+			"name": "product",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products?populate=*",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products/{{product-id}}?populate=*&?populate[1]=categories",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{product-id}}"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								},
+								{
+									"key": "?populate[1]",
+									"value": "categories"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/categories?populate=*",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}?populate=*",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"{{category-id}}"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "identifier",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/local",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{username}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/local/register",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "cart",
 			"item": [
 				{
@@ -176,16 +437,19 @@
 					"response": []
 				},
 				{
-					"name": "06-cart detail",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "06-update 0",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": []
+							"formdata": [
+								{
+									"key": "quantity",
+									"value": "0",
+									"type": "text"
+								}
+							]
 						},
 						"url": {
 							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
@@ -202,19 +466,16 @@
 					"response": []
 				},
 				{
-					"name": "06-update 0",
+					"name": "06-cart detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "PUT",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "quantity",
-									"value": "0",
-									"type": "text"
-								}
-							]
+							"formdata": []
 						},
 						"url": {
 							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
@@ -282,52 +543,183 @@
 			]
 		},
 		{
-			"name": "product",
+			"name": "Order",
 			"item": [
 				{
-					"name": "index",
+					"name": "01-list-order",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products",
+							"raw": "{{SERVER_URL}}/api/users/me/receipts",
 							"host": [
 								"{{SERVER_URL}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"users",
+								"me",
+								"receipts"
+							],
+							"query": [
+								{
+									"key": "pagination[start]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pagination[limit]",
+									"value": "25",
+									"disabled": true
+								},
+								{
+									"key": "filters[status][$eq]",
+									"value": "chờ duyệt",
+									"disabled": true
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "detail",
+					"name": "02-set-address",
 					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "address",
+									"value": "{{address}}",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "{{phone}}",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products/{{product-id}}",
+							"raw": "{{SERVER_URL}}/api/users/me/address",
 							"host": [
 								"{{SERVER_URL}}"
 							],
 							"path": [
 								"api",
-								"products",
-								"{{product-id}}"
+								"users",
+								"me",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-get-address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/address",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"item\": [{{cart-id}}],\n    \"address\": \"aaaa\",\n    \"phone\": \"aaaa\",\n    \"note\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-order-detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts/{{order-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts",
+								"{{order-id}}"
+							],
+							"query": [
+								{
+									"key": "pagination[start]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pagination[limit]",
+									"value": "25",
+									"disabled": true
+								},
+								{
+									"key": "filters[status][$eq]",
+									"value": "chờ duyệt",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-order-cancel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts/{{order-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts",
+								"{{order-id}}"
 							]
 						}
 					},
@@ -335,7 +727,14 @@
 				}
 			],
 			"auth": {
-				"type": "noauth"
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt}}",
+						"type": "string"
+					}
+				]
 			},
 			"event": [
 				{
@@ -355,162 +754,6 @@
 							""
 						]
 					}
-				}
-			]
-		},
-		{
-			"name": "categories",
-			"item": [
-				{
-					"name": "index",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{SERVER_URL}}/api/categories",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"categories"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "detail",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"categories",
-								"{{category-id}}"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"auth": {
-				"type": "noauth"
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "account",
-			"item": [
-				{
-					"name": "login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "identifier",
-									"value": "{{username}}",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "{{pass}}",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{SERVER_URL}}/api/auth/local",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"local"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "register",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "username",
-									"value": "{{username}}",
-									"type": "text"
-								},
-								{
-									"key": "password",
-									"value": "{{pass}}",
-									"type": "text"
-								},
-								{
-									"key": "email",
-									"value": "{{username}}",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{SERVER_URL}}/api/auth/local/register",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"auth",
-								"local",
-								"register"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		}
@@ -543,15 +786,15 @@
 		},
 		{
 			"key": "jwt",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc0NTMxODIxLCJleHAiOjE2NzcxMjM4MjF9.pCwvp56aVZGLXlgvoyaULhCQr6JvV14ytKuEwSuKx8Y"
+			"value": "jwt token"
 		},
 		{
 			"key": "username",
-			"value": "phambathang_t65@hus.edu.vn"
+			"value": "email"
 		},
 		{
 			"key": "pass",
-			"value": "phambathang_t65@hus.edu.vn"
+			"value": "Password@123"
 		},
 		{
 			"key": "cart-id",
@@ -564,6 +807,20 @@
 		{
 			"key": "category-id",
 			"value": "1"
+		},
+		{
+			"key": "order-id",
+			"value": "1"
+		},
+		{
+			"key": "address",
+			"value": "shiping address",
+			"type": "string"
+		},
+		{
+			"key": "phone",
+			"value": "phone number",
+			"type": "string"
 		}
 	]
 }

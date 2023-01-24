@@ -44,6 +44,12 @@
       "relation": "oneToMany",
       "target": "api::order-item.order-item",
       "mappedBy": "order"
+    },
+    "total_price": {
+      "type": "float"
+    },
+    "note": {
+      "type": "text"
     }
   }
 }
