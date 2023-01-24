@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "55025835-a28a-4dd2-bfeb-f822e0dc47bd",
+		"name": "strapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22250699"
+	},
+	"item": [
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "01-list cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/cart",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-create 1st",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "{{product-id}}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-create 2nd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "{{product-id}}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-create not found",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-cart detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-update 0",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "quantity",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products/{{product-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{product-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/categories",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"{{category-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "identifier",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/local",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{username}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/local/register",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SERVER_URL",
+			"value": "http://localhost:1337",
+			"type": "string"
+		},
+		{
+			"key": "jwt",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc0NTMxODIxLCJleHAiOjE2NzcxMjM4MjF9.pCwvp56aVZGLXlgvoyaULhCQr6JvV14ytKuEwSuKx8Y"
+		},
+		{
+			"key": "username",
+			"value": "phambathang_t65@hus.edu.vn"
+		},
+		{
+			"key": "pass",
+			"value": "phambathang_t65@hus.edu.vn"
+		},
+		{
+			"key": "cart-id",
+			"value": "1"
+		},
+		{
+			"key": "product-id",
+			"value": "1"
+		},
+		{
+			"key": "category-id",
+			"value": "1"
+		}
+	]
+}
