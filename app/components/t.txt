@@ -1,0 +1,26 @@
+Unable to resolve module react-redux from /Users/delus/Documents/projects/school/se2022-8.2/app/components/EntryPage.tsx: react-redux could not be found within the project or in these directories:
+  node_modules
+  2 | import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin';
+  3 | import {Dispatch} from 'redux';
+> 4 | import {connect} from 'react-redux';
+    |                        ^
+  5 |
+  6 | interface StateProps {
+  7 |     isSigninInProgress: boolean;
+
+RCTFatal
+__28-[RCTCxxBridge handleError:]_block_invoke
+_dispatch_call_block_and_release
+_dispatch_client_callout
+_dispatch_main_queue_drain
+_dispatch_main_queue_callback_4CF
+__CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__
+__CFRunLoopRun
+CFRunLoopRunSpecific
+GSEventRunModal
+-[UIApplication _run]
+UIApplicationMain
+main
+start_sim
+0x0
+0x0
