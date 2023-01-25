@@ -85,7 +85,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
     const {item, phone, address} = ctx.request.body;
     for (let i = 0; i < item.length; i++) {
       const cartItem = await strapi.db.query('api::cart.cart').delete({
-        where: {id: parseInt(item[i]), user: user.id},
+        where: {id: parseInt(item[i]), user: user.id, product: {show: true}},
         populate: {product: true}
       });
       if (!cartItem) {
