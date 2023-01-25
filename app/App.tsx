@@ -15,6 +15,7 @@ import SignInScreen from './src/screen/SignInScreen';
 const App = () => {
 
   return (
+
     <SafeAreaView style={styles.root}>
       <SignInScreen />
     </SafeAreaView>

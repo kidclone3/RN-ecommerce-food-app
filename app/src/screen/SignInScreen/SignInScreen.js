@@ -44,7 +44,7 @@ const SignInScreen = () => {
             setValue={setPassword}
             secureTextEntry={true}
         />
-        {/* <TickButton /> */}
+        <TickButton />
         <CustomButton 
             text = 'Sign In' 
             onPress={onSignInPressed} 
