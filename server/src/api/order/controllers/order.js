@@ -20,7 +20,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       limit: limit
     });
     return {
-      ...data[0],
+      data: data[0],
       total: data[1],
       page: page,
       limit: limit,
@@ -43,6 +43,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
     const limit = ctx?.query?.pagination?.limit ?? 25
     const data = await strapi.db.query('api::order-item.order-item').findWithCount({
       where: {order: order.id},
+      populate: {product:true},
       offset: Math.abs(page - 1) * limit,
       limit: limit
     });
