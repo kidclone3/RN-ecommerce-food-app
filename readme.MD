@@ -9,6 +9,7 @@
 | @react-navigation/native | 6.1.2   |
 | @react-navigation/stack  | 6.3.11   |
 | redux-thunk              | 2.3.0   |
+|react-native-vector-icons | 9.2.0|
 
 ## Install
 ```

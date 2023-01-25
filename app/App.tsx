@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -9,64 +8,36 @@
  * @format
  */
 
-import * as React from 'react-native';
-import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import { Provider } from 'react-redux';
-import {useEffect, useState} from 'react';
-import store from './src/reducers';
-import { navigationRef } from './src/services/navRef';
-import {getAuthAsyncStorage} from './src/services/getAuthAsyncStorage';
-import Navigation from './src/navigation/Navigation';
-import { loggedIn } from './src/actions/auth';
+import React from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import SignInScreen from './src/screen/SignInScreen';
 
+const App = () => {
 
-function App() {
-  const [isLoading, setIsLoadingFromAsyncStorage] = useState<boolean>(true);
-
-  useEffect(() => {
-    const load = async () => {
-      await setIsLoadingFromAsyncStorage(true);
-      const userStorage = await getAuthAsyncStorage();
-      if (userStorage.user && userStorage.token) {
-        await store.dispatch(loggedIn({
-          user: userStorage.user,
-          token: userStorage.token,
-        }));
-      }
-      await setIsLoadingFromAsyncStorage(false);
-    }
-    load()
-  }, []);
-
-  if (isLoading) {
-    return null;
-  }
   return (
-    <Provider store={store}>
-      <NavigationContainer ref={navigationRef}>
-        <Navigation />
-      </NavigationContainer>
-    </Provider>
-    
+    <SafeAreaView style={styles.root}>
+      <SignInScreen />
+    </SafeAreaView>
   );
-}
-const styles = React.StyleSheet.create({
-  container: {
+};
+
+const styles = StyleSheet.create({
+  root: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#F9FBFC',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  highlight: {
+    fontWeight: '700',
   },
 });
+
 export default App;
