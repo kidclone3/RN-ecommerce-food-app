@@ -5,11 +5,11 @@
  */
 
 const {createCoreController} = require('@strapi/strapi').factories;
-
+const createError = require('http-errors');
 module.exports = createCoreController('api::order.order', ({strapi}) => ({
   findByUser: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const page = ctx?.query?.pagination?.start ?? 1;
     const limit = ctx?.query?.pagination?.limit ?? 25
@@ -26,18 +26,18 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       limit: limit,
       next: data[1] > page * limit,
       previous: page > 1,
-      last: Math.ceil(parseInt(data[1]) / parseInt(limit))
+      last: Math.ceil(data[1] / parseInt(limit))
     }
   },
   orderDetail: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const order = await strapi.db.query('api::order.order').findOne({
       where: {user: user.id, id: ctx.params.id},
     });
     if (!order) {
-      return ctx.throw(404, "Order not found")
+      throw createError(404, "Order not found")
     }
     const page = ctx?.query?.pagination?.start ?? 1;
     const limit = ctx?.query?.pagination?.limit ?? 25
@@ -54,19 +54,19 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       limit: limit,
       next: data[1] > page * limit,
       previous: page > 1,
-      last: Math.ceil(parseInt(data[1]) / parseInt(limit))
+      last: Math.ceil(data[1] / parseInt(limit))
     }
   },
   getDefaultAddress: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const {address, phone} = await strapi.query('plugin::users-permissions.user').findOne(user.id)
     return {address, phone}
   },
   setDefaultAddress: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     return await strapi.plugins['users-permissions'].services.user.edit(user.id, {
       address: ctx.request.body.address,
@@ -74,11 +74,11 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
     });
   },
   createOrderWithCartItem: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     if (!Array.isArray(ctx.request.body.item) || !ctx.request.body.address || !ctx.request.body.phone)
-      return ctx.badRequest("Missing required fields")
+      throw createError(400,"Missing required fields")
     const products = [];
     let total = 0;
     const {item, phone, address} = ctx.request.body;
@@ -88,7 +88,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
         populate: {product: true}
       });
       if (!cartItem) {
-        ctx.throw(404, "Cart item not found");
+        throw createError(404, "Cart item not found");
       }
       if (!cartItem.product.price) {
         continue;
@@ -126,18 +126,18 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
     return order;
   },
   cancelOrder: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const order = await strapi.db.query('api::order.order').findOne({
       where: {user: user.id, id: ctx.params.id},
       populate: {order_items: true}
     });
     if (!order) {
-      return ctx.throw(404, "Order not found")
+      throw createError(404, "Order not found")
     }
     if (order.status !== "chờ duyệt") {
-      return ctx.throw(400, "Order can not be canceled")
+      throw createError(400, "Order can not be canceled")
     }
 
     return await strapi.db.query('api::order.order').update({where:{id: order.id}, data:{status: "đã hủy"}})

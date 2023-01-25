@@ -5,11 +5,11 @@
  */
 
 const {createCoreController} = require('@strapi/strapi').factories;
-
+const createError = require('http-errors');
 module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
   findByUser: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     return await strapi.db.query('api::cart.cart').findWithCount(
       {
@@ -20,16 +20,16 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
   },
 
   create: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const {product, quantity} = ctx.request.body;
     if (!product || product < 1 || !quantity || quantity < 1) {
-      return ctx.badRequest(null, 'Please provide product and quantity');
+      throw createError(400, 'Please provide product and quantity');
     }
     const productEntity = await strapi.entityService.findOne('api::product.product', product);
     if (!productEntity || !productEntity.show) {
-      ctx.throw(404, 'Product not found');
+      throw createError(404, 'Product not found');
     }
     const cart = await strapi.db.query('api::cart.cart').findOne({
       where: {
@@ -55,13 +55,13 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
     });
   },
   update: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const {id} = ctx.params;
     const {quantity} = ctx.request.body;
     if (!id || !quantity) {
-      return ctx.badRequest(null, 'Please provide id and quantity');
+      throw createError(null, 'Please provide id and quantity');
     }
     const cart = await strapi.db.query('api::cart.cart').findOne({
       where: {
@@ -72,7 +72,7 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
     });
 
     if (!cart) {
-      return ctx.throw(404, 'Cart not found');
+      throw createError(404, 'Cart not found');
     }
     if (parseInt(quantity) <= 0) {
       return await strapi.db.query('api::cart.cart').delete({where: {id: cart.id},});
@@ -84,8 +84,8 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
     });
   },
   findOne: async (ctx) => {
-    if (!ctx.request.header.authorization)
-      return ctx.throw(403, "Permission denied")
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     const {id} = ctx.params;
     const cart = await strapi.db.query('api::cart.cart').findOne({
@@ -97,7 +97,7 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
     });
 
     if (!cart) {
-      return ctx.throw(404, 'Cart not found');
+      throw createError(404, 'Cart not found');
     }
     return cart;
   }
