@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true,
+    "draftAndPublish": false,
     "timestamps": true
   },
   "pluginOptions": {},
@@ -28,8 +28,9 @@
     },
     "products": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "categories"
     }
   }
 }
