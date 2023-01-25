@@ -12,9 +12,17 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		6C32CC1513FD4595B3793E6E /* logo-hus.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F4C3662C5A4A86BF89B9DC /* logo-hus.png */; };
 		7699B88040F8A987B510C191 /* libPods-app-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-app-appTests.a */; };
+		803572D6440C4EE798F05B59 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07FBDA1C68AF4361BAC8BDF4 /* FontAwesome.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		84B2BFE5298182D200C3499F /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B2BFE4298182D200C3499F /* MaterialIcons.ttf */; };
+		84B2BFE72981892400C3499F /* hermes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2BFE62981892400C3499F /* hermes.xcframework */; };
+		84B2BFE929818E6600C3499F /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 84B2BFE829818E6600C3499F /* Fonts */; };
+		8A4BEF3B2A1F4CD99272CA27 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E201B4B984374FA5963DD560 /* MaterialCommunityIcons.ttf */; };
+		971BB3649D21459983439166 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F74DEFAC27EF4E11A9CC75A8 /* MaterialIcons.ttf */; };
+		D8E28214C44F4E7D8864CDF5 /* logo-hus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1234DD3CB8F44D49D06F955 /* logo-hus.jpg */; };
+		E5DAFF2B043041D88AC85A22 /* default-logo.webp in Resources */ = {isa = PBXBuildFile; fileRef = 8D5A7362E27B49FFAD54FD9A /* default-logo.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +39,8 @@
 		00E356EE1AD99517003FC87E /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
+		04F4C3662C5A4A86BF89B9DC /* logo-hus.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "logo-hus.png"; path = "../assets/images/logo-hus.png"; sourceTree = "<group>"; };
+		07FBDA1C68AF4361BAC8BDF4 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = ../assets/fonts/FontAwesome.ttf; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = app/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = app/AppDelegate.mm; sourceTree = "<group>"; };
@@ -44,8 +54,14 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84B2BFE4298182D200C3499F /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = ../../../../../../Downloads/MaterialIcons.ttf; sourceTree = "<group>"; };
+		84B2BFE62981892400C3499F /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
+		84B2BFE829818E6600C3499F /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-app-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app-appTests.release.xcconfig"; path = "Target Support Files/Pods-app-appTests/Pods-app-appTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D5A7362E27B49FFAD54FD9A /* default-logo.webp */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "default-logo.webp"; path = "../assets/images/default-logo.webp"; sourceTree = "<group>"; };
+		B1234DD3CB8F44D49D06F955 /* logo-hus.jpg */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "logo-hus.jpg"; path = "../assets/images/logo-hus.jpg"; sourceTree = "<group>"; };
+		E201B4B984374FA5963DD560 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = ../assets/fonts/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F74DEFAC27EF4E11A9CC75A8 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = ../assets/fonts/MaterialIcons.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B2BFE72981892400C3499F /* hermes.xcframework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,9 +102,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		05BD0C044D774B9ABF0AA0B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07FBDA1C68AF4361BAC8BDF4 /* FontAwesome.ttf */,
+				E201B4B984374FA5963DD560 /* MaterialCommunityIcons.ttf */,
+				F74DEFAC27EF4E11A9CC75A8 /* MaterialIcons.ttf */,
+				8D5A7362E27B49FFAD54FD9A /* default-logo.webp */,
+				B1234DD3CB8F44D49D06F955 /* logo-hus.jpg */,
+				04F4C3662C5A4A86BF89B9DC /* logo-hus.png */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* app */ = {
 			isa = PBXGroup;
 			children = (
+				84B2BFE829818E6600C3499F /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -101,6 +133,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B2BFE62981892400C3499F /* hermes.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-app.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-app-appTests.a */,
@@ -125,6 +158,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				05BD0C044D774B9ABF0AA0B5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -248,6 +282,13 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				84B2BFE5298182D200C3499F /* MaterialIcons.ttf in Resources */,
+				84B2BFE929818E6600C3499F /* Fonts in Resources */,
+				803572D6440C4EE798F05B59 /* FontAwesome.ttf in Resources */,
+				8A4BEF3B2A1F4CD99272CA27 /* MaterialCommunityIcons.ttf in Resources */,
+				971BB3649D21459983439166 /* MaterialIcons.ttf in Resources */,
+				E5DAFF2B043041D88AC85A22 /* default-logo.webp in Resources */,
+				D8E28214C44F4E7D8864CDF5 /* logo-hus.jpg in Resources */,
+				6C32CC1513FD4595B3793E6E /* logo-hus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

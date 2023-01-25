@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-// import MaterialIcon from '../../font-icon/material-icons';
-import FontAwesomeIcons from '../../font-icon/font-awesome-icons';
+import MaterialIcon from '../../font-icon/material-icons';
+// import FontAwesomeIcons from '../../font-icon/font-awesome-icons';
 
 const TickButton = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -15,9 +15,9 @@ const TickButton = () => {
       {/* <svg data-testid="DeleteIcon"></svg> */}
       
         {isChecked ? (
-          <FontAwesomeIcons name="compass-calibration" size={24} color="#4F8EF7" />
+          <MaterialIcon name="compass-calibration" size={24} color="#4F8EF7" />
         ) : (
-          <FontAwesomeIcons name="compass-calibration" size={24} color="#4F8EF7" />
+          <MaterialIcon name="compass-calibration" size={24} color="#4F8EF7" />
         )}
       </TouchableOpacity>
       <Text>
