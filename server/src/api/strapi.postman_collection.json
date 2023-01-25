@@ -1,0 +1,826 @@
+{
+	"info": {
+		"_postman_id": "55025835-a28a-4dd2-bfeb-f822e0dc47bd",
+		"name": "strapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22250699"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products?populate=*",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products/{{product-id}}?populate=*&?populate[1]=categories",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"{{product-id}}"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								},
+								{
+									"key": "?populate[1]",
+									"value": "categories"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/categories?populate=*",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}?populate=*",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"{{category-id}}"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "identifier",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/local",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{username}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/local/register",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "01-list cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/cart",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-create 1st",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "{{product-id}}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-create 2nd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "{{product-id}}",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-create not found",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-update 0",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "quantity",
+									"value": "0",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06-cart detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/carts/{{cart-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								"{{cart-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "01-list-order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts"
+							],
+							"query": [
+								{
+									"key": "pagination[start]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pagination[limit]",
+									"value": "25",
+									"disabled": true
+								},
+								{
+									"key": "filters[status][$eq]",
+									"value": "chờ duyệt",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02-set-address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "address",
+									"value": "{{address}}",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "{{phone}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/address",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03-get-address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/address",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04-create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"item\": [{{cart-id}}],\n    \"address\": \"aaaa\",\n    \"phone\": \"aaaa\",\n    \"note\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-order-detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts/{{order-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts",
+								"{{order-id}}"
+							],
+							"query": [
+								{
+									"key": "pagination[start]",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pagination[limit]",
+									"value": "25",
+									"disabled": true
+								},
+								{
+									"key": "filters[status][$eq]",
+									"value": "chờ duyệt",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05-order-cancel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/receipts/{{order-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"receipts",
+								"{{order-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SERVER_URL",
+			"value": "http://localhost:1337",
+			"type": "string"
+		},
+		{
+			"key": "jwt",
+			"value": "jwt token"
+		},
+		{
+			"key": "username",
+			"value": "email"
+		},
+		{
+			"key": "pass",
+			"value": "Password@123"
+		},
+		{
+			"key": "cart-id",
+			"value": "1"
+		},
+		{
+			"key": "product-id",
+			"value": "1"
+		},
+		{
+			"key": "category-id",
+			"value": "1"
+		},
+		{
+			"key": "order-id",
+			"value": "1"
+		},
+		{
+			"key": "address",
+			"value": "shiping address",
+			"type": "string"
+		},
+		{
+			"key": "phone",
+			"value": "phone number",
+			"type": "string"
+		}
+	]
+}
