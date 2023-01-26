@@ -15,15 +15,13 @@ const SocialSignInButton = () => {
         <CustomButton 
             text = 'Continue with Facebook' 
             onPress={onSignInFacebook}
-            bgColor="#E7EAF4"
-            fgColor="#4765A9"
-
+            type = 'TERTIARY'
         />
         <CustomButton 
             text = 'Continue with Google' 
             onPress={onSignInGoogle}
-            bgColor="#FAE9EA"
-            fgColor="#DD4D44"
+            type = 'TERTIARY'
+
         />
     </>
   )

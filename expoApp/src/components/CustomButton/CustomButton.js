@@ -40,6 +40,11 @@ const styles = StyleSheet.create({
     container_PRIMARY: {
     },
     container_TERTIARY: {
+        backgroundColor: 'transparent',
+        borderColor: '#565656',
+        borderWidth: 1,
+        borderRadius: 15,
+        fontFamily: 'Oceanwide',
     },
     text: {},
     text_PRIMARY: {

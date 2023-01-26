@@ -1,15 +1,21 @@
 # Dev branch
 
+### Requirement library:
+
 | Library                  | Version |
 |:-------------------------|:--------|
 | react                    | 18.1.0 |
 | react-native             | 0.70.6 |
-| redux                    | 4.2.0   |
-| react-redux              | 8.0.5   |
-| @react-navigation/native | 6.1.2   |
-| @react-navigation/stack  | 6.3.11   |
-| redux-thunk              | 2.3.0   |
 |react-native-vector-icons | 9.2.0|
+
+### Font installed:
+At folder `assets/fonts`
+
+Setup font install:
+
+```
+npx react-native-asset
+```
 
 ## Install
 ```

@@ -1,6 +1,5 @@
 import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native'
 import React from 'react'
-import Logo from '../../../assets/images/logo-hus.png'
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import TickButton from '../../components/TickButton/TickButton';
@@ -25,33 +24,37 @@ const SignInScreen = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
         <Image 
-            source={Logo} 
+            source={require('../../../assets/images/example-icon/order.png')}
             style = {[styles.logo, {height:height* 0.3}]} 
             resizeMode='contain'
 
         />
-            <CustomInput 
-                placeholder='Username'
-                value={username}
-                setValue={setUsername}
-            /> 
+        <Text style={styles.title}>
+            Let's you in
+        </Text>
+        <SocialSignInButton />
 
-            <CustomInput 
-                placeholder='Password'
-                value={password}
-                setValue={setPassword}
-                secureTextEntry={true}
-            />
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <CustomInput 
+            placeholder='Username'
+            value={username}
+            setValue={setUsername}
+        /> 
 
-                <TickButton size = {20}/>
-                <Text>Remember me</Text>
-            </View>
-            <CustomButton 
-                text = 'Sign In' 
-                onPress={onSignInPressed} 
-            />
-            <SocialSignInButton />
+        <CustomInput 
+            placeholder='Password'
+            value={password}
+            setValue={setPassword}
+            secureTextEntry={true}
+        />
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+
+            <TickButton size = {20}/>
+            <Text>Remember me</Text>
+        </View>
+        <CustomButton 
+            text = 'Sign In' 
+            onPress={onSignInPressed} 
+        />
             
         </View>
     </ScrollView>
@@ -68,6 +71,9 @@ const styles = StyleSheet.create({
         // maxWidth: 300,
         maxHeight: 200,
     },
+    title: {
+        fontSize: 32,
+    }
 });
 
 export default SignInScreen
