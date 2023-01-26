@@ -1,39 +1,37 @@
 import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native'
 import React from 'react'
-import Logo from '../../../assets/images/logo-hus.png'
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import TickButton from '../../components/TickButton/TickButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
-import { useNavigation } from '@react-navigation/native';
 
-const SignInScreen = () => {
+const SignUpScreen = () => {
 
     const {username, setUsername} = React.useState('');
+    const {email, setEmail} = React.useState('');
     const {password, setPassword} = React.useState('');
-    const navigation = useNavigation();
-    
-    const onSignInPressed = () => {
-        console.warn('Sign in pressed');
-        // validate user
-        // if valid, navigate to home screen
-        navigation.navigate('HomeScreen');
+    const {passwordRepeat, setPasswordRepeat} = React.useState('');
+    const onRegisterPressed = () => {
+        console.warn('Sign up pressed');
     }
+
 
     const {height}= useWindowDimensions();
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-        <Image 
-            source={Logo} 
-            style = {[styles.logo, {height:height* 0.3}]} 
-            resizeMode='contain'
-
-        />
+            <Text>
+                Create new account
+            </Text>
             <CustomInput 
                 placeholder='Username'
                 value={username}
                 setValue={setUsername}
+            /> 
+            <CustomInput 
+                placeholder='Email'
+                value={email}
+                setValue={setEmail}
             /> 
 
             <CustomInput 
@@ -42,14 +40,20 @@ const SignInScreen = () => {
                 setValue={setPassword}
                 secureTextEntry={true}
             />
+            <CustomInput 
+                placeholder='Repeat Password'
+                value={passwordRepeat}
+                setValue={setPasswordRepeat}
+                secureTextEntry={true}
+            />
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
 
                 <TickButton size = {20}/>
                 <Text>Remember me</Text>
             </View>
             <CustomButton 
-                text = 'Sign In' 
-                onPress={onSignInPressed} 
+                text = 'Register' 
+                onPress={onRegisterPressed} 
             />
             <SocialSignInButton />
             
@@ -70,4 +74,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SignInScreen
+export default SignUpScreen
