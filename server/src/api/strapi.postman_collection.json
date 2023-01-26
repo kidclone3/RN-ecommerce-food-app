@@ -13,15 +13,9 @@
 					"name": "index",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products?populate=*",
+							"raw": "{{SERVER_URL}}/api/products?populate[categories][fields]=name&populate[image][fields]=url&filters[show][$eq]=true&pagination[start]=0&pagination[limit]=25",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -31,8 +25,24 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[categories][fields]",
+									"value": "name"
+								},
+								{
+									"key": "populate[image][fields]",
+									"value": "url"
+								},
+								{
+									"key": "filters[show][$eq]",
+									"value": "true"
+								},
+								{
+									"key": "pagination[start]",
+									"value": "0"
+								},
+								{
+									"key": "pagination[limit]",
+									"value": "25"
 								}
 							]
 						}
@@ -43,15 +53,9 @@
 					"name": "detail",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products/{{product-id}}?populate=*&?populate[1]=categories",
+							"raw": "{{SERVER_URL}}/api/products/{{product-id}}?populate[image][fields]=url&populate[categories][fields]=name&filters[show][$eq]=true",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -62,12 +66,16 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[image][fields]",
+									"value": "url"
 								},
 								{
-									"key": "?populate[1]",
-									"value": "categories"
+									"key": "populate[categories][fields]",
+									"value": "name"
+								},
+								{
+									"key": "filters[show][$eq]",
+									"value": "true"
 								}
 							]
 						}
@@ -106,15 +114,9 @@
 					"name": "index",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/categories?populate=*",
+							"raw": "{{SERVER_URL}}/api/categories?populate[icon][fields]=url",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -124,8 +126,8 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[icon][fields]",
+									"value": "url"
 								}
 							]
 						}
@@ -136,15 +138,9 @@
 					"name": "detail",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}?populate=*",
+							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}?populate[image][fields]=url",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -155,8 +151,36 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[image][fields]",
+									"value": "url"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "item in categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products?populate[image][fields][1]=url&populate[categories][filters][name][$eq]={{category-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "populate[image][fields][1]",
+									"value": "url"
+								},
+								{
+									"key": "populate[categories][filters][name][$eq]",
+									"value": "{{category-id}}"
 								}
 							]
 						}
@@ -790,7 +814,8 @@
 		},
 		{
 			"key": "username",
-			"value": "email"
+			"value": "test@example.com",
+			"type": "string"
 		},
 		{
 			"key": "pass",
