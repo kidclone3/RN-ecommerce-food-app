@@ -1,5 +1,6 @@
 # Dev branch
 
+Currently working on expoApp folder.
 ### Requirement library:
 
 | Library                  | Version |
@@ -7,6 +8,9 @@
 | react                    | 18.1.0 |
 | react-native             | 0.70.6 |
 |react-native-vector-icons | 9.2.0|
+|@rneui/themed | 4.0.0-rc.7 |
+
+Note: @rneui/themed 4.0 is latest version of React Native Elements (latest maintain is 3.4.3)
 
 ### Font installed:
 At folder `assets/fonts`

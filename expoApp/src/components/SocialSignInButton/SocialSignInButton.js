@@ -16,11 +16,18 @@ const SocialSignInButton = () => {
             text = 'Continue with Facebook' 
             onPress={onSignInFacebook}
             type = 'TERTIARY'
-        />
+            icon='facebook'
+        >
+            {/* <SocialIcon
+                type='facebook'
+                style={{marginRight: 10}}
+            /> */}
+        </CustomButton>
         <CustomButton 
             text = 'Continue with Google' 
             onPress={onSignInGoogle}
             type = 'TERTIARY'
+            icon='google'
 
         />
     </>

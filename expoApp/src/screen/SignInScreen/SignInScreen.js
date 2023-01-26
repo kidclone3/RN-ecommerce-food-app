@@ -5,11 +5,13 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 import TickButton from '../../components/TickButton/TickButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
 import { useNavigation } from '@react-navigation/native';
+import { CheckBox, Icon } from '@rneui/themed';
 
 const SignInScreen = () => {
 
-    const {username, setUsername} = React.useState('');
-    const {password, setPassword} = React.useState('');
+    const [username, setUsername] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [rememberMe, setRememberMe] = React.useState(false);
     const navigation = useNavigation();
     
     const onSignInPressed = () => {
@@ -46,11 +48,24 @@ const SignInScreen = () => {
             setValue={setPassword}
             secureTextEntry={true}
         />
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-
-            <TickButton size = {20}/>
+        {/* <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            
+            <CheckBox />
             <Text>Remember me</Text>
-        </View>
+        </View> */}
+        <CheckBox
+            center
+            title='Remember me'
+            labelStyle={{color: 'green' }}
+            iconType="material-community"
+            checkedIcon="checkbox-marked"
+            checkedColor="green"
+            uncheckedIcon="checkbox-blank-outline"
+            uncheckedColor="green"
+            checked={rememberMe}
+            onPress={() => setRememberMe(!rememberMe)}
+        />
+
         <CustomButton 
             text = 'Sign In' 
             onPress={onSignInPressed} 

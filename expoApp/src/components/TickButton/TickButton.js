@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import MaterialIcon from '../../font-icon/material-icons';
-// import FontAwesomeIcons from '../../font-icon/font-awesome-icons';
+import {Stack, CheckBox } from '@rneui/themed';
 
 const TickButton = (size = 14) => {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <View>
-        <TouchableOpacity
-          onPress={() => setIsChecked(!isChecked)}
-          style={styles.container}
-        >
-          {isChecked ? (
-            <MaterialIcon 
-              name="check-box-outline-blank" 
-              size={24} 
-              color="#1BAC4B"
-              borderRadius={50}/>
-          ) : (
-            <MaterialIcon name="check-box" size={24} color="#1BAC4B" />
-          )}
-        </TouchableOpacity>
-    </View>
+    <Stack row align="center" spacing={1}>
+         <CheckBox
+           checked={isChecked}
+           onPress={() => setIsChecked(!isChecked)}
+           // Use ThemeProvider to make change for all checkbox
+           iconType="material-community"
+           checkedIcon="checkbox-marked"
+           uncheckedIcon="checkbox-blank-outline"
+           checkedColor="red"
+         />
+         
+       </Stack>
   );
 };
 
