@@ -4,7 +4,7 @@ import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
 import { useNavigation } from '@react-navigation/native';
-import { CheckBox, Divider, useTheme } from '@rneui/themed';
+import { CheckBox, Divider, useTheme, Button } from '@rneui/themed';
 import CustomDivider from '../../components/CustomDivider';
 
 const LetInScreen = () => {
@@ -27,11 +27,11 @@ const LetInScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-            <Image 
-                // source={require('../../../assets/images/example-icon/order.png')}
-                style = {[styles.logo, {height:windowHeight* 0.3}]} 
-                resizeMode='contain'
-
+            <Image
+                style={styles.logo}
+                source={{
+                    uri: 'https://i.imgur.com/TQAOVkU.jpeg',
+                }}
             />
             <Text style={styles.title}>
                 Let's you in
@@ -69,9 +69,17 @@ const LetInScreen = () => {
                 text = 'Sign in with Phone Number' 
                 onPress={onSignInPressed} 
             />
-            <Text style={{color:'#828282', width:windowWidth * 0.3}}>
-                Don't have an account? Sign up
-            </Text>
+            <Button
+              containerStyle={{
+                width: "80%",
+                marginHorizontal: 50,
+                marginVertical: 10,
+              }}
+              title="Don't have an account? Sign up"
+              type="clear"
+              titleStyle={{ color: 'grey', fontSize:12, }}
+              onPress= {() => navigation.navigate("SignUp")}
+            />
                 
         </View>
     </ScrollView>
@@ -80,16 +88,17 @@ const LetInScreen = () => {
 
 const styles = StyleSheet.create({
     root: {
-        alignItems: 'center',
+        paddingTop: 50,
         padding: 20,
+        alignItems: 'center',
         backgroundColor: 'white',
     }, 
     logo: {
-        width: '30%',
-        // maxWidth: 300,
-        maxHeight: 200,
-    },
+        width: 66,
+        height: 58,
+      },
     title: {
+        padding: 30,
         fontSize: 32,
     },
     

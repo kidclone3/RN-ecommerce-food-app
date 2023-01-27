@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import CustomButton from '../CustomButton/CustomButton'
+import { SocialIcon } from '@rneui/themed'
 
 const SocialSignInButton = () => {
     

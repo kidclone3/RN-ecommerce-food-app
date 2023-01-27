@@ -1,6 +1,6 @@
 # Dev branch
 
-Currently working on MyApp folder.
+Currently working on expoApp folder.
 ### Requirement library:
 
 | Library                  | Version |
@@ -34,6 +34,11 @@ yarn run ios
 ```
 yarn run android
 ```
+
+## To-do
+
+- Handle data from PhoneNumberInput component.
+
 ## APIs
 | Endpoint (Request Method: POST) | Response                                                                                                                        |
 |:--------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|

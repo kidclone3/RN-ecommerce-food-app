@@ -3,6 +3,9 @@ import React from 'react'
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
+import CustomDivider from '../../components/CustomDivider';
+import { SocialIcon } from '@rneui/themed';
+import {FontAwesomeIcons} from '../../font-icon/font-awesome-icons';
 
 const SignUpScreen = () => {
 
@@ -37,8 +40,35 @@ const SignUpScreen = () => {
                 text = 'Register' 
                 onPress={onRegisterPressed} 
             />
-            <SocialSignInButton />
-            
+            <CustomDivider
+                text="or continue with"
+            />
+            <View style={{flexDirection:'row'}}>
+                <SocialIcon
+                    //Social Icon using @rneui/themed
+                    button
+                    light
+                    //To make a button type Social Icon
+                    type="facebook"
+                    //Type of Social Icon
+                    onPress={() => {
+                        //Action to perform on press of Social Icon
+                        alert('facebook');
+                    }}
+                />
+                <SocialIcon
+                    //Social Icon using @rneui/themed
+                    button
+                    light
+                    //To make a button type Social Icon
+                    type="google"
+                    //Type of Social Icon
+                    onPress={() => {
+                        //Action to perform on press of Social Icon
+                        alert('google');
+                    }}
+                />
+            </View>
         </View>
     </ScrollView>
   )
@@ -48,6 +78,7 @@ const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
         padding: 20,
+        backgroundColor: 'white'
     }, 
     logo: {
         width: '30%',
