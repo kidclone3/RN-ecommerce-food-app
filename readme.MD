@@ -1,6 +1,6 @@
 # Dev branch
 
-Currently working on expoApp folder.
+Currently working on MyApp folder.
 ### Requirement library:
 
 | Library                  | Version |

@@ -19,7 +19,7 @@ const LetInScreen = () => {
         console.warn('Sign in pressed');
         // validate user
         // if valid, navigate to home screen
-        navigation.navigate('HomeScreen');
+        navigation.navigate('SignIn');
     }
 
     const windowWidth = Dimensions.get('window').width;
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     title: {
         padding: 30,
         fontSize: 32,
+        paddingHorizontal: 20,
     },
     
 });

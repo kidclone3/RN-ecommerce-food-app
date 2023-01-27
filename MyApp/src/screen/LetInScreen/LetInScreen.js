@@ -19,7 +19,7 @@ const LetInScreen = () => {
         console.warn('Sign in pressed');
         // validate user
         // if valid, navigate to home screen
-        navigation.navigate('HomeScreen');
+        navigation.navigate('SignIn');
     }
 
     const windowWidth = Dimensions.get('window').width;
@@ -27,11 +27,11 @@ const LetInScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-            <Image 
-                // source={require('../../../assets/images/example-icon/order.png')}
-                style = {[styles.logo, {height:windowHeight* 0.3}]} 
-                resizeMode='contain'
-
+            <Image
+                style={styles.logo}
+                source={{
+                    uri: 'https://i.imgur.com/TQAOVkU.jpeg',
+                }}
             />
             <Text style={styles.title}>
                 Let's you in
@@ -88,17 +88,19 @@ const LetInScreen = () => {
 
 const styles = StyleSheet.create({
     root: {
-        alignItems: 'center',
+        paddingTop: 50,
         padding: 20,
+        alignItems: 'center',
         backgroundColor: 'white',
     }, 
     logo: {
-        width: '30%',
-        // maxWidth: 300,
-        maxHeight: 200,
-    },
+        width: 66,
+        height: 58,
+      },
     title: {
+        padding: 30,
         fontSize: 32,
+        paddingHorizontal: 20,
     },
     
 });

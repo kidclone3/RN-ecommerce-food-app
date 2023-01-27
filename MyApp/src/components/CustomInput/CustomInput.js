@@ -1,16 +1,19 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native'
+import { Input } from '@rneui/themed'
 import React from 'react'
 
-const CustomInput = ({value, setValue, placeholder, secureTextEntry=false}) => {
+const CustomInput = ({leftIcon, value, setValue, placeholder, secureTextEntry=false}) => {
   return (
-    <View style = {style.container}>
-        <TextInput 
+    <>
+        <Input 
             placeholder={placeholder}
             value={value}
-            style={style.input}
+            inputContainerStyle={style.container}
             secureTextEntry={secureTextEntry}
+            leftIcon = {leftIcon}
+            leftIconContainerStyle = {style.leftIconContainerStyle}
         />
-    </View>
+    </>
   )
 }
 
@@ -23,11 +26,14 @@ const style = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 5,
         paddingHorizontal: 10,
-        marginVertical: 15,
+        // marginVertical: 15,
     },
     input: {
-        padding: 10,
+        padding: 15,
     },
+    leftIconContainerStyle: {
+        paddingRight: 20,
+    }
 });
 
 

@@ -39,7 +39,7 @@ const SignUpScreen = () => {
                 value={phoneNumber}
                 setValue={setPhoneNumber}
             />  */}
-            <PhoneNumberInput />
+            <PhoneNumberInput/>
 
             <CustomInput
                 label='email'

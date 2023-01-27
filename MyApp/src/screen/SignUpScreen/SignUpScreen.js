@@ -4,14 +4,18 @@ import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
 import CustomDivider from '../../components/CustomDivider';
-import { SocialIcon } from '@rneui/themed';
-import {FontAwesomeIcons} from '../../font-icon/font-awesome-icons';
+import { SocialIcon, Icon, Skeleton, Button } from '@rneui/themed';
+import {useNavigation} from '@react-navigation/native';
+import PhoneNumberInput from '../../components/PhoneNumberInput';
+
 
 const SignUpScreen = () => {
 
     const [phoneNumber, setPhoneNumber] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [username, setUsername] = React.useState('');
+    const navigation = useNavigation();
+
     const onRegisterPressed = () => {
         console.warn('Sign up pressed');
     }
@@ -21,23 +25,49 @@ const SignUpScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.root}>
-            <Text>
+
+            <Image
+                style={styles.logo}
+                source={{uri:'https://i.imgur.com/TQAOVkU.jpeg'}}
+            />
+
+            <Text style={styles.title}>
                 Create new account
             </Text>
-            <CustomInput 
+            {/* <CustomInput 
                 placeholder='Phone Number'
                 value={phoneNumber}
                 setValue={setPhoneNumber}
-            /> 
-            <CustomInput 
+            />  */}
+            <PhoneNumberInput/>
+
+            <CustomInput
+                label='email'
                 placeholder='Email'
-                value={email}
-                setValue={setEmail}
-            /> 
+                leftIcon={
+                    <Icon 
+                        type='material-community'
+                        name="mail" 
+                        size={20}
+                    />
+                }
+            />
+            <CustomInput
+                label='username'
+                placeholder='Full Name'
+                leftIcon={
+                    <Icon 
+                        type='material-community'
+                        name="account-outline" 
+                        size={20}
+                    />
+                }
+            />
+            
 
             
             <CustomButton 
-                text = 'Register' 
+                text = 'Sign Up' 
                 onPress={onRegisterPressed} 
             />
             <CustomDivider
@@ -69,6 +99,17 @@ const SignUpScreen = () => {
                     }}
                 />
             </View>
+            <Button
+              containerStyle={{
+                width: "80%",
+                marginHorizontal: 50,
+                marginVertical: 10,
+              }}
+              title="Already have an account? Sign in"
+              type="clear"
+              titleStyle={{ color: 'grey', fontSize:12, }}
+              onPress= {() => navigation.navigate("SignIn")}
+            />
         </View>
     </ScrollView>
   )
@@ -81,10 +122,15 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     }, 
     logo: {
-        width: '30%',
+        width: 55,
+        height: 66,
         // maxWidth: 300,
         maxHeight: 200,
     },
+    title: {
+        padding: 30,
+        fontSize:32,
+    }
 });
 
 export default SignUpScreen
