@@ -13,18 +13,26 @@ Currently working on MyApp folder.
 Note: @rneui/themed 4.0 is latest version of React Native Elements (latest maintain is 3.4.3)
 
 ### Font installed:
-At folder `assets/fonts`
-
-Setup font install:
+At assets:
 
 ```
 npx react-native-asset
 ```
+if you have error with `npx react-native-asset`, try to run `sudo npm install -g react-native-asset`
 
 ## Install
 ```
 yarn install
 ```
+With IOS (Cocoapods)
+```
+cd ios && pod install
+```
+
+if you have error with pod install, try to run `sudo gem install cocoapods`
+
+if you have some problem with ruby, use `rbenv` to install ruby version 2.7.6.
+
 
 ## How to run
 ```
