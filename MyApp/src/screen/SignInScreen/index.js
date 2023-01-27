@@ -3,17 +3,21 @@ import React from 'react'
 import CustomInput from '../../components/CustomInput/CustomInput';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
+import { useNavigation } from '@react-navigation/native';
 
-const SignUpScreen = () => {
 
-    const [phoneNumber, setPhoneNumber] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [username, setUsername] = React.useState('');
+const SignInScreen = () => {
+
+    const {username, setUsername} = React.useState('');
+    const {email, setEmail} = React.useState('');
+    const {password, setPassword} = React.useState('');
+    const {passwordRepeat, setPasswordRepeat} = React.useState('');
+    const navigation = useNavigation();
+
     const onRegisterPressed = () => {
         console.warn('Sign up pressed');
+        navigation.navigate('SignIn')
     }
-
-
     const {height}= useWindowDimensions();
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -22,9 +26,9 @@ const SignUpScreen = () => {
                 Create new account
             </Text>
             <CustomInput 
-                placeholder='Phone Number'
-                value={phoneNumber}
-                setValue={setPhoneNumber}
+                placeholder='Username'
+                value={username}
+                setValue={setUsername}
             /> 
             <CustomInput 
                 placeholder='Email'
@@ -32,6 +36,18 @@ const SignUpScreen = () => {
                 setValue={setEmail}
             /> 
 
+            <CustomInput 
+                placeholder='Password'
+                value={password}
+                setValue={setPassword}
+                secureTextEntry={true}
+            />
+            <CustomInput 
+                placeholder='Repeat Password'
+                value={passwordRepeat}
+                setValue={setPasswordRepeat}
+                secureTextEntry={true}
+            />
             
             <CustomButton 
                 text = 'Register' 
@@ -56,4 +72,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SignUpScreen
+export default SignInScreen

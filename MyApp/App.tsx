@@ -8,18 +8,18 @@
  * @format
  */
 
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-
 import Navigation from './src/navigation';
+import LetInScreen from './src/screen/LetInScreen';
+import SignInScreen from './src/screen/SignInScreen';
 
 const App = () => {
-  const [isFullscreen, setIsFullscreen] = React.useState(false);
-  
+
   return (
 
     <SafeAreaView style={styles.root}>
+
       <Navigation />
     </SafeAreaView>
   );
@@ -28,9 +28,20 @@ const App = () => {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: '#white',
+    backgroundColor: '#F9FBFC',
   },
-  
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: '600',
+  },
+  sectionDescription: {
+    marginTop: 8,
+    fontSize: 18,
+    fontWeight: '400',
+  },
+  highlight: {
+    fontWeight: '700',
+  },
 });
 
 export default App;
