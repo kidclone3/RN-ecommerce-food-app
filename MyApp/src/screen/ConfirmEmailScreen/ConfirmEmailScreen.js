@@ -7,21 +7,37 @@ import CustomButton from '../../components/Button/CustomButton';
 import PhoneNumberInput from '../../components/PhoneNumberInput';
 import CustomDivider from '../../components/CustomDivider';
 import { Button, CheckBox, Icon } from '@rneui/themed';
+
 import { useNavigation } from '@react-navigation/native';
 
-const SignInScreen = () => {
+const ConfirmEmailScreen = () => {
 
     const [email, setEmail] = React.useState('');
     const [remember, setRemember] = React.useState(false);
-    const navigation = useNavigation();
-
-
-    const onSignInPressed = () => {
-        console.warn('Sign up pressed');
-        navigation.push('HomeScreen')
+    const onConfirmPressed = () => {
+        console.warn('Confirm pressed');
     }
+    const [resendCode, setResendCode] = React.useState(60);
+    const onResendPressed = () => {
+        if (resendCode <= 0) {
+            console.warn('Resent!');
+            setResendCode(60);
+        } else {
+            console.warn('Wait for it');
+        }
+    }
+    // const navigation = useNavigation();
 
-    const { height } = useWindowDimensions();
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            resendCode > 0 ?
+                setResendCode(resendCode => resendCode - 1)
+                : setResendCode(0);
+
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
@@ -31,7 +47,7 @@ const SignInScreen = () => {
                 />
 
                 <Text style={styles.title}>
-                    Login to Your Account
+                    Confirm Email
                 </Text>
                 {/* <CustomInput 
                 placeholder='Phone Number'
@@ -39,32 +55,22 @@ const SignInScreen = () => {
                 setValue={setPhoneNumber}
             />  */}
                 <CustomInput
-                    label='email'
-                    placeholder='Email'
-                    leftIcon={
-                        <Icon
-                            type='material-community'
-                            name="mail"
-                            size={20}
-                        />
-                    }
+                    label='code'
+                    placeholder='Enter your verification code'
                 />
-
-                <CheckBox
-                    center
-                    title='Remember me'
-                    iconType='material-community'
-                    checkedIcon='checkbox-marked'
-                    uncheckedIcon='checkbox-blank-outline'
-                    checkedColor='green'
-                    checked={remember}
-                    onPress={() => setRemember(!remember)}
-                    wrapperStyle={{ marginVertical: 10 }}
-                />
+                <Text style={{ padding: 20 }}>
+                    Resend code in {resendCode} seconds
+                </Text>
 
                 <CustomButton
-                    text='Sign In'
-                    onPress={onSignInPressed}
+                    text='Confirm'
+                    onPress={onConfirmPressed}
+                />
+                <CustomButton
+                    text='Resend'
+                    onPress={onResendPressed}
+                    type='TERTIARY'
+                    style={{ borderWidth: 5 }}
                 />
                 <CustomDivider
                     text="or continue with"
@@ -87,4 +93,4 @@ const SignInScreen = () => {
 }
 
 
-export default SignInScreen
+export default ConfirmEmailScreen

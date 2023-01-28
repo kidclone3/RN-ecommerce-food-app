@@ -1,0 +1,23 @@
+
+{
+    "products":
+    [{
+        "id": 1,
+        "title": "Macbook Air M2",
+        "image": "https://www.apple.com/vn/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large_2x.jpg",
+        "rating": 5,
+        "avgRating": 3,
+        "price": 1000,
+        "oldPrice": 1001
+    },
+    {
+        "id": 2,
+        "title": "Macbook Air M1",
+        "image": "https://www.apple.com/vn/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large_2x.jpg",
+        "rating": 5,
+        "avgRating": 3,
+        "price": 900,
+        "oldPrice": 999
+    }
+    ]
+}

@@ -9,17 +9,23 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, useColorScheme} from 'react-native';
 import Navigation from './src/navigation';
-import LetInScreen from './src/screen/LetInScreen';
-import SignInScreen from './src/screen/SignInScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import HomeScreen from './src/screen/HomeScreen';
+
 
 const App = () => {
+  const isDarkMode = useColorScheme() === 'dark';
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
+  };
 
   return (
 
     <SafeAreaView style={styles.root}>
-
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Navigation />
     </SafeAreaView>
   );
