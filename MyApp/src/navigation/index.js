@@ -11,7 +11,7 @@ import HomeHeader from '../components/Header/HomeHeader';
 import { Button } from '@rneui/base';
 import NotificationButton from '../components/Button/NotificationButton';
 import CartButton from '../components/Button/CartButton';
-
+import Tabs from './tabs'
 
 const Stack = createNativeStackNavigator()
 
@@ -21,7 +21,7 @@ const Navigation = () => {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name="HomeScreen"
-          component={HomeScreen}
+          component={Tabs}
           options={{
             headerTitle: (props) => <HomeHeader {...props} />,
             headerRight: () => (

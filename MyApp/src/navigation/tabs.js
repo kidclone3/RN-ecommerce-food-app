@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import HomeScreen from '../screen/HomeScreen';
 import OrderScreen from '../screen/OrderScreen';
 import MessageScreen from '../screen/MessageScreen';
 import EwalletScreen from '../screen/EwalletScreen';
 import ProfileScreen from '../screen/ProfileScreen';
+import { Icon } from '@rneui/themed';
 
 const Tab = createBottomTabNavigator();
 
@@ -12,11 +14,72 @@ const Tabs
     = () => {
         return (
             <Tab.Navigator>
-                <Tab.Screen name="Home" component={HomeScreen} />
-                <Tab.Screen name="Order" component={OrderScreen} />
-                <Tab.Screen name="Message" component={MessageScreen} />
-                <Tab.Screen name="Ewallet" component={EwalletScreen} />
-                <Tab.Screen name="Profile" component={ProfileScreen} />
+                <Tab.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <Icon
+                                type='ionicon'
+                                name={focused ? 'home-sharp' : 'home-outline'}
+                                size={30}
+                                color={focused ? 'green' : 'black'}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen
+                    name="Order"
+                    component={OrderScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <Icon
+                                type='ionicon'
+                                name={focused ? 'reader-sharp' : 'reader-outline'}
+                                size={30}
+                                color={focused ? 'green' : 'black'}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen
+                    name="Message"
+                    component={MessageScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <Icon
+                                type='ionicon'
+                                name={focused ? 'chatbubble-ellipses-sharp' : 'chatbubble-ellipses-outline'}
+                                size={30}
+                                color={focused ? 'green' : 'black'}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen name="Ewallet" component={EwalletScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <Icon
+                                type='ionicon'
+                                name={focused ? 'wallet-sharp' : 'wallet-outline'}
+                                size={30}
+                                color={focused ? 'green' : 'black'}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen name="Profile" component={ProfileScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <Icon
+                                type='ionicon'
+                                name={focused ? 'person-sharp' : 'person-outline'}
+                                size={30}
+                                color={focused ? 'green' : 'black'}
+                            />
+                        )
+                    }}
+                />
 
             </Tab.Navigator>
         )

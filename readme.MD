@@ -12,6 +12,8 @@ Currently working on MyApp folder.
 
 Note: @rneui/themed 4.0 is latest version of React Native Elements (latest maintain is 3.4.3)
 
+With react-navigation 5.0, we need to install @react-navigation/native, @react-navigation/stack, @react-navigation/bottom-tabs, @react-navigation/drawer
+
 ### Font installed:
 At assets:
 
