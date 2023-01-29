@@ -15,19 +15,12 @@ const HomeHeader = () => {
             uri: 'https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg',
         }}
         />
-    <ListItem bottomDivider>
-        <Avatar
-            rounded
-            source={{ uri: 'https://randomuser.me/api/portraits/men/36.jpg' }}
-        />
-        <ListItem.Content>
-        <ListItem.Title>John Doe</ListItem.Title>
-        <ListItem.Subtitle>President</ListItem.Subtitle>
-        </ListItem.Content>
-    </ListItem>
+
     <View style={{padding:10, flexDirection:'row', flexBasis: 'auto', alignSelf:'flex-end'}}>
-      <NotificationButton />
-      <CartButton />
+      {/* <NotificationButton />
+      <CartButton /> */}
+        <Text style={{padding:10, fontSize: 20, fontWeight: 'bold'}}>Home</Text>
+
     </View>
       
     </View>

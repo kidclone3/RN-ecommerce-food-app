@@ -9,8 +9,14 @@ const HomeScreen = () => {
     
   return (
     <View style={styles.container}>
-      <HomeHeader/>
-
+      {/* <HomeHeader/> */}
+        <Icon
+                name='menu'
+                type='material'
+                color='#000'
+                size={30}
+                style={{padding:10}}
+            />
     </View>
   )
 }
