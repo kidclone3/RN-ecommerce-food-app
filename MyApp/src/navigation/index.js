@@ -1,42 +1,36 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import LetInScreen from '../screen/LetInScreen';
-import SignUpScreen from '../screen/SignUpScreen';
-import HomeScreen from '../screen/HomeScreen';
-import SignInScreen from '../screen/SignInScreen';
-import ConfirmEmailScreen from '../screen/ConfirmEmailScreen';
-import HomeHeader from '../components/Header/HomeHeader';
-import { Button } from '@rneui/base';
-import NotificationButton from '../components/Button/NotificationButton';
-import CartButton from '../components/Button/CartButton';
-import Tabs from './tabs'
+import LetInScreen from '../screen/Auth/LetInScreen';
+import SignUpScreen from '../screen/Auth/SignUpScreen';
+import SignInScreen from '../screen/Auth/SignInScreen';
+import ConfirmEmailScreen from '../screen/Auth/ConfirmEmailScreen';
+import BottomTabs from './bottonTabNav'
 
-const Stack = createNativeStackNavigator()
+const Root = createNativeStackNavigator()
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen
-          name="HomeScreen"
-          component={Tabs}
-          options={{
-            headerTitle: (props) => <HomeHeader {...props} />,
-            headerRight: () => (
-              <>
-                <NotificationButton />
-                <CartButton />
-              </>
-            ),
-          }}
+      <Root.Navigator screenOptions={{ headerShown: false }}>
+        <Root.Screen
+          name="HomeTab"
+          component={BottomTabs}
+        // options={{
+        //   headerTitle: (props) => <HomeHeader {...props} />,
+        //   headerRight: () => (
+        //     <>
+        //       <NotificationButton />
+        //       <CartButton />
+        //     </>
+        //   ),
+        // }}
         />
-        <Stack.Screen name="LetInScreen" component={LetInScreen} />
-        <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-        <Stack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
-      </Stack.Navigator>
+        <Root.Screen name="LetInScreen" component={LetInScreen} />
+        <Root.Screen name="SignIn" component={SignInScreen} />
+        <Root.Screen name="SignUp" component={SignUpScreen} />
+        <Root.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
+      </Root.Navigator>
     </NavigationContainer>
   )
 }

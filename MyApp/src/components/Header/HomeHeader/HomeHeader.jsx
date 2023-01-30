@@ -6,13 +6,14 @@ import CartButton from '../../Button/CartButton'
 
 
 const HomeHeader = () => {
+  const avatar = "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg"
   return (
     <View style={styles.header}>
       <Avatar
         rounded
         size='medium'
         source={{
-            uri: 'https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg',
+            uri: avatar,
         }}
         />
 
@@ -33,9 +34,10 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         backgroundColor: 'transparent',
-        
-        height: 70,
-        width: '100%',
-        justifyContent: 'center',
+        // padding: 40,
+        paddingBottom: 10,
+        // height: ,
+        // width: '100%',
+        justifyContent: 'flex-start',
     },
 })

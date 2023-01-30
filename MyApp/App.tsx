@@ -9,10 +9,10 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, useColorScheme} from 'react-native';
+import { StatusBar, StyleSheet, useColorScheme} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Navigation from './src/navigation';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './src/screen/HomeScreen';
 
 
 const App = () => {
@@ -24,9 +24,10 @@ const App = () => {
 
   return (
 
-    <SafeAreaView style={styles.root}>
+    <SafeAreaView style={styles.root} edges={["right", "top", "left"]}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Navigation />
+      {/* <HomeScreen /> */}
     </SafeAreaView>
   );
 };
