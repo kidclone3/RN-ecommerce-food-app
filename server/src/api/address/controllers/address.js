@@ -91,6 +91,22 @@ module.exports = createCoreController('api::address.address', ({strapi}) => ({
         where: {id: ctx.params.id},
         populate: {user: true}
       });
+    },
+  calculateShipping: async (ctx) => {
+    if (!ctx?.request.header.authorization)
+      throw createError(403, "Permission denied")
+    const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
+    if (!Array.isArray(ctx.request.body.item) || !ctx.request.body.address || !ctx.request.body.shop_id) {
+      throw createError(400,"Missing required fields")
+    }
+    const {item, address, shop_id} = ctx.request.body;
+    const shop = await strapi.db.query('api::shop.shop').findOne({
+      where: {id: shop_id},
+    });
+    if (!shop) {
+      throw createError(404, "Shop not found")
+    }
+    return strapi.services['address'].calculateShipping(item, address, shop.address)
     }
   })
 );

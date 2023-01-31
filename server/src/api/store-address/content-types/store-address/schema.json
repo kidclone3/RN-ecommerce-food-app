@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "store_addresses",
   "info": {
     "singularName": "store-address",
@@ -20,10 +20,6 @@
     },
     "phone": {
       "type": "string"
-    },
-    "show": {
-      "type": "boolean",
-      "default": true
     }
   }
 }
