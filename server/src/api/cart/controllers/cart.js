@@ -13,7 +13,7 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
     return await strapi.db.query('api::cart.cart').findWithCount(
       {
-        where: {user: user.id},
+        where: {user: user.id, product: {show: true}},
         populate: {product: true},
         orderBy: {createdAt: 'desc'},
       });

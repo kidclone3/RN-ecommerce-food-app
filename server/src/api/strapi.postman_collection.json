@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "55025835-a28a-4dd2-bfeb-f822e0dc47bd",
+		"_postman_id": "fa681734-c757-4867-8384-50a97985f675",
 		"name": "strapi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "22250699"
+		"_exporter_id": "25588629"
 	},
 	"item": [
 		{
@@ -13,15 +13,9 @@
 					"name": "index",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products?populate=*",
+							"raw": "{{SERVER_URL}}/api/products?populate[categories][fields]=name&populate[image][fields]=url&filters[show][$eq]=true&pagination[start]=0&pagination[limit]=25",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -31,8 +25,24 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[categories][fields]",
+									"value": "name"
+								},
+								{
+									"key": "populate[image][fields]",
+									"value": "url"
+								},
+								{
+									"key": "filters[show][$eq]",
+									"value": "true"
+								},
+								{
+									"key": "pagination[start]",
+									"value": "0"
+								},
+								{
+									"key": "pagination[limit]",
+									"value": "25"
 								}
 							]
 						}
@@ -43,15 +53,9 @@
 					"name": "detail",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products/{{product-id}}?populate=*&?populate[1]=categories",
+							"raw": "{{SERVER_URL}}/api/products/{{product-id}}?populate[image][fields]=url&populate[categories][fields]=name&filters[show][$eq]=true",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -62,13 +66,38 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[image][fields]",
+									"value": "url"
 								},
 								{
-									"key": "?populate[1]",
-									"value": "categories"
+									"key": "populate[categories][fields]",
+									"value": "name"
+								},
+								{
+									"key": "filters[show][$eq]",
+									"value": "true"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/reviews/{{slug}}/stats",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"reviews",
+								"{{slug}}",
+								"stats"
 							]
 						}
 					},
@@ -106,15 +135,9 @@
 					"name": "index",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/categories?populate=*",
+							"raw": "{{SERVER_URL}}/api/categories?populate[icon][fields]=url",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -124,8 +147,8 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[icon][fields]",
+									"value": "url"
 								}
 							]
 						}
@@ -136,15 +159,9 @@
 					"name": "detail",
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{jwt}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}?populate=*",
+							"raw": "{{SERVER_URL}}/api/categories/{{category-id}}?populate[image][fields]=url",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -155,8 +172,36 @@
 							],
 							"query": [
 								{
-									"key": "populate",
-									"value": "*"
+									"key": "populate[image][fields]",
+									"value": "url"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "item in categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/products?populate[image][fields][1]=url&populate[categories][filters][name][$eq]={{category-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "populate[image][fields][1]",
+									"value": "url"
+								},
+								{
+									"key": "populate[categories][filters][name][$eq]",
+									"value": "{{category-id}}"
 								}
 							]
 						}
@@ -583,62 +628,7 @@
 					"response": []
 				},
 				{
-					"name": "02-set-address",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "address",
-									"value": "{{address}}",
-									"type": "text"
-								},
-								{
-									"key": "phone",
-									"value": "{{phone}}",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{SERVER_URL}}/api/users/me/address",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"me",
-								"address"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "03-get-address",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{SERVER_URL}}/api/users/me/address",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"users",
-								"me",
-								"address"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "04-create order",
+					"name": "02-create order",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -667,7 +657,7 @@
 					"response": []
 				},
 				{
-					"name": "05-order-detail",
+					"name": "03-order-detail",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -705,7 +695,7 @@
 					"response": []
 				},
 				{
-					"name": "05-order-cancel",
+					"name": "04-order-cancel",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -720,6 +710,438 @@
 								"me",
 								"receipts",
 								"{{order-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "List comment",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/reviews/{{slug}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"reviews",
+								"{{slug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List comment with Auth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/reviews/{{slug}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"reviews",
+								"{{slug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "score",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "haha",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/reviews/{{slug}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"reviews",
+								"{{slug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "score",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "blabla",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/comment/{{comment-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"comment",
+								"{{comment-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "score",
+									"value": "4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comment",
+									"value": "blabla",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/comment/{{comment-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"comment",
+								"{{comment-id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "address",
+			"item": [
+				{
+					"name": "Get shop",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/store-addresses?filters[show][$eq]=true",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"store-addresses"
+							],
+							"query": [
+								{
+									"key": "filters[show][$eq]",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get shop detail",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/store-addresses/1?filters[show][$eq]=true",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"store-addresses",
+								"1"
+							],
+							"query": [
+								{
+									"key": "filters[show][$eq]",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user adresses list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/addresses",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "bla",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "aa",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "aa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/addresses",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"addresses"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user address detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/addresses/{{address-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"addresses",
+								"{{address-id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit user address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "bla",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "aaa",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "aa",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/addresses/{{address-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"addresses",
+								"{{address-id}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{SERVER_URL}}/api/users/me/addresses/{{address-id}}",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me",
+								"addresses",
+								"{{address-id}}"
 							]
 						}
 					},
@@ -790,7 +1212,8 @@
 		},
 		{
 			"key": "username",
-			"value": "email"
+			"value": "test@example.com",
+			"type": "string"
 		},
 		{
 			"key": "pass",
@@ -821,6 +1244,18 @@
 			"key": "phone",
 			"value": "phone number",
 			"type": "string"
+		},
+		{
+			"key": "slug",
+			"value": "1"
+		},
+		{
+			"key": "comment-id",
+			"value": "1"
+		},
+		{
+			"key": "address-id",
+			"value": "1"
 		}
 	]
 }

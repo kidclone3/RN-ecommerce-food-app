@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "store_addresses",
+  "info": {
+    "singularName": "store-address",
+    "pluralName": "store-addresses",
+    "displayName": "Store Address",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}
