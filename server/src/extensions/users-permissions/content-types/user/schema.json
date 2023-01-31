@@ -72,13 +72,16 @@
     "phone": {
       "type": "string"
     },
-    "address": {
-      "type": "text"
-    },
     "orders": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::order.order",
+      "mappedBy": "user"
+    },
+    "addresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::address.address",
       "mappedBy": "user"
     }
   }
