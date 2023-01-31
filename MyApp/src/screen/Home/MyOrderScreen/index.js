@@ -1,1 +1,1 @@
-export { default } from '/MyOrderScreen'
+export { default } from './MyOrderScreen'
