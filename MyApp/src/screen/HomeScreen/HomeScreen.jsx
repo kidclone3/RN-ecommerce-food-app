@@ -6,7 +6,7 @@ import HomeHeader from '../../components/Header/HomeHeader'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
 import { Image } from '@rneui/base'
-
+import {useNavigation} from '@react-navigation/native'
 
 const HomeScreen = () => {
     const customData = require('../../../demo-data/laptop.json');
@@ -53,8 +53,11 @@ const HomeScreen = () => {
         id: 8,
         name: 'More',
         icon: icons.mooncake,
+        screen: "CategoriesScreen"
       },
     ]
+
+    const navigation = useNavigation();
 
     const renderItem = ({ item }) => {
       return (
@@ -75,7 +78,7 @@ const HomeScreen = () => {
             // width: 100,
             // ...styles.shadow
           }}
-          onPress={() => console.log(item.name)}
+          onPress={() => item.screen ? navigation.navigate(item.screen) : null}
           icon={<Image 
             source={item.icon} 
             resizeMode="contain" 
