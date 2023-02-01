@@ -58,23 +58,8 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       last: Math.ceil(data[1] / parseInt(limit))
     }
   },
-  getDefaultAddress: async (ctx) => {
-    if (!ctx?.request.header.authorization)
-      throw createError(403, "Permission denied")
-    const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
-    const {address, phone} = await strapi.query('plugin::users-permissions.user').findOne(user.id)
-    return {address, phone}
-  },
-  setDefaultAddress: async (ctx) => {
-    if (!ctx?.request.header.authorization)
-      throw createError(403, "Permission denied")
-    const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
-    return await strapi.plugins['users-permissions'].services.user.edit(user.id, {
-      address: ctx.request.body.address,
-      phone: ctx.request.body.phone
-    });
-  },
   createOrderWithCartItem: async (ctx) => {
+
     if (!ctx?.request.header.authorization)
       throw createError(403, "Permission denied")
     const user = await strapi.plugins['users-permissions'].services.jwt.getToken(ctx);
@@ -82,7 +67,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       throw createError(400,"Missing required fields")
     const products = [];
     let total = 0;
-    const {item, phone, address} = ctx.request.body;
+    const {item, phone, address, shop_id} = ctx.request.body;
     for (let i = 0; i < item.length; i++) {
       const cartItem = await strapi.db.query('api::cart.cart').delete({
         where: {id: parseInt(item[i]), user: user.id, product: {show: true}},
@@ -103,6 +88,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       })
       total += parseFloat(cartItem.product.price) * parseInt(cartItem.quantity)
     }
+    const shop = await strapi.entityService.findMany('api::store-address.store-address');
     const order = await strapi.db.query('api::order.order').create({
       data: {
         user: user.id,
@@ -110,6 +96,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
         phone: phone,
         total_price: total,
         note: ctx?.request?.body?.note ?? "",
+        shop_address: shop.address,
       }
     });
     for (let i = 0; i < products.length; i++) {

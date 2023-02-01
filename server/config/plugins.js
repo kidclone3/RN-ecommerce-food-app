@@ -1,5 +1,8 @@
 module.exports = ({ env }) => ({
-  // ...
+  'ratings': {
+    enabled: true,
+    resolve: './src/plugins/ratings',
+  },
   email: {
     config: {
       provider: 'nodemailer',

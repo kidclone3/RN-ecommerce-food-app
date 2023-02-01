@@ -50,6 +50,9 @@
     },
     "note": {
       "type": "text"
+    },
+    "shop_address": {
+      "type": "string"
     }
   }
 }
