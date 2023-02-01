@@ -5,7 +5,7 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 import SocialSignInButton from '../../components/SocialSignInButton';
 import CustomDivider from '../../components/CustomDivider';
 import { SocialIcon, Icon, Skeleton, Button } from '@rneui/themed';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import PhoneNumberInput from '../../components/PhoneNumberInput';
 
 
@@ -21,98 +21,98 @@ const SignUpScreen = () => {
     }
 
 
-    const {height}= useWindowDimensions();
-  return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.root}>
+    const { height } = useWindowDimensions();
+    return (
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.root}>
 
-            <Image
-                style={styles.logo}
-                source={{uri:'https://i.imgur.com/TQAOVkU.jpeg'}}
-            />
+                <Image
+                    style={styles.logo}
+                    source={{ uri: 'https://i.imgur.com/TQAOVkU.jpeg' }}
+                />
 
-            <Text style={styles.title}>
-                Create new account
-            </Text>
-            {/* <CustomInput 
+                <Text style={styles.title}>
+                    Create new account
+                </Text>
+                {/* <CustomInput 
                 placeholder='Phone Number'
                 value={phoneNumber}
                 setValue={setPhoneNumber}
             />  */}
-            <PhoneNumberInput/>
+                <PhoneNumberInput />
 
-            <CustomInput
-                label='email'
-                placeholder='Email'
-                leftIcon={
-                    <Icon 
-                        type='material-community'
-                        name="mail" 
-                        size={20}
-                    />
-                }
-            />
-            <CustomInput
-                label='username'
-                placeholder='Full Name'
-                leftIcon={
-                    <Icon 
-                        type='material-community'
-                        name="account-outline" 
-                        size={20}
-                    />
-                }
-            />
-            
-
-            
-            <CustomButton 
-                text = 'Sign Up' 
-                onPress={onRegisterPressed} 
-            />
-            <CustomDivider
-                text="or continue with"
-            />
-            <View style={{flexDirection:'row'}}>
-                <SocialIcon
-                    //Social Icon using @rneui/themed
-                    button
-                    light
-                    //To make a button type Social Icon
-                    type="facebook"
-                    //Type of Social Icon
-                    onPress={() => {
-                        //Action to perform on press of Social Icon
-                        alert('facebook');
-                    }}
+                <CustomInput
+                    label='email'
+                    placeholder='Email'
+                    leftIcon={
+                        <Icon
+                            type='material-community'
+                            name="mail"
+                            size={20}
+                        />
+                    }
                 />
-                <SocialIcon
-                    //Social Icon using @rneui/themed
-                    button
-                    light
-                    //To make a button type Social Icon
-                    type="google"
-                    //Type of Social Icon
-                    onPress={() => {
-                        //Action to perform on press of Social Icon
-                        alert('google');
+                <CustomInput
+                    label='username'
+                    placeholder='Full Name'
+                    leftIcon={
+                        <Icon
+                            type='material-community'
+                            name="account-outline"
+                            size={20}
+                        />
+                    }
+                />
+
+
+
+                <CustomButton
+                    text='Sign Up'
+                    onPress={onRegisterPressed}
+                />
+                <CustomDivider
+                    text="or continue with"
+                />
+                <View style={{ flexDirection: 'row' }}>
+                    <SocialIcon
+                        //Social Icon using @rneui/themed
+                        button
+                        light
+                        //To make a button type Social Icon
+                        type="facebook"
+                        //Type of Social Icon
+                        onPress={() => {
+                            //Action to perform on press of Social Icon
+                            alert('facebook');
+                        }}
+                    />
+                    <SocialIcon
+                        //Social Icon using @rneui/themed
+                        button
+                        light
+                        //To make a button type Social Icon
+                        type="google"
+                        //Type of Social Icon
+                        onPress={() => {
+                            //Action to perform on press of Social Icon
+                            alert('google');
+                        }}
+                    />
+                </View>
+                <Button
+                    containerStyle={{
+                        width: "80%",
+                        marginHorizontal: 50,
+                        marginVertical: 10,
                     }}
+                    title="Already have an account? Sign in"
+                    type="clear"
+                    titleStyle={{ color: 'grey', fontSize: 12, }}
+                    onPress={() => navigation.push("SignIn")}
                 />
             </View>
-            <Button
-              containerStyle={{
-                width: "80%",
-                marginHorizontal: 50,
-                marginVertical: 10,
-              }}
-              title="Already have an account? Sign in"
-              type="clear"
-              titleStyle={{ color: 'grey', fontSize:12, }}
-              onPress= {() => navigation.navigate("SignIn")}
-            />
-        </View>
-    </ScrollView>
-  )
+        </ScrollView>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         backgroundColor: 'white'
-    }, 
+    },
     logo: {
         width: 55,
         height: 66,
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
     title: {
         padding: 30,
-        fontSize:32,
+        fontSize: 32,
     }
 });
 
