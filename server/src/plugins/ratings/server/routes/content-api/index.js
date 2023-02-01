@@ -16,7 +16,8 @@ module.exports = {
       path: "/reviews/:slug",
       handler: "reviews.find",
       config: {
-        policies: []
+        policies: [],
+        auth: false
       }
     },
     {
@@ -24,7 +25,8 @@ module.exports = {
       path: "/reviews/:slug/count",
       handler: "reviews.count",
       config: {
-        policies: []
+        policies: [],
+        auth: false
       }
     },
     {
@@ -40,7 +42,8 @@ module.exports = {
       path: "/reviews/:slug/stats",
       handler: "reviews.getStats",
       config: {
-        policies: []
+        policies: [],
+        auth: false
       }
     },
     {
@@ -65,6 +68,15 @@ module.exports = {
       handler: "reviews.delete",
       config: {
         policies: []
+      }
+    },
+    {
+      method: "POST",
+      path:"/reviews",
+      handler: "reviews.statsByList",
+      config: {
+        policies: [],
+        auth: false
       }
     }
   ]

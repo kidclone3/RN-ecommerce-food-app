@@ -10,7 +10,7 @@ module.exports = {
   async find(ctx) {
     const {slug} = ctx.params
     const {user} = ctx.state
-    const {start, ignoreCount} = ctx.request.query
+    const {start} = ctx.request.query
     const pageSize = await strapi.service('plugin::ratings.review').getPageSize()
     let reviews = await strapi.entityService.findMany("plugin::ratings.review",
       {
@@ -23,23 +23,27 @@ module.exports = {
         }
       }
     )
-    let reviewsCount
+    let reviewsCount = 0
     let averageScore = 0
     let userReview = null
-    if (!ignoreCount) {
-      reviewsCount = await strapi.db.query("plugin::ratings.review").count({
-        where: {
-          related_to: {slug}
-        }
-      })
+
       const score = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-        select: ["average"],
+        select: ["average","count"],
         where: {slug}
       })
       if (score) {
+        reviewsCount = score.count
         averageScore = score.average
       }
-    }
+      else {
+        await strapi.entityService.create("plugin::ratings.r-content-id", {
+          data: {slug},
+          populate: {
+            reviews: {fields: ["id"]}
+          },
+        })
+      }
+
     // Check whether the user has already posted a review
     if (user) {
       userReview = await strapi.db.query("plugin::ratings.review").findMany({
@@ -49,7 +53,7 @@ module.exports = {
           author: user.id
         },
         populate: {
-          author: {fields: ["id", "username", "email"]}
+          author: {select: ["id", "username", "email"]}
         }
       })
       if (userReview) {
@@ -98,16 +102,13 @@ module.exports = {
     // If not exists, this is the fist review
     // - create the contentID and grab the ID
     let relatedContent = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-      select: ["id", "average"],
-      populate: {
-        reviews: {fields: ["id"]}
-      },
+      select: ["id", "average", "count"],
       where: {slug}
     })
     if (!relatedContent) {
       // First review ever for this content
       relatedContent = await strapi.entityService.create("plugin::ratings.r-content-id", {
-        data: {slug, average: 0},
+        data: {slug},
         populate: {
           reviews: {fields: ["id"]}
         },
@@ -123,11 +124,12 @@ module.exports = {
       }
     })
     // Update average rating
-    const oldTotalScore = relatedContent.average * relatedContent.reviews.length
-    const newAvg = (oldTotalScore + parseFloat(score)) / (relatedContent.reviews.length + 1)
+    const oldTotalScore = relatedContent.average * relatedContent.count
+    const newAvg = (oldTotalScore + parseFloat(score)) / (relatedContent.count + 1)
     await strapi.entityService.update("plugin::ratings.r-content-id", relatedContent.id, {
       data: {
-        average: newAvg
+        average: newAvg,
+        count: relatedContent.count + 1
       }
     })
     ctx.body = {id: newReview.id}
@@ -139,29 +141,25 @@ module.exports = {
   async count(ctx) {
     const {slug} = ctx.params
     // count reviews related to this content
-    const reviewsCount = await strapi.db.query("plugin::ratings.review").count({
-      where: {
-        related_to: {slug}
-      }
+    const reviewsCount = await strapi.db.query("plugin::ratings.review").findOne({
+      select: ["count"],
+      where: {slug}
     })
     return {
-      count: reviewsCount
+      count: reviewsCount.count
     }
   },
   async getStats(ctx) {
     const {slug} = ctx.params
-    const reviewsCount = await strapi.db.query("plugin::ratings.review").count({
-      where: {
-        related_to: {slug}
-      }
-    })
     let averageScore = 0
+    let reviewsCount = 0
     const score = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-      select: ["average"],
+      select: ["id", "average", "count"],
       where: {slug}
     })
     if (score) {
       averageScore = score.average
+      reviewsCount = score.count
     }
     ctx.body = {
       averageScore,
@@ -220,14 +218,11 @@ module.exports = {
     })
     // Update average rating
     const relatedContent = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-      select: ["id", "average"],
-      populate: {
-        reviews: {fields: ["id"]}
-      },
+      select: ["id", "average","count"],
       where: {id: review.related_to.id}
     })
-    const oldTotalScore = relatedContent.average * relatedContent.reviews.length
-    const newAvg = (oldTotalScore + parseFloat(score) - review.score) / relatedContent.reviews.length
+    const oldTotalScore = relatedContent.average * relatedContent.count
+    const newAvg = (oldTotalScore + parseFloat(score) - review.score) / relatedContent.count
     await strapi.entityService.update("plugin::ratings.r-content-id", relatedContent.id, {
       data: {
         average: newAvg
@@ -257,22 +252,44 @@ module.exports = {
     await strapi.entityService.delete("plugin::ratings.review", ctx.params.id)
 // Update average rating
     const relatedContent = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-      select: ["id", "average"],
-      populate: {
-        reviews: {fields: ["id"]}
-      },
+      select: ["id", "average","count"],
       where: {id: review.related_to.id}
     })
-    const oldTotalScore = relatedContent.average * relatedContent.reviews.length
-    const newAvg = (oldTotalScore - review.score) / (relatedContent.reviews.length - 1)
+    const oldTotalScore = relatedContent.average * relatedContent.count
+    const newAvg = (oldTotalScore - review.score) / (relatedContent.count - 1)
     await strapi.entityService.update("plugin::ratings.r-content-id", relatedContent.id, {
       data: {
-        average: newAvg
+        average: newAvg,
+        count: relatedContent.count - 1
       }
     })
     ctx.body = {
       id: review.id
     }
   },
+  statsByList: async (ctx) => {
+    const {list} = ctx.request.body
+    const stats = await strapi.db.query("plugin::ratings.r-content-id").findMany({
+      select: ["slug", "average", "count"],
+      where: {slug: {$in: list}}
+    })
+    if (stats.length < list.length) {
+      const missing = list.filter(slug => !stats.find(s => s.slug === slug))
+      for (const slug of missing) {
+        stats.push({
+          slug,
+          average: 0,
+          count: 0
+        });
+        await strapi.entityService.create("plugin::ratings.r-content-id", {
+          data: {slug},
+          populate: {
+            reviews: {fields: ["id"]}
+          },
+        })
+      }
+    }
+    return stats
+  }
 }
 
