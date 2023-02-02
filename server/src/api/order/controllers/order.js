@@ -67,7 +67,7 @@ module.exports = createCoreController('api::order.order', ({strapi}) => ({
       throw createError(400,"Missing required fields")
     const products = [];
     let total = 0;
-    const {item, phone, address, shop_id} = ctx.request.body;
+    const {item, phone, address} = ctx.request.body;
     for (let i = 0; i < item.length; i++) {
       const cartItem = await strapi.db.query('api::cart.cart').delete({
         where: {id: parseInt(item[i]), user: user.id, product: {show: true}},
