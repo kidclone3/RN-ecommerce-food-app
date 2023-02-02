@@ -9,7 +9,7 @@ import { Image } from '@rneui/base'
 import {useNavigation} from '@react-navigation/native'
 
 const HomeScreen = () => {
-    const customData = require('../../../demo-data/laptop.json');
+    const customData = require('../../../demo-data/laptop.json').products;
 
   function renderMainCatagories() {
 
@@ -123,11 +123,52 @@ const HomeScreen = () => {
       </View>
     )
   }
+  function renderProductList() {
+    const renderItem = ({ item }) => {
+      return (
+        <ProductItem
+          item={item}
+          // onPress={() => navigation.navigate("ProductDetailScreen", {
+          //   item: item
+          // })}
+          onPress = {() => {console.log("pressed")}}
+        />
+      )
+    }
+
+    return (
+      <View style={{padding:1}}>
+        <Text style={{...FONTS.h1 }}>Discount Guaranteed! </Text>
+        <FlatList
+          showsVerticalScrollIndicator={true}
+          horizontal
+          data={customData}
+          keyExtractor={item => `${item.id}`}
+          renderItem={renderItem}
+          contentContainerStyle={{
+            paddingVertical: SIZES.padding * 2,
+            padding: SIZES.padding * 2,
+          }}
+        />
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={customData}
+          keyExtractor={item => `${item.id}`}
+          renderItem={renderItem}
+          contentContainerStyle={{
+            paddingVertical: SIZES.padding * 2,
+            padding: SIZES.padding * 2,
+          }}
+        />
+      </View>
+    )
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <HomeHeader/>
       {renderMainCatagories()}
-        
+      {renderProductList()}
     </SafeAreaView>
   )
 }

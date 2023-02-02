@@ -16,6 +16,7 @@ export const COLORS = {
     lightGray4: "#F8F8F9",
     transparent: "transparent",
     darkgray: '#898C95',
+    orange: '#FA9F18',
 };
 
 export const SIZES = {
@@ -25,7 +26,7 @@ export const SIZES = {
     radius: 30,
     padding: 10,
     padding2: 12,
-
+    padding3: 5,
     // font sizes
     largeTitle: 50,
     h1: 30,

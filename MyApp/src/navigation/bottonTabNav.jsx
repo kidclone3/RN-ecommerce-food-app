@@ -10,11 +10,6 @@ import { Icon } from '@rneui/themed';
 
 const Tab = createBottomTabNavigator();
 
-const CustomTabBar = (props) => {
-    return (
-        <BottomTabBar {...props.props} />
-    )
-}
 
 const BottomTabs
     = () => {
@@ -39,6 +34,7 @@ const BottomTabs
                         opacity: 0.95,
                         shadowOffset: { width: 1, height: 4 },
                     },
+                    headerShown: false
                 }}
 
             >
@@ -54,7 +50,6 @@ const BottomTabs
                                 color={focused ? 'green' : 'black'}
                             />
                         ),
-
                     }}
                 />
                 <Tab.Screen

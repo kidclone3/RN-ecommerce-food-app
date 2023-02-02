@@ -18,6 +18,7 @@ const Navigation = () => {
         <Root.Screen
           name="HomeTab"
           component={BottomTabs}
+
         // options={{
         //   headerTitle: (props) => <HomeHeader {...props} />,
         //   headerRight: () => (
