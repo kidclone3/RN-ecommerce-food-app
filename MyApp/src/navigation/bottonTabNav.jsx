@@ -16,25 +16,10 @@ const BottomTabs
         return (
             <Tab.Navigator
                 initialRouteName='Home'
-                tabBarOptions={{
-                    showLabel: false,
-                    style: {
-                        borderTopWidth: 0,
-                        backgroundColor: 'transparent',
-                        elevation: 0
-                    }
-                }}
                 screenOptions={{
-                    tabBarStyle: {
-                        elevation: 1,
-                        backgroundColor: '#f5f5f5',
-                        height: 70,
-                        bottom: 0,
-                        borderRadius: 20,
-                        opacity: 0.95,
-                        shadowOffset: { width: 1, height: 4 },
-                    },
-                    headerShown: false
+                    tabBarStyle: styles.tabBar,
+                    headerShown: false,
+                    tabBarShowLabel: false
                 }}
 
             >
@@ -112,4 +97,17 @@ const BottomTabs
 export default BottomTabs
 
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tabBar: {
+        elevation: 1,
+        backgroundColor: '#f5f5f5',
+        height: 70,
+        bottom: 0,
+        borderRadius: 20,
+        opacity: 0.95,
+        shadowOffset: { width: 1, height: 4 },
+        borderTopWidth: 0,
+        backgroundColor: 'transparent',
+        elevation: 0
+    }
+})

@@ -59,6 +59,7 @@ buck-out
 
 # Watchman
 .watchmanconfig
+.watchman-cookie*
 
 # Android
 .idea

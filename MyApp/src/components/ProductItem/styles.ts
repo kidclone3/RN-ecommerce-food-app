@@ -12,16 +12,17 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
     },
     image: {
-        flex: 2,
-        height: 70,
-        width: 70,
-        resizeMode: 'center',
+        flex: 1,
+        justifyContent: 'space-around',
+        height: 100,
+        width: 100,
+        resizeMode: 'contain',
         aspectRatio: 1,
         margin: 10,
         borderRadius: 50,
     },
     rightContainer: {
-        padding: 20,
+        padding: 10,
         flex: 3,
     },
     title: {
