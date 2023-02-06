@@ -3,11 +3,12 @@ import {API_URL} from '../index';
 import {validateError} from './index';
 
 export const resetPass = async (code, password, passwordConfirmation) => {
+    let returnCode = 0;
     if (password !== passwordConfirmation) {
         console.warn('Passwords do not match');
         return 1;
     }
-    axios
+    await axios
         .post(`${API_URL}/api/auth/reset-password`, {
             code: code,
             password: password,
@@ -16,17 +17,18 @@ export const resetPass = async (code, password, passwordConfirmation) => {
         .then(() => {
             // Reset password successful
             console.warn('Success');
-            return 0;
         })
         .catch(error => {
             // Reset password failed
             const errors = validateError(error);
             if (errors.length > 0) {
-                return 2;
+                returnCode = 2;
             }
             if (error.response.data.error.name === 'Incorrect code provided') {
                 console.warn(`Wrong reset password code`);
-                return 3;
+                returnCode = 3;
             }
         });
+    return returnCode;
 }
+export default resetPass;

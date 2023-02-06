@@ -4,7 +4,8 @@ import {API_URL} from "../index";
 import {validateError} from "./index";
 
 export const register = async (username,password,email) => {
-    axios.post(`${API_URL}/api/auth/local/register`, {
+    let code = 0;
+    await axios.post(`${API_URL}/api/auth/local/register`, {
         username: username,
         password: password,
         email: email,
@@ -14,19 +15,20 @@ export const register = async (username,password,email) => {
         await EncryptedStorage.setItem('username', user.username);
         await EncryptedStorage.setItem('jwt', jwt);
         // register successful
-        return 0;
     }).catch(error => {
         // Validation error => invalid input
         const errors = validateError(error)
         if (errors.length > 0) {
-            return 1;
+            code = 1;
         }
         const message = error.response.data.error.message
         // Email or Username are already taken => existed account
         if (message === 'Email or Username are already taken') {
             console.warn('Email or Username are already taken')
-            return 2;
+            code = 2;
         }
         // Login failed
     })
+    return code;
 }
+export default register;
