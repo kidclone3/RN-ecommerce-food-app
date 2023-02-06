@@ -17,7 +17,6 @@ module.exports = {
       handler: "reviews.find",
       config: {
         policies: [],
-        auth: false
       }
     },
     {
