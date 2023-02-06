@@ -9,7 +9,7 @@ const initEmails = async ({ pluginStore }) => {
       options: {
         from: {
           name: "SE2022 noreply",
-          email: "noreply@se2022.com.au",
+          email: "noreply@se2022",
         },
         response_email: "",
         object: "Reset password",
@@ -25,7 +25,7 @@ const initEmails = async ({ pluginStore }) => {
       options: {
         from: {
           name: "SE2022 noreply",
-          email: "noreply@se2022.com.au",
+          email: "noreply@se2022",
         },
         response_email: "",
         object: "Account Verification",
@@ -33,8 +33,7 @@ const initEmails = async ({ pluginStore }) => {
 
               <p>You have to confirm your email address. Please click on this <a href="<%= URL %>?confirmation=<%= CODE %>">link</a> to verify your account.</p>
               
-              <p>Cheers!</p>
-              <p>AusVie Team</p>`,
+              <p>Cheers!</p>`,
       },
     },
   };
@@ -63,7 +62,7 @@ module.exports = {
       type: "plugin",
       name: "users-permissions",
     });
-
+    
     await initEmails({
       pluginStore,
     });
