@@ -39,7 +39,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-
+yarn.lock
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
@@ -57,7 +57,15 @@ yarn-error.log
 
 # Ruby / CocoaPods
 /ios/Pods/
+/ios/build/
+/ios/.xcode.env
+/ios/Podfile.lock
 /vendor/bundle/
-
+Gemfile.lock
+#Android
+/android/app/build/
+/android/build/
+/android/.gradle/
+/android/app/src/main/assets
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
