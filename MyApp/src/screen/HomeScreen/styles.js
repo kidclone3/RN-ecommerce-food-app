@@ -3,6 +3,18 @@ import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
 
 
 const styles = StyleSheet.create({
+    searchBar: {
+        padding: SIZES.padding * 2,
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
+        height: SIZES.largeTitle,
+        marginBottom: SIZES.padding * 2,
+        marginTop: SIZES.padding * 2,
+    },
+    searchBarInput: {
+        backgroundColor: COLORS.lightGray,
+        borderColor: COLORS.white,
+    },
     buttonContainer: {
         padding: SIZES.padding,
         paddingBottom: SIZES.padding,

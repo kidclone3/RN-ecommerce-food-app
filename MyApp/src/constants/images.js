@@ -28,7 +28,7 @@ const sarawak_laksa = require("../../assets/images/sarawak-laksa.jpg");
 const sushi = require("../../assets/images/sushi.jpg");
 const teh_c_peng = require("../../assets/images/teh-c-peng.jpg");
 const tomato_pasta = require("../../assets/images/tomato-pasta.jpg");
-
+const clipboards = require("../../assets/images/clipboards.png");
 export default {
     avatar_1,
     avatar_2,
@@ -60,4 +60,5 @@ export default {
     sushi,
     teh_c_peng,
     tomato_pasta,
+    clipboards,
 }

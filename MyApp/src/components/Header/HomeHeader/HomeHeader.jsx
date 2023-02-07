@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Icon, Avatar, ListItem } from '@rneui/themed'
-import NotificationButton from '../../Button/NotificationButton'
 import CartButton from '../../Button/CartButton'
+import { SIZES } from '../../../constants'
 
 
 const HomeHeader = () => {
@@ -16,14 +16,11 @@ const HomeHeader = () => {
             uri: avatar,
         }}
         />
-
-    <View style={{padding:10, flexDirection:'row', flexBasis: 'auto', alignSelf:'flex-end'}}>
-      {/* <NotificationButton />
-      <CartButton /> */}
-        <Text style={{padding:10, fontSize: 20, fontWeight: 'bold'}}>Home</Text>
-
-    </View>
       
+      <View style={{flexDirection: 'row', justifyContent:'space-between', gap:SIZES.body3}}>
+        <CartButton />
+      </View>
+        
     </View>
   )
 }
@@ -34,10 +31,11 @@ const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         backgroundColor: 'transparent',
-        // padding: 40,
+        padding: SIZES.h3,
         paddingBottom: 10,
-        // height: ,
+        height: "10%",
         // width: '100%',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
 })

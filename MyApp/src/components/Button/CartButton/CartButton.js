@@ -1,25 +1,30 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react';
 import { Button, Icon } from '@rneui/themed';
+import { COLORS, SIZES } from '../../../constants';
+import { useNavigation } from '@react-navigation/native';
 
 const CartButton = () => {
+    const navigation = useNavigation();
     const onCartButtonPressed = () => {
         console.warn('Notification button pressed');
+        navigation.push('MyCart');
     }
     return (
         <>
             <Button
                 type='outline'
-                buttonStyle={{ width: 50, height: 50, borderRadius: 100, backgroundColor: 'white' }}
+                buttonStyle={styles.buttonStyle}
                 icon={
                     <Icon
                         light
-                        type='ionicon'
-                        name='basket-outline'
-                        size={30}
+                        type='feather'
+                        name='shopping-cart'
+                        size={SIZES.h3}
                     />
                 }
                 onPress={onCartButtonPressed}
+                size='sm'
             />
 
         </>
@@ -28,4 +33,11 @@ const CartButton = () => {
 
 export default CartButton
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    buttonStyle: {
+        width: 50, height: 50, borderRadius: 100, backgroundColor: 'white',
+        borderColor: COLORS.lightGray3,
+        borderWidth: 2,
+    }
+
+})

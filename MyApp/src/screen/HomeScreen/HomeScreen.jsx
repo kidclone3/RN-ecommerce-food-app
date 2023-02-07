@@ -1,15 +1,29 @@
 import { View, Text, FlatList, ScrollView} from 'react-native'
 import React from 'react'
 import ProductItem from '../../components/ProductItem'
-import {Button, Icon} from '@rneui/themed'
+import {Button, Icon, Image, SearchBar} from '@rneui/themed'
 import HomeHeader from '../../components/Header/HomeHeader'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
-import {List, Image } from '@rneui/base'
 import {useNavigation} from '@react-navigation/native'
 import styles from './styles'
 
 const HomeScreen = () => {
+  function searchBar() {
+    return (
+      <SearchBar 
+        round
+        lightTheme
+        platform="ios"
+        cancelIcon={{ type: 'font-awesome', name: 'chevron-left' }}
+        showLoading
+        placeholder='What are you craving?'
+        containerStyle={styles.searchBar}
+        inputContainerStyle={styles.searchBarInput}
+      />
+    )
+  }
+
     const customData = require('../../../demo-data/laptop.json').products;
 
   function renderMainCatagories() {
@@ -172,6 +186,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <HomeHeader/>
       <ScrollView >
+        {searchBar()}
         {renderMainCatagories()}
         {renderProductList()}
       </ScrollView>

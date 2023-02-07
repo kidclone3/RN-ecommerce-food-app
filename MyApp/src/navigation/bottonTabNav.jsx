@@ -6,6 +6,7 @@ import OrderScreen from '../screen/OrderScreen';
 import MessageScreen from '../screen/MessageScreen';
 import EwalletScreen from '../screen/EwalletScreen';
 import ProfileScreen from '../screen/ProfileScreen';
+import HomeNavigator from './homeNav';
 import { Icon } from '@rneui/themed';
 
 const Tab = createBottomTabNavigator();
@@ -24,8 +25,8 @@ const BottomTabs
 
             >
                 <Tab.Screen
-                    name="Home"
-                    component={HomeScreen}
+                    name="HomeNavigator"
+                    component={HomeNavigator}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <Icon
