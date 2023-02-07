@@ -2,7 +2,7 @@ import axios from 'axios';
 import {API_URL} from '../index';
 import {validateError} from './index';
 
-export const resetPass = async (code, password, passwordConfirmation) => {
+export const resetPass = async (email, code, password, passwordConfirmation) => {
     let returnCode = 0;
     if (password !== passwordConfirmation) {
         console.warn('Passwords do not match');
@@ -13,6 +13,7 @@ export const resetPass = async (code, password, passwordConfirmation) => {
             code: code,
             password: password,
             passwordConfirmation: password,
+            email: email,
         })
         .then(() => {
             // Reset password successful
