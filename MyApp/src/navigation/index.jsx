@@ -8,6 +8,7 @@ import ConfirmEmailScreen from '../screen/Auth/ConfirmEmailScreen';
 import BottomTabs from './bottonTabNav'
 import CategoriesScreen from '../screen/Item/CategoriesScreen';
 import HomeNavigator from './homeNav';
+import MyCartScreen from '../screen/Home/MyCartScreen';
 
 const Root = createNativeStackNavigator()
 
@@ -18,6 +19,7 @@ const Navigation = () => {
         <Root.Screen
           name="HomeTab"
           component={BottomTabs}
+
         // options={{
         //   headerTitle: (props) => <HomeHeader {...props} />,
         //   headerRight: () => (
@@ -33,7 +35,7 @@ const Navigation = () => {
         <Root.Screen name="SignUp" component={SignUpScreen} />
         <Root.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
         <Root.Screen name="Categories" component={CategoriesScreen} />
-        <Root.Screen name="HomeButtons" component={HomeNavigator} />
+        {/* <Root.Screen name="MyCart" component={MyCartScreen} /> */}
 
       </Root.Navigator>
     </NavigationContainer>

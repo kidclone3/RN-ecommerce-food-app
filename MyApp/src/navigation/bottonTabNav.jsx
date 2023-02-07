@@ -6,45 +6,27 @@ import OrderScreen from '../screen/OrderScreen';
 import MessageScreen from '../screen/MessageScreen';
 import EwalletScreen from '../screen/EwalletScreen';
 import ProfileScreen from '../screen/ProfileScreen';
+import HomeNavigator from './homeNav';
 import { Icon } from '@rneui/themed';
 
 const Tab = createBottomTabNavigator();
 
-const CustomTabBar = (props) => {
-    return (
-        <BottomTabBar {...props.props} />
-    )
-}
 
 const BottomTabs
     = () => {
         return (
             <Tab.Navigator
                 initialRouteName='Home'
-                tabBarOptions={{
-                    showLabel: false,
-                    style: {
-                        borderTopWidth: 0,
-                        backgroundColor: 'transparent',
-                        elevation: 0
-                    }
-                }}
                 screenOptions={{
-                    tabBarStyle: {
-                        elevation: 1,
-                        backgroundColor: '#f5f5f5',
-                        height: 70,
-                        bottom: 0,
-                        borderRadius: 20,
-                        opacity: 0.95,
-                        shadowOffset: { width: 1, height: 4 },
-                    },
+                    tabBarStyle: styles.tabBar,
+                    headerShown: false,
+                    tabBarShowLabel: false
                 }}
 
             >
                 <Tab.Screen
-                    name="Home"
-                    component={HomeScreen}
+                    name="HomeNavigator"
+                    component={HomeNavigator}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <Icon
@@ -54,7 +36,6 @@ const BottomTabs
                                 color={focused ? 'green' : 'black'}
                             />
                         ),
-
                     }}
                 />
                 <Tab.Screen
@@ -117,4 +98,17 @@ const BottomTabs
 export default BottomTabs
 
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    tabBar: {
+        elevation: 1,
+        backgroundColor: '#f5f5f5',
+        height: 70,
+        bottom: 0,
+        borderRadius: 20,
+        opacity: 0.95,
+        shadowOffset: { width: 1, height: 4 },
+        borderTopWidth: 0,
+        backgroundColor: 'transparent',
+        elevation: 0
+    }
+})

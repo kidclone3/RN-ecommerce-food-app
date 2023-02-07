@@ -1,15 +1,30 @@
-import { View, Text, FlatList, StyleSheet} from 'react-native'
+import { View, Text, FlatList, ScrollView} from 'react-native'
 import React from 'react'
 import ProductItem from '../../components/ProductItem'
-import {Button, Icon} from '@rneui/themed'
+import {Button, Icon, Image, SearchBar} from '@rneui/themed'
 import HomeHeader from '../../components/Header/HomeHeader'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
-import { Image } from '@rneui/base'
 import {useNavigation} from '@react-navigation/native'
+import styles from './styles'
 
 const HomeScreen = () => {
-    const customData = require('../../../demo-data/laptop.json');
+  function searchBar() {
+    return (
+      <SearchBar 
+        round
+        lightTheme
+        platform="ios"
+        cancelIcon={{ type: 'font-awesome', name: 'chevron-left' }}
+        showLoading
+        placeholder='What are you craving?'
+        containerStyle={styles.searchBar}
+        inputContainerStyle={styles.searchBarInput}
+      />
+    )
+  }
+
+    const customData = require('../../../demo-data/laptop.json').products;
 
   function renderMainCatagories() {
 
@@ -63,22 +78,8 @@ const HomeScreen = () => {
       return (
         <Button
           color={COLORS.white}
-          containerStyle={{
-            padding: SIZES.padding,
-            paddingBottom: SIZES.padding,
-            backgroundColor: COLORS.white,
-            // borderRadius: SIZES.radius,
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginRight: SIZES.padding,
-            flex: 1,
-            flexDirection: 'column',
-            margin: 5,
-            height: 80,
-            // width: 100,
-            // ...styles.shadow
-          }}
-          onPress={() => item.screen ? navigation.navigate(item.screen) : null}
+          containerStyle={styles.buttonContainer}
+          onPress={() => item.screen ? navigation.navigate(item.screen) : console.warn(item.name)}
           icon={<Image 
             source={item.icon} 
             resizeMode="contain" 
@@ -102,40 +103,95 @@ const HomeScreen = () => {
           </Button>
       )
     }
-
+    function catagoriesHeader() {
+      return (
+        <View style={styles.header}>
+          <Text style={{...FONTS.h1}}>Main</Text>
+          <Text style={{...FONTS.h1 }}>Categories</Text>
+        </View>
+      )
+    }
     return (
-      <View style={{padding:1}}>
-        <Text style={{...FONTS.h1}}>Main</Text>
-        <Text style={{...FONTS.h1 }}>Categories</Text>
+      <FlatList
+        bounces={true}
+        ListHeaderComponent={catagoriesHeader}
+        scrollEnabled={false}
+        showsHorizontalScrollIndicator={false}
+        data={catagoriesData}
+        keyExtractor={item => `${item.id}`}
+        renderItem={renderItem}
+        contentContainerStyle={{
+          paddingVertical: SIZES.padding * 2,
+          
+        }}
+        containerStyle = {styles.flatList}
+        numColumns={Math.ceil(catagoriesData.length / 2)}
+      />
+    )
+  }
+  function renderProductList() {
+    const renderItem = ({ item }) => {
+      return (
+        <ProductItem
+          item={item}
+          // onPress={() => navigation.navigate("ProductDetailScreen", {
+          //   item: item
+          // })}
+          onPress = {() => {console.log("pressed")}}
+        />
+      )
+    }
+    return (
+      <SafeAreaView>
+        <View style={styles.header}>
+          <Text style={{...FONTS.h1 }}>
+            Discount Guaranteed! 
+          </Text>
+        </View>
+
         <FlatList
-          // horizontal
-          showsHorizontalScrollIndicator={false}
-          data={catagoriesData}
+          bounces={true}
+          showsVerticalScrollIndicator={true}
+          horizontal
+          data={customData}
           keyExtractor={item => `${item.id}`}
           renderItem={renderItem}
           contentContainerStyle={{
             paddingVertical: SIZES.padding * 2,
-            
+            padding: SIZES.padding * 2,
+            gap: SIZES.padding * 2,
           }}
-          numColumns={Math.ceil(catagoriesData.length / 2)}
+          containerStyle={styles.flatList}
         />
-
-      </View>
+        <View style={styles.header}>
+          <Text style={{...FONTS.h1 }}>
+            Recommend for you! 
+          </Text>
+        </View>
+         <FlatList
+          showsVerticalScrollIndicator={false}
+          data={customData}
+          keyExtractor={item => `${item.id}`}
+          renderItem={renderItem}
+          contentContainerStyle={{
+            paddingVertical: SIZES.padding * 2,
+            padding: SIZES.padding * 2,
+          }}
+        />
+        </SafeAreaView>
     )
   }
+
   return (
     <SafeAreaView style={styles.container}>
       <HomeHeader/>
-      {renderMainCatagories()}
-        
+      <ScrollView >
+        {searchBar()}
+        {renderMainCatagories()}
+        {renderProductList()}
+      </ScrollView>
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#fff',
-    },
-});
 
 export default HomeScreen
