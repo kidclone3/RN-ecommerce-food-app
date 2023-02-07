@@ -1,10 +1,22 @@
+const _ = require("lodash");
 const rdStr = require("randomstring");
 const bcrypt = require("bcrypt");
+const utils = require("@strapi/utils");
 const createHttpError = require("http-errors");
+const { getService } = require("./utils/index");
 const {
   validateForgotPasswordBody,
   validateResetPasswordBody,
 } = require("./validation/auth");
+
+const { sanitize } = utils;
+
+const sanitizeUser = (user, ctx) => {
+  const { auth } = ctx.state;
+  const userSchema = strapi.getModel("plugin::users-permissions.user");
+
+  return sanitize.contentAPI.output(user, userSchema, { auth });
+};
 
 module.exports = (plugin) => {
   plugin.controllers.auth.forgotPassword = async (ctx) => {
@@ -102,7 +114,7 @@ module.exports = (plugin) => {
 
     const [resetPasswordToken, timeStamp] = user.resetPasswordToken.split("|");
 
-    if (Number(timeStamp) + 60 * 5 < Date.now()) {
+    if (Number(timeStamp) + 60000 * 5 < Date.now()) {
       throw createHttpError(400, "Session is expired!");
     }
 

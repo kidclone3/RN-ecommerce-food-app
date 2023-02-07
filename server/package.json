@@ -13,11 +13,14 @@
   "dependencies": {
     "@strapi/plugin-i18n": "4.4.3",
     "@strapi/plugin-users-permissions": "4.4.3",
+    "@strapi/provider-email-nodemailer": "^4.6.0",
     "@strapi/strapi": "4.4.3",
     "bcrypt": "^5.1.0",
     "better-sqlite3": "7.4.6",
     "http-errors": "^2.0.0",
-    "randomstring": "^1.2.3"
+    "lodash": "^4.17.21",
+    "randomstring": "^1.2.3",
+    "react-awesome-stars-rating": "^0.13.5"
   },
   "author": {
     "name": "A Strapi developer"
