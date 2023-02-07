@@ -17,7 +17,7 @@ export const listUserAddress = async () => {
         object = response.data;
     }).catch(error => {
         console.warn("Error: " + error);
-        object=object.error
+        object=error
     })
     return object;
 }

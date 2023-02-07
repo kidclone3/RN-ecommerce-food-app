@@ -34,8 +34,8 @@ export const getProductsByCategory = async (categoryName, start = 0, limit = 25)
                 data = response.data.data
             })
             .catch(error => {
-                console.warn('Error retrieving products: ' + error);
-                return null;
+                console.warn('Error retrieving products: ' + error.response.data.error.message);
+                data.error = error
             });
     return data;
     // eg: console.warn(await getProductsByCategory( await (categoriesDetail(1)).name))

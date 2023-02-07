@@ -8,6 +8,7 @@ export const storeAddress = async () => {
         data = response.data.data;
     }).catch(error => {
         console.warn("Error: " + error);
+        data.error=error
     });
     return data;
 }

@@ -14,7 +14,8 @@ export const categoryDetail = async (id) => {
         console.warn("Product retrieved");
         data = response.data.data;
     }).catch(error => {
-        console.warn("Error retrieving products: " + error);
+        console.warn("Error retrieving products: " + error.response.data.error.message);
+        data.error = error
     });
     return data;
 }

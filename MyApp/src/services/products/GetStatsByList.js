@@ -14,6 +14,7 @@ export const getStatsByList = async (list) => {
         data = response.data;
     }).catch(error => {
         console.warn("Error retrieving stats: " + error.response.data.error.message);
+        data.error = error
     });
     return data;
     // eg: let products = await getProducts();
