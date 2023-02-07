@@ -55,8 +55,7 @@ module.exports = createCoreController('api::address.address', ({strapi}) => ({
           name: name,
           phone: phone,
           address: address,
-        },
-        populate: {user: true}
+        }
       });
     },
     update: async (ctx) => {
@@ -73,8 +72,7 @@ module.exports = createCoreController('api::address.address', ({strapi}) => ({
           name: name,
           phone: phone,
           address: address,
-        },
-        populate: {user: true}
+        }
       });
     },
     delete: async (ctx) => {
@@ -89,7 +87,6 @@ module.exports = createCoreController('api::address.address', ({strapi}) => ({
       }
       return strapi.db.query('api::address.address').delete({
         where: {id: ctx.params.id},
-        populate: {user: true}
       });
     }
   })
