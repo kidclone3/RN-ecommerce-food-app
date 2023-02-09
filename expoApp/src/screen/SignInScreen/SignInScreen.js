@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, , ScrollView } from 'react-native'
 import React from 'react'
 // import CustomInput from '../../components/CustomInput/CustomInput';
 // import CustomButton from '../../components/CustomButton/CustomButton';
@@ -20,7 +20,6 @@ const SignInScreen = () => {
     }
     const navigation = useNavigation();
 
-    const { height } = useWindowDimensions();
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>

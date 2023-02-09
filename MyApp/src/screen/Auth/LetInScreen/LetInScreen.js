@@ -22,8 +22,6 @@ const LetInScreen = () => {
 
     }
 
-    const windowWidth = Dimensions.get('window').width;
-    const windowHeight = Dimensions.get('window').height;
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
