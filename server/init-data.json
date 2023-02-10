@@ -1,0 +1,2406 @@
+{
+	"version": 2,
+	"data": {
+		"api::address.address": {},
+		"api::order.order": {},
+		"api::cart.cart": {},
+		"plugin::users-permissions.role": {},
+		"plugin::users-permissions.user": {},
+		"api::product.product": {
+			"1": {
+				"id": 1,
+				"name": "Nho xanh không hạt",
+				"description": "Nho xanh là loại trái cây tươi nhập khẩu cao cấp từ Nam Phi. Đạt tiêu chuẩn xuất khẩu toàn cầu. Nho ngọt khi trái xanh đậm, sáng, quả chắc, to. Quả nho xanh, dáng tròn, trái vừa ăn. Vỏ mỏng, không hạt, vị ngọt đậm, thịt chắc, giòn, tươi mát.\n\nNho giàu vitamin A, vitamin C và vitamin K tốt cho cơ thể cùng những khoáng chất như sắt, canxi,...Đặc biệt nho còn chứa anthocyanin, tannin và resveratrol chống oxy hóa cao.\n\nNho xanh giúp cải thiện sức khỏe tim mạch rất tốt, ngăn ngừa ung thư hiệu quả, tăng cường chức năng não, giúp bạn có giấc ngủ ngon và cải thiện thị lực",
+				"price": "200000",
+				"show": true,
+				"unit": "kg",
+				"slug": "nho-xanh-khong-hat",
+				"createdAt": "2023-02-10T09:15:37.150Z",
+				"updatedAt": "2023-02-10T09:50:22.792Z",
+				"image": [
+					3,
+					4
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"name": "Đu đủ",
+				"description": "Đu đủ là một trong những loại quả chứa rất nhiều Vitamin và khoáng chất tốt cho sức khỏe. Trong thành phần của trái đu đủ có chứa Carotenoid, các loại Vitamin A, B, C (với hàm lượng cao gấp 2 lần hàm lượng Vitamin C có trong cam) và khoáng chất.\n\nNgoài tác dụng mát gan, tốt cho hệ tiêu hóa, đu đủ còn giúp cơ thể chống lại các tác nhân oxy hóa từ bên ngoài. Bên cạnh đó, đu đủ còn có tác dụng làm đẹp và trẻ hóa làn da cho các chị em\n\nĐu đủ ruột đỏ tươi ngon, trái chắc, không bị dập, úng. Đu đủ khi chín có ruột đỏ hấp dẫn, vị ngọt thanh. Đu đủ được đảm bảo nguồn gốc xuất xứ rõ ràng, bán theo quả từ 700g - 900g.\n",
+				"price": "20000",
+				"show": true,
+				"unit": "quả",
+				"slug": "du-du",
+				"createdAt": "2023-02-10T09:18:50.254Z",
+				"updatedAt": "2023-02-10T09:50:30.617Z",
+				"image": [
+					5,
+					6
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"name": "Táo Gala Pháp ",
+				"description": "Táo gala là trái cây nhập khẩu từ Pháp. Đạt tiêu chuẩn xuất khẩu toàn cầu. Bảo quản tươi ngon đến tận tay khách hàng. Táo gala Pháp ngon, ngọt, chất lượng, không bị dập, úng.\n\nTáo gala có lượng dưỡng chất dồi dào, vị ngọt, thanh mát, trái nhỏ. Táo Gala nhập khẩu Pháp là trái cây nhập khẩu chất lượng an toàn, vừa tiết kiệm về giá, lại vừa vặn cho một lần ăn mà không gây ngán, không phải dự trữ lại.\n\nTáo tươi ngon, không bị dập, 1kg khoảng 5-7 trái.\n\nTáo gala có lớp vỏ giàu chất xơ, thịt táo giàu vitamin A, vitamin C, vitamin B1, vitamin B2,...tốt cho sức khỏe.\n\nTáo chứa chất chống oxy hóa giúp đẹp da, đẹp dáng cũng như nhiều khoáng chất thiết yếu tốt cho trí não và hệ miễn dịch, không cholesterol giúp tăng cường tuần hoàn máu và đặc biệt là giàu chất xơ có lợi cho hệ tiêu hóa\nÍt chất béo hỗ trợ giảm cân hiệu quả",
+				"price": "50000",
+				"show": true,
+				"unit": "cái",
+				"slug": "tao",
+				"createdAt": "2023-02-10T09:27:16.376Z",
+				"updatedAt": "2023-02-10T09:50:39.570Z",
+				"image": [
+					7,
+					8
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"name": "Cam sành",
+				"description": "Cam sành là trái cây rất thông dụng trong đời sống, được ưu tiên chọn mua bởi tác dụng thần kỳ của nó mang lại cho sức khỏe chúng ta. Đặc điểm vỏ cam sành màu xanh đến xanh vàng khi chín, sần và dày, tép màu vàng cam đậm, nhiều nước, vị ngọt chua mùi rất thơm và khá nhiều hạt. Phù hợp để vắt nước.\n\nCam sành to quả, chắc, cầm nặng tay, có màu xanh bóng, có vị ngọt thanh, thơm. Cam sành tươi, không bị dập, bị thối, có nguồn gốc xuất xứ rõ ràng tại Việt Nam, 1 kg cam sành có từ 3 đến 4 trái.\n\nCam sành là trái cây chứa nhiều chất dinh dưỡng như vitamin C, các vitamin chống oxy hóa, các khoáng chất như canxi, natri, phốt pho,...lượng chất xơ cao, tốt cho sức khỏe.\n\nCam có tác dụng tốt cho cơ thể do chứa nhiều thành phần như vitamin, các chất dinh dưỡng và khoáng chất. Giúp hệ tiêu hóa hoạt động hiệu quả hơn, tránh cảm cúm, tăng cường thị lực, giúp ngủ ngon,... Ngoài ra, cam còn có nhiều công dụng làm đẹp thần kì được rất nhiều chị em phụ nữ áp dụng.",
+				"price": "33000",
+				"show": true,
+				"unit": "kg",
+				"slug": "cam-sanh",
+				"createdAt": "2023-02-10T09:31:37.179Z",
+				"updatedAt": "2023-02-10T09:50:47.538Z",
+				"image": [
+					9,
+					10
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"name": "Quýt mini",
+				"description": "Quýt là loại trái cây tươi ngon, bổ dưỡng chứa nhiều dưỡng chất như kali, canxi, caroten, nhưng lại chứa rất ít đường và calo, cung cấp vitamin C dồi dào cho cơ thể. Quýt chất lượng và an toàn tuyệt đối.\n\nQuýt mini tươi ngon, ngọt, thơm, chất lượng, không bị dập không bị hư. Quýt mini có cả quả và cành bên trong.\n\nQuýt là một trong những thực phẩm chứa vitamin C cao, ngoài ra quýt còn chứa nhiều vitamin A, vitamin D, vitamin B, các khoáng chất như sắt, kẽm, mangan,... cần thiết cho cơ thể\n\nĂn quýt giúp tăng cường sức đề kháng, hỗ trợ điều trị cảm và ho khan, ngăn ngừa béo phì, tiểu đường, đột quỵ,... Quýt giàu chất chống oxy hóa và cải thiện, duy trì làn da luôn săn chắc. Đồng thời lượng Vitamin A giúp cải thiện thị lực. Bên cạnh đó quýt giúp iảm rụng tóc nhờ hàm lượng vitamin B12 cao và giúp xương săn chắc",
+				"price": "30000",
+				"show": true,
+				"unit": "kg",
+				"slug": "quyt-mini",
+				"createdAt": "2023-02-10T10:01:59.779Z",
+				"updatedAt": "2023-02-10T10:02:22.030Z",
+				"image": [
+					22,
+					23,
+					24
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"name": "Nho đỏ Ninh Thuận",
+				"description": "Nho đỏ có phần thịt dày mọng nước, vị ngọt xen lẫn chua nhẹ hài hoà, là loại trái cây được nhiều người yêu thích vào những ngày hè. Loại nho đỏ Ninh Thuận  mang lại nhiều lợi ích đối với sức khoẻ, nho ngọt khi có vỏ màu đỏ tím, đậm, chín đều, chắc, mọng.\n\nNho được bán đều là loại tươi ngon, trái to, màu đỏ tươi đến đỏ thẫm, khi ăn sẽ cảm nhận được độ giòn, ngọt của nho.  Nho không bị hư, dập.\n\nNho chứa nhiều đường trái cây, chất xơ, vitamin C, vitamin  và vitamin B rất tốt cho sức khỏe. Ngoài ra, nho đỏ Ninh Thuận còn cung cấp nhiều  khoáng chất và dinh dưỡng. Bổ sung quả nho vào thực đơn hàng ngày có thể giúp cải thiện một số vấn đề liên quan đến sức khoẻ\n\nĂn nho giúp ngừa nguy cơ xơ cứng động mạch, giảm các triệu chứng viêm nhiễm, giảm huyết áp, phòng chống các bệnh về tuổi già và ngăn ngừa ung thư tăng cường hệ miễn dịch, giảm nguy cơ mắc bệnh đường hô hấp.",
+				"price": "58000",
+				"show": true,
+				"unit": "kg",
+				"slug": "nho-do-ninh-thuan",
+				"createdAt": "2023-02-10T10:05:53.061Z",
+				"updatedAt": "2023-02-10T10:05:53.061Z",
+				"image": [
+					25,
+					26,
+					27
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"7": {
+				"id": 7,
+				"name": "Xoài Đài Loan trái từ 600g",
+				"description": "Nguồn gốc nhập khẩu, chất lượng, uy tín. Xoài Đài Loan được bán có ngoại hình đẹp, bóng bẩy, thịt quả chứa nhiều vitamin. Xoài Đài Loan ngon khi chín màu hồng đỏ, mềm nhưng không nhũn. Cam kết đúng khối lượng và chất lượng, bao bì kín đáo hợp vệ sinh\n\nXoài Đài Loan xanh là giống xoài có nguồn gốc từ Đài Loan, kể từ khi du nhập vào Việt Nam, loại trái cây này được rất nhiều người yêu thích bởi vị ngọt dịu, giòn xốp khi ăn. Xoài Đài Loan thường được ăn sống, mua về có thể sử dụng ngay. Khi còn xanh, xoài có vị chua, ngọt nhẹ và giòn, khi chín xoài sẽ ngọt đậm. Xoài đảm bảo tươi ngon, không bị dập\n\nXoài có tác dụng vàng cho cơ thể có thể kế đến như chứa hàm lượng dinh dưỡng và vitamin dồi dào như: Kali, Carbohydrate, chất xơ, Đường, Protein, Vitamin A, Canxi, Sắt, Vitamin B1, Vitamin B6, Magie,...\n\nXoài có chứa nhiều chất xơ, tốt cho hệ tiêu hóa của chúng ta đồng thời còn chứa các vitamin giúp cơ thể phòng ngừa và chống lại bệnh tim cũng như các enzyme có trong Xoài dùng chữa kiết ly hay ngăn ngừa nhiễm trùng đường tiết niệu",
+				"price": "12500",
+				"show": true,
+				"unit": "quả",
+				"slug": "xoai-dai-loan-trai-tu-600g",
+				"createdAt": "2023-02-10T10:10:24.519Z",
+				"updatedAt": "2023-02-10T10:10:41.663Z",
+				"image": [
+					30,
+					29,
+					28
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"8": {
+				"id": 8,
+				"name": "Trái cây sấy giòn Vinamit gói 250g",
+				"description": "Trái cây sấy giòn giòn, thơm và giữ được độ ngọt tự nhiên của chuối, ăn rất thích. Trái cây sấy giòn Vinamit gói 250g vừa ăn vừa xem phim, đọc sách rất phù hợp hoặc thưởng trà. Trái cây sấy Vinamit chất lượng, vệ sinh và dinh dưỡng, là món ăn tiện lợi và thơm ngon",
+				"price": "72500",
+				"show": true,
+				"unit": "cái",
+				"slug": "trai-cay-say-gion-vinamit-goi-250g",
+				"createdAt": "2023-02-10T10:13:50.826Z",
+				"updatedAt": "2023-02-10T10:13:57.771Z",
+				"image": [
+					31,
+					32,
+					33
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"9": {
+				"id": 9,
+				"name": "Chuối sấy giòn Vinamit gói 250g",
+				"description": "Trái cây sấy giòn giòn, thơm và giữ được độ ngọt tự nhiên của trái cây, ăn rất thích. Chuối sấy giòn Vinamit gói 250g vừa ăn vừa xem phim, đọc sách rất phù hợp hoặc thưởng trà. Trái cây sấy Vinamit có dạng gói chuối sấy giòn Vinamit túi 100g phù hợp cho 1 lần ăn.",
+				"price": "48000",
+				"show": true,
+				"unit": "cái",
+				"slug": "chuoi-say-gion-vinamit-goi-250g",
+				"createdAt": "2023-02-10T10:15:02.123Z",
+				"updatedAt": "2023-02-10T10:15:02.123Z",
+				"image": [
+					34,
+					35,
+					36
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"10": {
+				"id": 10,
+				"name": "Khoai lang sấy giòn Vinamit gói 250g",
+				"description": "Khoai lang sấy giòn giòn thơm và giữ được độ ngọt tự nhiên của khoai lang, ăn rất thích. Khoai lang sấy giòn Vinamit gói 250g vừa ăn vừa xem phim, đọc sách rất phù hợp hoặc thưởng trà. Trái cây sấy Vinamit chất lượng, vệ sinh và dinh dưỡng, là món ăn tiện lợi và thơm ngon",
+				"price": "60000",
+				"show": true,
+				"unit": "cái",
+				"slug": "khoai-lang-say-gion-vinamit-goi-250g",
+				"createdAt": "2023-02-10T10:16:25.282Z",
+				"updatedAt": "2023-02-10T12:08:38.217Z",
+				"image": [
+					37,
+					38,
+					39
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"11": {
+				"id": 11,
+				"name": "Mận sấy dẻo Vinamit gói 100g",
+				"description": "Mận sấy dẻo thơm, mềm, dai và giữ được độ ngọt tự nhiên của mận, ăn rất thích. Mận sấy dẻo Vinamit gói 100g vừa ăn vừa xem phim, đọc sách rất phù hợp hoặc thưởng trà. Trái cây sấy Vinamit chất lượng, vệ sinh và dinh dưỡng, là món ăn tiện lợi và thơm ngon",
+				"price": "48000",
+				"show": true,
+				"unit": "cái",
+				"slug": "man-say-deo-vinamit-goi-100g",
+				"createdAt": "2023-02-10T10:18:12.386Z",
+				"updatedAt": "2023-02-10T10:18:12.386Z",
+				"image": [
+					40,
+					41,
+					42
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"12": {
+				"id": 12,
+				"name": "Vải thiều nước đường Hạ Long 560g",
+				"description": "Trái cây đóng hộp tiện lợi thơm ngon từ thương hiệu Hạ Long. Vải thiều nước đường Hạ Long 560g được chế biến từ những trái vải tươi ngon được chọn lọc kỹ lưỡng, an toàn và vệ sinh thực phẩm. Có thể dùng ăn trực tiếp hoặc chế biến các loại món ăn tráng miệng cho gia đình và bạn bè",
+				"price": "62000",
+				"show": true,
+				"unit": "cái",
+				"slug": "vai-thieu-nuoc-duong-ha-long-560g",
+				"createdAt": "2023-02-10T10:20:18.714Z",
+				"updatedAt": "2023-02-10T10:20:18.714Z",
+				"image": [
+					43,
+					44,
+					45
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"13": {
+				"id": 13,
+				"name": "Hạt Sen Nước Đường CANfresh 460g - Đồ Hộp Hạ Long",
+				"description": "Hạt sen nước đường Canfresh 460g dùng thưởng thức được ngay hoặc dùng để chế biến các món tráng miệng như: chè hạt sen, trà sen,... Sản phẩm tiện lợi nhưng vẫn cung cấp cho bạn và gia đình món ngon, chất lượng và an toàn.\n",
+				"price": "74000",
+				"show": true,
+				"unit": "cái",
+				"slug": "hat-sen-nuoc-duong-ca-nfresh-460g-do-hop-ha-long",
+				"createdAt": "2023-02-10T10:24:41.411Z",
+				"updatedAt": "2023-02-10T10:25:06.170Z",
+				"image": [
+					46,
+					47
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"14": {
+				"id": 14,
+				"name": "Mít sấy Vinamit gói 250g",
+				"description": "Mít sấy giòn giòn, thơm và giữ được độ ngọt tự nhiên của trái cây, ăn rất thích. Mít sấy Vinamit gói 250g vừa ăn vừa xem phim, đọc sách rất phù hợp hoặc thưởng trà. Trái cây sấy Vinamit chất lượng, vệ sinh và dinh dưỡng, là món ăn tiện lợi và thơm ngon",
+				"price": null,
+				"show": true,
+				"unit": "cái",
+				"slug": "mit-say-vinamit-goi-250g",
+				"createdAt": "2023-02-10T10:27:12.475Z",
+				"updatedAt": "2023-02-10T10:28:11.317Z",
+				"image": [
+					48,
+					49,
+					50
+				],
+				"categories": [
+					10
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"15": {
+				"id": 15,
+				"name": "Rau húng quế",
+				"description": "Rau húng quế có mùi thơm rất dễ chịu, đặc trưng và thường kết hợp với húng cây làm thành \"bộ đôi rau nêm\" góp mặt trong nhiều bữa ăn của gia đình Việt như: Phở bò, bò kho, hủ tiếu, tiết canh, các món luộc, nướng,... Ngoài ra, húng quế còn có thể dùng để hỗ trợ một số bệnh nhẹ như: cảm mạo, ho,...\n\nRau húng quế tươi ngon, xanh, không bị dập, là loại rau thơm, không bị dập, úng\n\nTrong rau húng quế chứa nhiều canxi, sắt, magie, kali, chất xơ, vitamin C, vitamin K,... cần thiết cho cơ thể\n\nRau húng quế có mùi hăng đậm, ngọt và mát. Kết hợp ăn rau khác nhau tương ứng với từng món ăn khác nhau làm gia tăng hương vị cho món ăn. Hoặc húng quế còn được sử dụng như một phương pháp điều trị bệnh: điều trị cảm mạo, ho, điều trị nhức đầu, cải thiện hệ thống miễn dịch, làm sạch răng,...",
+				"price": "6500",
+				"show": true,
+				"unit": "lạng",
+				"slug": "rau-hung-que",
+				"createdAt": "2023-02-10T10:31:44.484Z",
+				"updatedAt": "2023-02-10T10:32:56.951Z",
+				"image": [
+					51,
+					52
+				],
+				"categories": [
+					5
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"16": {
+				"id": 16,
+				"name": "Gừng",
+				"description": "Gừng là một loại củ có rất nhiều công dụng đối với chúng ta. Ngoài là gia vị trong nấu ăn hàng ngày, gừng có thể dùng trong làm đẹp, làm thuốc cũng cực tốt. Có thể kể đến một số lợi ích của gừng như: làm ấm cơ thể, trừ hàn, tiêu đàm, dịu ho, cầm máu,...\n\nGừng tươi, chất lượng, củ to, chứa nhiều nước bên trong. Bên trong gừng có 2 loại là ruột vàng và ruột xanh. Gừng ruột hơi xanh có vị cay hơn ruột vàng.\n\nGừng được đảm bảo nguồn gốc xuất xứ rõ ràng\n\nTrong gừng chứa nhiều vitamin như vitamin C, vitamin B6,... cùng nhiều khoáng chất tốt cho cơ thể như kali, đồng, mangan, phốt pho, sắt,...\n\nGừng có vị cay, tính ôn, kích thích vị giác, tạo cảm giác thèm ăn, khiến bữa ăn thêm ngon miệng. Bên cạnh đó những lợi ích từ gừng như: làm ấm cơ thể, trừ hàn, tiêu đàm, dịu ho, cầm máu, giúp giảm các cơn đau cơ, viêm khớp, thấp khớp, đau đầu hay đau nửa đầu.\n\n",
+				"price": "6000",
+				"show": true,
+				"unit": "lạng",
+				"slug": "gung",
+				"createdAt": "2023-02-10T10:35:06.333Z",
+				"updatedAt": "2023-02-10T10:36:33.897Z",
+				"image": [
+					53,
+					54
+				],
+				"categories": [
+					6
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"17": {
+				"id": 17,
+				"name": "Chanh xanh",
+				"description": "Chanh to trái, tròn và mọng nước,có vị chua đậm đà cho nhiều món ăn hay nước uống, khiến cho nhiều người thích mê. Chanh có thể làm nước đá chanh giải nhiệt mùa hè, tạo nên vị chua cho các món như canh chua, lẩu chua,...\n\nChanh tươi, to trái, chất lượng, mọng nước và đặc biệt là chanh không có hạt. Chanh chất lượng, không bị hư khoảng 10 đến 15 quả 1 kg.\n\nTrong chanh có lượng vitamin rất dồi dào, đặc biệt là vitamin C, chất chống oxy hóa cũng nhiều khoáng chất khác có lợi cho cơ thể.\n\nChanh còn chứa nhiều chất chống oxy hóa, nhờ đó mà hạn chế các bệnh ung thư, tiểu đường cực hiệu quả. Các vitamin C có trong chanh giúp cải thiện sức khoẻ cho da, giúp da tươi tắn rạng rỡ hơn. Ngoài ra chanh còn rất nhiều tác dụng không ngờ khác như làm đẹp, cải thiện sức khỏe hay vệ sinh nhà cửa, đồ vật hằng ngày.",
+				"price": "30000",
+				"show": true,
+				"unit": "kg",
+				"slug": "chanh",
+				"createdAt": "2023-02-10T10:40:06.158Z",
+				"updatedAt": "2023-02-10T10:40:06.158Z",
+				"image": [
+					56,
+					57
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"18": {
+				"id": 18,
+				"name": "Bưởi hồng da xanh trái từ 1.7kg trở lên",
+				"description": "Bưởi Da xanh là trái cây đặc sản nổi tiếng của Việt Nam. Bưởi da xanh có đặc điểm vỏ có màu xanh đến xanh hơi vàng khi chín.Tép bưởi màu hồng đỏ, vị ngọt thanh, màu sắc đẹp mắt, là một trong những loại trái cây cực tốt cho sức khoẻ với nhiều công dụng thần kỳ khác nhau đã được khoa học chứng minh.\n\nBưởi da xanh là loại trái cây được trồng phổ biến nhất ở tỉnh Bến Tre. Đúng với tên gọi của loại bưởi này, bưởi có hình cầu, vỏ màu xanh. Bưởi da xanh này là múi có màu hồng đỏ rất bắt mắt mang vị ngọt dịu, không chua và những tép bưởi rất dễ tróc vỏ, chính vì điều này làm cho loại bưởi này rất được nhiều người yêu thích.",
+				"price": "79000",
+				"show": true,
+				"unit": "quả",
+				"slug": "buoi-da-xanh-trai-tu-1-7kg-tro-len",
+				"createdAt": "2023-02-10T10:41:53.995Z",
+				"updatedAt": "2023-02-10T10:41:53.995Z",
+				"image": [
+					58,
+					59,
+					60
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"19": {
+				"id": 19,
+				"name": "Quất",
+				"description": "Tắc trái của Bách Hóa Xanh tươi ngon, mọng nước và to trái. Tắc được bảo đảm các chỉ tiêu về an toàn và chất lượng. Hương tắc thơm, vị chua dịu, không quá gắt kích thích vị giác của người dùng thường được dùng ăn kèm với các món bún, pha nước tắc.\n\nTắc trái to trái, căng và mọng nước. Tắc tươi ngon, thơm, ruột cam rất bắt mắt.\n\nTrong tắc có chứa nhiều nước, chất xơ, chất đạm, các vitamin C, vitamin B1, vitamin PP, cùng những khoáng chất cần thiết như sắt, đồng, magie, phốt pho,...\n\nQuất giúp cải thiện sức khỏe của da và xương, hỗ trợ hệ tiêu hóa hoạt động hiệu quả, ngăn ngừa bệnh loãng xương, tăng cường hệ miễn dịch\n\n\n",
+				"price": "40000",
+				"show": true,
+				"unit": "kg",
+				"slug": "quat",
+				"createdAt": "2023-02-10T10:45:37.307Z",
+				"updatedAt": "2023-02-10T10:47:55.376Z",
+				"image": [
+					61,
+					62
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"20": {
+				"id": 20,
+				"name": "Bưởi diễn Hà Nội",
+				"description": "Bưởi diễn được tuyển chọn , thu hái trực tiếp tại nhà vườn, đảm bảo bưởi luôn tươi ngon, cùi bưởi mỏng, múi bưởi có tôm vàng óng, hạt bên trong se nhỏ, khi ăn sẽ thấy vị ngọt đậm đà và lưu mãi ở đầu lưỡi.\n\nQuả bưởi diễn có đường kính chừng 15 cm, trọng lượng 0,8 – 1 kg/ quả.\n\nCùi và vỏ bưởi rất mỏng,  múi bưởi có tôm vàng óng, hạt bên trong sẽ nhỏ. Bưởi diễn càng để lâu quả sẽ càng thu nước ,sắt nước, ngọt đậm. \n\nBưởi giúp giảm cân, giảm cholesterol máu đồng thời giúp làm giảm bớt căng thẳng làm đẹp da, dưỡng ẩm cho da và giữ nước cho cơ thể, ngăn chặn các nếp nhăn và chân chim. Bên cạnh đó cùi bưởi khô có thể nấu chè bưởi",
+				"price": "45000",
+				"show": true,
+				"unit": "kg",
+				"slug": "buoi-dien-ha-noi",
+				"createdAt": "2023-02-10T10:54:12.179Z",
+				"updatedAt": "2023-02-10T10:54:12.179Z",
+				"image": [
+					63,
+					64,
+					65
+				],
+				"categories": [
+					11
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"21": {
+				"id": 21,
+				"name": "Sà lách",
+				"description": "Rau xà lách được trồng tại Lâm Đồng và đóng gói theo những tiêu chuẩn nghiêm ngặt, bảo đảm các tiêu chuẩn xanh - sach. Xà lách nhiều chất xơ, hàm lượng dinh dưỡng cao, vị ngọt, giòn nên thường dùng làm rau ăn kèm cho các món cuốn. \n\nXà lách tươi ngon, bẹ lá xanh, to, giòn và ăn có vị ngọt thanh. Xà lách không bị hư, dập hay úng.\n\nrau xà lách lô lô có chứa nước, các vitamin A, vitamin B, muối khoáng và các khoáng chất khác như canxi, kali, sắt,... tốt cho sức khỏe.\n\nRau sà lách giúp cung cấp chất xơ tốt cho hệ tiêu hóa, giảm cholesterol hỗ trợ bảo vệ tim mạch",
+				"price": "38000",
+				"show": true,
+				"unit": "kg",
+				"slug": "sa-lach",
+				"createdAt": "2023-02-10T11:10:15.244Z",
+				"updatedAt": "2023-02-10T11:10:56.164Z",
+				"image": [
+					66,
+					67,
+					68
+				],
+				"categories": [
+					2
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"22": {
+				"id": 22,
+				"name": "Tía tô",
+				"description": "Tía tô là một loại rau ăn kèm với các món ăn của người Việt. Vị cay cay, chát nhẹ của loại rau này được rất nhiều người yêu thích. Ngoài là một loại thực phẩm thì tía tô còn có thể hỗ trợ điều vị một số bệnh như: giúp đầu óc tỉnh táo, giảm stress, giảm đau kháng viêm....\n\nRau tía tô tươi ngon, chất lượng, không bị dập, héo, thơm,được đảm bảo nguồn gốc xuất xứ rõ ràng, đảm bảo chất lượng\n\nRau tía tô chứa nhiều dưỡng chất như vitamin A, vitamin B1, vitamin B4, vitamin K, vitamin C, phốt pho, sắt, kẽm, mangan,...\n\nKhông chỉ là loại rau gia vị giúp cho món ăn thêm phần thơm ngon, hấp dẫn rau tía tô còn là một trong những loại rau thơm có công dụng chữa bệnh hiệu quả. Theo các nhà khoa học, lá tía tô có hàm lượng tinh dầu lớn, giàu các axit béo chưa bão hòa cùng các khoáng chất có lợi khác, giúp trị các bệnh như hen suyễn, xơ vữa động mạch, ngăn ngừa bệnh tim, giảm đau và kháng viêm,... Đặc biệt lá tía tôi còn giúp hỗ trợ điều trị chứng trầm cảm, giúp đầu óc tỉnh táo, giảm stress,.... Đặc biệt, đối với các chị em phụ nữ thì đây còn là \"thần dược\" trong việc làm đẹp như trị mụn ẩn, mụn viêm, làm trắng sáng da,... Ngoài ra, tía tô còn được các bà mẹ tin dùng trong việc chữa các loại bệnh vặt ở trẻ như ho, cảm, rôm sẩy, dị ứng,... và dùng để đuổi muỗi, côn trùng an toàn và hiệu quả.",
+				"price": "6500",
+				"show": true,
+				"unit": "lạng",
+				"slug": "tia-to",
+				"createdAt": "2023-02-10T11:13:50.451Z",
+				"updatedAt": "2023-02-10T11:13:50.451Z",
+				"image": [
+					69,
+					70
+				],
+				"categories": [
+					5
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"23": {
+				"id": 23,
+				"name": "Nấm hương khô Nguyên Bảo gói 50g",
+				"description": "Với 100% nấm khô có hạt chất lượng cao, tiện lợi cho các món hầm, tiềm hoặc các món ăn khác. Nấm hương khô Nguyên Bảo gói 50g tiện lợi, dinh dưỡng và an toàn. Chỉ cần ngâm nấm khô Nguyên Bảo, đem đi rửa sạch là có thể chế biến được rồi\n",
+				"price": "32000",
+				"show": true,
+				"unit": "cái",
+				"slug": "nam-huong-kho-nguyen-bao-goi-50g",
+				"createdAt": "2023-02-10T11:16:37.199Z",
+				"updatedAt": "2023-02-10T11:16:37.199Z",
+				"image": [
+					71,
+					72,
+					73
+				],
+				"categories": [
+					4
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"24": {
+				"id": 24,
+				"name": "Nấm mèo đen sợi Việt San túi 100g",
+				"description": "Được làm từ 100% nấm mèo đen được thái sợi, tiện lợi, dễ chế biến, chỉ cần ngâm, rửa sạch là có thể đem đi nấu những món ăn ngon. Nấm mèo đen sợi Việt San túi 100g ngâm ra sẽ nở ra rất nhiều. Đồ khô Việt San tiện lợi, an toàn và chất lượng",
+				"price": "26000",
+				"show": true,
+				"unit": "cái",
+				"slug": "nam-meo-den-soi-viet-san-tui-100g",
+				"createdAt": "2023-02-10T11:18:12.329Z",
+				"updatedAt": "2023-02-10T11:18:12.329Z",
+				"image": [
+					74,
+					75,
+					76
+				],
+				"categories": [
+					4
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"25": {
+				"id": 25,
+				"name": "Nấm kim châm Hàn Quốc gói 150g",
+				"description": "\nNấm kim châm Hàn Quốc được nuôi trồng và đóng gói theo những tiêu chuẩn nghiêm ngặt, bảo đảm các tiêu chuẩn xanh - sạch, chất lượng và an toàn với người dùng. Sợi nấm dai, giòn và ngọt, khi nấu chín rất thơm nên thường được lăn bột chiên giòn, nấu súp hoặc để nướng ăn kèm.\n\nNấm kim châm tươi ngon, chất lượng, sợi nấm nhỏ, dài nhỏ màu trắng. Nấm dai ngon, giòn và khá ngọt. Nấm được đóng gói cẩn thận, tiện lợi.\n\nNấm kim châm chứa nhiều chất xơ tốt cơ hệ tiêu hóa, cùng những dưỡng chất như protein, lipid, canxi, các axit amin tốt cho cơ thể.\n\nNấm hỗ trợ giảm cholesterol trong máu, giúp hỗ trợ phát triển trí não, Cải thiện hệ tiêu hóa hiệu quả",
+				"price": "16000",
+				"show": true,
+				"unit": "cái",
+				"slug": "nam-kim-cham-han-quoc-goi-150g",
+				"createdAt": "2023-02-10T11:32:03.692Z",
+				"updatedAt": "2023-02-10T11:32:03.692Z",
+				"image": [
+					78,
+					77,
+					79
+				],
+				"categories": [
+					4
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"26": {
+				"id": 26,
+				"name": "Nấm bào ngư xám vỉ 300g",
+				"description": "Nấm bào ngư xám được nuôi trồng và đóng gói theo những tiêu chuẩn nghiêm ngặt, bảo đảm các tiêu chuẩn xanh - sạch, chất lượng và an toàn với người dùng. Vị ngọt, nhiều chất dinh dưỡng nên thường được dùng để lăn bột chiên xù, nấu súp nấm hoặc làm rau ăn kèm nhúng lẩu.\n\nNấm bào ngư có dạng phễu lệch, phiến nấm mang bào tử kéo dài xuống đến chân, cuống nấm gần gốc có lớp lông nhỏ mịn, có màu xám nhẹ. Nấm tươi ngon, chất lượng, không bị dập.\n\nNấm bào ngư xám chứa nhiều vitamin B1, chất xơ, vitamin B3, vitamin B5, vitamin B6,... cùng các chất khoáng như kali, đồng, sắt,...\n\nNấm bào ngư xám giúp hệ tiêu hóa hoạt động hiệu quả, hỗ trợ sức khỏe tim mạch giảm lượng đường trong máu, tăng cường chức năng não",
+				"price": "28000",
+				"show": true,
+				"unit": "cái",
+				"slug": "nam-bao-ngu-xam-vi-300g",
+				"createdAt": "2023-02-10T11:33:57.494Z",
+				"updatedAt": "2023-02-10T11:34:16.675Z",
+				"image": [
+					80,
+					81,
+					82
+				],
+				"categories": [
+					4
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"27": {
+				"id": 27,
+				"name": "Hành tím",
+				"description": "Củ hành tím là gia vị không thể thiếu trong căn bếp của mỗi gia đình. Hành tím không chỉ giúp món ăn của bạn thêm đậm đà, hấp dẫn mà còn còn có công dụng trong việc chăm sóc sức khỏe. Trong hành tím có chứa rất nhiều chất dinh dưỡng tốt cho sức khỏe.\n\nHành tím củ to, chất lượng, căng, không bị khô.\n\nTrong củ hành tím có chứa rất nhiều chất dinh dưỡng rất tốt cho cơ thể như vitamin C, vitamin B6, biotin, axit folic, chromium, canxi và chất xơ tốt cho sức khỏe. Ngoài ra, hành tím còn chứa nhiều chất có hoạt tính cao như: các hợp chất sulfuric, chromium, prostaglandin, phenoplast, diallyl sulfide, disulphide, trisulphide,…\n\nHành giúp trị mụn trứng cá, liền sẹo, trị mụn cóc và tàn nhan, ... Bên cạnh đó giúp ngừa đau tai, chữa cảm lạnh, cầm máu, trị ong đốt, ngăn ngừa loãng xương,...\n",
+				"price": "75000",
+				"show": true,
+				"unit": "kg",
+				"slug": "hanh-tim",
+				"createdAt": "2023-02-10T11:37:02.542Z",
+				"updatedAt": "2023-02-10T11:37:02.542Z",
+				"image": [
+					83,
+					84
+				],
+				"categories": [
+					6
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"28": {
+				"id": 28,
+				"name": "Giá đậu xanh gói 300g",
+				"description": "Giá đậu xanh của Bách hóa Xanh được nuôi trồng và đóng gói theo những tiêu chuẩn nghiêm ngặt, bảo đảm các tiêu chuẩn xanh - sạch, chất lượng và an toàn với người dùng. Giá giòn, ngọt thường được dùng làm rau ăn kèm cho các món có nước như bún, phở hoặc nấu canh chua, xào với thịt.\n\nGiá đậu xanh tươi ngon, ngọt nhẹ, trắng, không bị dập, hư.\n\nGiá đỗ là một trong những nguồn thực phẩm có nguồn gốc thực vật, rất giàu chất dinh dưỡng, giàu vitamin đặc biệt là vitamin C, vitamin E. Bên cạnh đó, chúng còn chứa nhiều khoáng chất amino acid, protein và chất có nguồn gốc thực vật (phytochemicals) rất bổ dưỡng cho con người\n\nGiúp giải được nhiều loại chất độc tố, trị các bệnh lý như bệnh đầy bụng, phân sống, khàn tiếng",
+				"price": "8000",
+				"show": true,
+				"unit": "cái",
+				"slug": "gia-dau-xanh-goi-300g",
+				"createdAt": "2023-02-10T11:40:06.791Z",
+				"updatedAt": "2023-02-10T11:40:06.791Z",
+				"image": [
+					86,
+					85
+				],
+				"categories": [
+					2
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"29": {
+				"id": 29,
+				"name": "Đậu phộng PMT 250g",
+				"description": "Đậu phộng đều, chắc hạt, sạch không có rác. Đậu phộng PMT 250g rất là bùi, không bị lép, dùng để nấu xôi hoặc có thể dùng để nấu chè mát,... và nhiều món khác tùy sở thích của mỗi người. Đậu PMT an toàn, chất lượng vệ sinh được nhiều người chọn mua.",
+				"price": "20000",
+				"show": true,
+				"unit": "cái",
+				"slug": "dau-phong-pmt-250g",
+				"createdAt": "2023-02-10T11:48:48.997Z",
+				"updatedAt": "2023-02-10T11:48:58.131Z",
+				"image": [
+					88,
+					89
+				],
+				"categories": [
+					13
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"30": {
+				"id": 30,
+				"name": "Hạt sen khô Việt San gói 150g",
+				"description": "Hạt sen khô Việt San 150g là một trong những loại thực phẩm an toàn, đồng thời đây cũng được xem là \"dược liệu tự nhiên\" rất tốt cho sức khoẻ con người. Hạt sen giúp dễ bảo quản, lại giữ được dưỡng chất tốt mà còn rất tiện lợi",
+				"price": "46000",
+				"show": true,
+				"unit": "cái",
+				"slug": "hat-sen-kho-viet-san-goi-150g",
+				"createdAt": "2023-02-10T11:50:34.371Z",
+				"updatedAt": "2023-02-10T11:50:34.371Z",
+				"image": [
+					90,
+					91
+				],
+				"categories": [
+					13
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"31": {
+				"id": 31,
+				"name": "Đậu trắng Việt San 500g",
+				"description": "Đậu trắng 100% to tròn, mập mạp, chất lượng, không lẫn rác, sạn,...Đậu trắng Việt San 500g dùng để nấu xôi, chè và các món ăn khác rất phù hợp. Đậu Việt San chất lượng, tiện lợi tốt cho sức khỏe, cung cấp nhiều dưỡng chất cho cơ thể, được nhiều người chọn mua",
+				"price": "39000",
+				"show": true,
+				"unit": "cái",
+				"slug": "dau-trang-viet-san-500g",
+				"createdAt": "2023-02-10T11:51:33.391Z",
+				"updatedAt": "2023-02-10T11:51:33.391Z",
+				"image": [
+					92,
+					93
+				],
+				"categories": [
+					13
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"32": {
+				"id": 32,
+				"name": "Đậu xanh hạt Việt San 500g",
+				"description": "Đậu xanh 100% mập mạp, chất lượng, không lẫn rác, sạn,...Đậu xanh hạt Việt San 500g dùng để nấu xôi, chè và các món ăn khác rất phù hợp. Đậu Việt San chất lượng, tiện lợi tốt cho sức khỏe, cung cấp nhiều dưỡng chất cho cơ thể, được nhiều người chọn mua",
+				"price": "35000",
+				"show": true,
+				"unit": "cái",
+				"slug": "dau-xanh-hat-viet-san-500g",
+				"createdAt": "2023-02-10T11:52:21.338Z",
+				"updatedAt": "2023-02-10T11:52:32.707Z",
+				"image": [
+					94,
+					95
+				],
+				"categories": [
+					13
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"33": {
+				"id": 33,
+				"name": "Cải ngọt baby",
+				"description": "Rau cải ngọt có vị ngọt thanh, phù hợp với việc chế biến nhiều món ăn khác nhau. Cải ngọt baby được sử dụng phổ biến trong các bữa ăn của người Việt. Chứa hàm lượng dinh dưỡng cao nên cải ngọt giúp phòng ngừa ung thư, hỗ trợ trị bệnh gout,...\n\nRau cải ngọt baby tươi ngon, chất lượng, được đóng trong túi khí để bảo quản rau tốt hơn, tránh rau bị dập khi vận chuyển. Cải ngọt baby có độ giòn, ngọt hơn rất nhiều. Cải ngọt có thân tròn, phần lá có dạng tròn hoặc tù, màu xanh mướt. Cải ngọt có vị ngọt thanh rất phù hợp trong việc chế biến nhiều món ăn khác nhau.\n\nCải ngọt baby canh chứa nhiều chất xơ, các vitamin A, vitamin B, vitamin C,... cùng nhiều khoáng chất như kali, canxi, sắt,... tốt cho cơ thể\n\nCũng như nhiều loại rau khác, cải ngọt baby chứa hàm lượng calories rất thấp nhưng lại có nhiều chất dinh dưỡng cần thiết cho cơ thể như Vitamin A, B, C, K, Axit lactic, Albumin, Caroten…, Do hàm lượng dinh dưỡng cao, cải ngọt baby có các tác dụng chữa bệnh tuyệt vời, ăn nhiều cải xanh bổ sung vitamin K rất cần thiết cho cơ thể, giúp tăng cường hệ miễn dịch, bảo vệ sức khỏe tim mạch và có thể ngăn ngừa các biểu hiện ung thư, ăn cải xanh nhiều còn giúp mắt sáng khỏe, giúp da ngăn ngừa lão hóa, chắc khỏe hỗ trợ chị em phụ nữ trong việc chăm sóc sắc đẹp.",
+				"price": "50000",
+				"show": true,
+				"unit": "kg",
+				"slug": "cai-ngot-baby",
+				"createdAt": "2023-02-10T11:54:46.023Z",
+				"updatedAt": "2023-02-10T11:54:46.023Z",
+				"image": [
+					96,
+					97
+				],
+				"categories": [
+					2
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"34": {
+				"id": 34,
+				"name": "Cải thìa thuỷ canh",
+				"description": "Cải thìa thủy canh là loại rau được nuôi trồng và đóng gói theo những tiêu chuẩn nghiêm ngặt, bảo đảm các tiêu chuẩn xanh - sạch, chất lượng và an toàn với người dùng. Cải thìa thủy canh ngọt, bẹ lá giòn, mọng nước, chứa nhiều chất xơ nên thường được dùng để luộc, hấp hoặc xào.\n\nCải thìa thủy canh là loại cải thìa được trồng bằng phương thức thủy canh, không sử dụng đất mà trồng trực tiếp vào môi trường dinh dưỡng như cát, trấu, than bùn,... Đây là loại rau được nhiều gia đình ưa chuộng sử dụng bởi không chỉ có tính ngọt và thanh mát. rau cải tươi ngon, chất lượng, giòn ngọt.\n\nRau cải thìa có chứa nhiều chất xơ tốt cho hệ tiêu hóa, ngoài ra còn chứa nhiều vitamin A, vitamin B, vitamin C và nhiều khoáng chất khác tốt cho cơ thể.\n\nRau cải thìa giúp phòng chống các bệnh ung thư, hỗ trợ tốt cho hệ tiêu hóa, giúp tăng thị lực, giúp thanh nhiệt cơ thể, tăng cường hệ miễn dịch\n",
+				"price": "30000",
+				"show": true,
+				"unit": "kg",
+				"slug": "cai-thia-thuy-canh",
+				"createdAt": "2023-02-10T11:57:29.626Z",
+				"updatedAt": "2023-02-10T11:57:29.626Z",
+				"image": [
+					98,
+					99
+				],
+				"categories": [
+					2
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"35": {
+				"id": 35,
+				"name": "Rau muống",
+				"description": "Rau muốngtươi ngon, xanh, sạch chứa nhiều dưỡng chất. Rau muống giòn, có thể chế biến thành nhiều món ăn ngon như rau muốn xào tỏi, rau muống trộn gỏi,... Rau muống được đảm bảo chất lượng, đạt tiêu chuẩn.\n\nRau muống tươi xanh, giòn vô cùng chất lượng.\n\nThành phần dinh dưỡng của rau muống chứa nhiều chất xơ, vitamin C, vitamin B1, vitamin B2, các khoáng chất như sắt, canxi, phốt pho, đồng,...\n\nRau muống giúp chống táo bón, giải độc cơ thể, ngăn ngừa bệnh thiếu máu, tạo hệ miễn dịch tốt cho cơ thể, hỗ trợ điều trị bệnh tiểu đường",
+				"price": "30000",
+				"show": true,
+				"unit": "kg",
+				"slug": "rau-muong",
+				"createdAt": "2023-02-10T12:03:40.816Z",
+				"updatedAt": "2023-02-10T12:03:40.816Z",
+				"image": [
+					101,
+					100
+				],
+				"categories": [
+					2
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"36": {
+				"id": 36,
+				"name": "Hẹ lá",
+				"description": "Hẹ lá là loại rau có hàm lượng dinh dưỡng cao, có tác dụng dược lý, được sử dụng rất nhiều trong các bài thuốc dân gian cũng như bữa ăn hàng ngày. Hẹ lá tươi, xanh, có mùi hăng nhẹ và được sử dụng trong nhiều món ăn ngon.\n\nLá hẹ tươi, có màu xanh thẫm, có vị hơi cay, hơi chua, hăng. Hẹ tươi ngon, chất lượng, không bị hư, dập.\n\nTrong hẹ chứa nhiều chất xơ cùng các vitamin A, vitamin C,... và những khoáng chất cần thiết cho cơ thể như canxi, phốt pho,...\n\n",
+				"price": "5500",
+				"show": true,
+				"unit": "lạng",
+				"slug": "he-la",
+				"createdAt": "2023-02-10T12:12:15.547Z",
+				"updatedAt": "2023-02-10T12:12:21.846Z",
+				"image": [
+					102,
+					103
+				],
+				"categories": [
+					5
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"37": {
+				"id": 37,
+				"name": "Hành lá",
+				"description": "Là một loại rau rất quen thuộc với chị em nội trợ. Hành lá thường được dùng để làm gia vị cho các món ăn, làm tăng hương vị lên gấp nhiều lần. Ngoài ra, hành lá còn có thể dùng để hỗ trợ trị một số bệnh nhẹ như: cảm sốt, nhức đầu,...\n\nHành lá tươi ngon, chất lượng, thân lá thẳng, không bị gãy, xanh đậm. Hành không bị hư, vàng hay dập.\n\nTrong hành lá chứa nhiều vitamin K, vitamin A, vitamin C, các khoáng chất như kali, canxi, chất xơ,...\n\nHành lá có tác dụng: giải quyết dứt điểm triệu chứng cảm sốt, nhức đầu, giúp cải thiện vấn đề tiêu hóa, ngăn ngừa tiểu đường, tốt cho mắt, nâng cao hoạt động hệ tim mạch,...",
+				"price": "7500",
+				"show": true,
+				"unit": "lạng",
+				"slug": "hanh-la",
+				"createdAt": "2023-02-10T12:14:51.803Z",
+				"updatedAt": "2023-02-10T12:14:51.803Z",
+				"image": [
+					104,
+					105
+				],
+				"categories": [
+					5
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"38": {
+				"id": 38,
+				"name": "Khoai lang mật",
+				"description": "Khoai lang mật được trồng và có củ quanh năm, ngon nhất là khi được nướng lên trên một bếp than đổ hồng. Loại củ này có vị ngọt ngào như mật, khi cho vào miệng thì bở tơi, tan tan trên đầu lưỡi thì còn gì bằng. Khoai lang Nhật chứa nhiều vitamin A, B, C và nhiều khoáng chất cần thiết cho làn da đẹp.\n\nKhoai lang mật củ to, dẻo, ngọt như mật, rất chất lượng, 1kg từ 2-4 củ.\n\nKhoai lang mật chứa nhiều giá trị dinh dưỡng như vitamin A, vitamin B, vitamin C, chứa nhiều tinh bột, chất xơ, chất đạm và nhiều khoáng chất khác.\n\nKhoai lang mật tạo cảm giác no bụng vì thế hạn chế được lượng thức ăn hấp thụ trong bữa ăn chính rất tốt cho quá trình giảm cân, đồng thời Giúp cho làn da đẹp, giúp dưỡng trắng da, chống oxy hóa và tẩy tế bào chết rất tốt. Bên cạnh đó khoai lang còn cung cấp nhiều vitamin và các chất như Kali, Beta Carotene, Canxi, chất xơ giúp phòng ngừa táo bón và tốt cho tiêu hoá cũng như lượng vitamin C trong khoai lang mật duy trì Collagen, tăng cường miễn dịch và giúp xương chắc khỏe.\n",
+				"price": "33000",
+				"show": true,
+				"unit": "kg",
+				"slug": "khoai-lang-mat",
+				"createdAt": "2023-02-10T12:19:03.979Z",
+				"updatedAt": "2023-02-10T12:19:03.979Z",
+				"image": [
+					106,
+					107
+				],
+				"categories": [
+					6
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"39": {
+				"id": 39,
+				"name": "Cà rốt ",
+				"description": "Cà rốt Đà Lạt là một loại củ rất quen thuộc trong các món ăn của người Việt. Cà rốt có hàm lượng chất dinh dưỡng và vitamin A cao, được xem là nguyên liệu cần thiết cho các món ăn dặm của trẻ nhỏ, giúp trẻ sáng mắt và cung cấp nguồn chất xơ dồi dào.\n\nCà rốt tươi ngon, màu cam tươi, vỏ trơn láng, có màu sáng. Cà rốt không bị mềm, dập hay bị héo. Cà rốt giòn ngọt, được lựa chọn cho nhiều món ngon, 1 kg khoảng 5-7 củ\n\nTrong cà rốt chứa nhiều chất xơ, đặc biệt là vitamin A, vitamin K, vitamin C,... ngoài ra còn chứa những khoáng chất tốt cho cơ thể như canxi, sắt, kali,...\n\nCà rốt giúp cải thiện sức khỏe mắt, giảm nguy cơ ung thư, giảm cholesterol trong máu",
+				"price": "34000",
+				"show": true,
+				"unit": "kg",
+				"slug": "ca-rot",
+				"createdAt": "2023-02-10T12:21:54.615Z",
+				"updatedAt": "2023-02-10T12:21:54.615Z",
+				"image": [
+					108,
+					109
+				],
+				"categories": [
+					6
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"40": {
+				"id": 40,
+				"name": "Củ cải trắng",
+				"description": "Thành phần dinh dưỡng của củ cải trắng vô cùng đa dạng với nhiều vitamin, khoáng chất có lợi cho sức khỏe tiêu biểu như: Protein, chất xơ, vitamin C, acid folic, canxi, magie, kali, đồng,...\n\nCủ cải trắng tốt cho tiêu hóa, ngừa ung thư, tốt cho ngũ tạng",
+				"price": "32000",
+				"show": true,
+				"unit": "kg",
+				"slug": "cu-cai-trang",
+				"createdAt": "2023-02-10T12:25:51.299Z",
+				"updatedAt": "2023-02-10T12:25:51.299Z",
+				"image": [
+					110,
+					111
+				],
+				"categories": [
+					6
+				],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"api::order-item.order-item": {},
+		"api::category.category": {
+			"2": {
+				"id": 2,
+				"name": "Rau",
+				"createdAt": "2023-02-10T09:10:23.531Z",
+				"updatedAt": "2023-02-10T11:24:28.505Z",
+				"icon": 11,
+				"products": [
+					21,
+					28,
+					33,
+					34,
+					35
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"name": "Nấm",
+				"createdAt": "2023-02-10T09:37:31.380Z",
+				"updatedAt": "2023-02-10T09:37:31.380Z",
+				"icon": 13,
+				"products": [
+					23,
+					24,
+					25,
+					26
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"name": "Rau thơm",
+				"createdAt": "2023-02-10T09:38:40.233Z",
+				"updatedAt": "2023-02-10T09:38:40.233Z",
+				"icon": 14,
+				"products": [
+					15,
+					22,
+					36,
+					37
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"name": "Củ",
+				"createdAt": "2023-02-10T09:40:21.778Z",
+				"updatedAt": "2023-02-10T09:40:21.778Z",
+				"icon": 15,
+				"products": [
+					16,
+					27,
+					38,
+					39,
+					40
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"10": {
+				"id": 10,
+				"name": "Hoa quả sấy",
+				"createdAt": "2023-02-10T09:44:29.059Z",
+				"updatedAt": "2023-02-10T12:07:49.067Z",
+				"icon": 19,
+				"products": [
+					8,
+					9,
+					10,
+					11,
+					12,
+					13,
+					14
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"11": {
+				"id": 11,
+				"name": "Hoa quả",
+				"createdAt": "2023-02-10T09:45:52.158Z",
+				"updatedAt": "2023-02-10T11:28:40.918Z",
+				"icon": 1,
+				"products": [
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					17,
+					18,
+					19,
+					20
+				],
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"13": {
+				"id": 13,
+				"name": "Hạt",
+				"createdAt": "2023-02-10T10:37:43.961Z",
+				"updatedAt": "2023-02-10T11:23:33.656Z",
+				"icon": 55,
+				"products": [
+					29,
+					30,
+					31,
+					32
+				],
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::upload.file": {
+			"1": {
+				"id": 1,
+				"name": "622083.png",
+				"alternativeText": "622083.png",
+				"caption": "622083.png",
+				"hash": "622083_f6ae753978",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/622083_f6ae753978.png",
+				"createdAt": "2023-02-10T09:09:32.760Z",
+				"updatedAt": "2023-02-10T11:27:03.827Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"name": "images",
+				"alternativeText": "images",
+				"caption": "images",
+				"hash": "images_9a09b656bf",
+				"ext": ".jpeg",
+				"mime": "image/jpeg",
+				"url": "/uploads/images_9a09b656bf.jpeg",
+				"createdAt": "2023-02-10T09:14:36.938Z",
+				"updatedAt": "2023-02-10T09:14:36.938Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"name": "green-grape.jpg",
+				"alternativeText": "green-grape.jpg",
+				"caption": "green-grape.jpg",
+				"hash": "green_grape_72f35bcbc0",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/green_grape_72f35bcbc0.jpg",
+				"createdAt": "2023-02-10T09:14:37.120Z",
+				"updatedAt": "2023-02-10T09:14:37.120Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"name": "an-du-du-bay-lau-ban-da-biet-no-co-tac-dung-gi-chua-202201111113597433.jpeg",
+				"alternativeText": "an-du-du-bay-lau-ban-da-biet-no-co-tac-dung-gi-chua-202201111113597433.jpeg",
+				"caption": "an-du-du-bay-lau-ban-da-biet-no-co-tac-dung-gi-chua-202201111113597433.jpeg",
+				"hash": "an_du_du_bay_lau_ban_da_biet_no_co_tac_dung_gi_chua_202201111113597433_c139685d18",
+				"ext": ".jpeg",
+				"mime": "image/jpeg",
+				"url": "/uploads/an_du_du_bay_lau_ban_da_biet_no_co_tac_dung_gi_chua_202201111113597433_c139685d18.jpeg",
+				"createdAt": "2023-02-10T09:18:06.411Z",
+				"updatedAt": "2023-02-10T09:18:06.411Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"name": "images",
+				"alternativeText": "images",
+				"caption": "images",
+				"hash": "images_d24f33d368",
+				"ext": ".jpeg",
+				"mime": "image/jpeg",
+				"url": "/uploads/images_d24f33d368.jpeg",
+				"createdAt": "2023-02-10T09:18:36.548Z",
+				"updatedAt": "2023-02-10T09:18:36.548Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"7": {
+				"id": 7,
+				"name": "tao-gala-phap-hop-1kg-5-7-trai-202211040903252764.jpg",
+				"alternativeText": "tao-gala-phap-hop-1kg-5-7-trai-202211040903252764.jpg",
+				"caption": "tao-gala-phap-hop-1kg-5-7-trai-202211040903252764.jpg",
+				"hash": "tao_gala_phap_hop_1kg_5_7_trai_202211040903252764_d5f289c453",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/tao_gala_phap_hop_1kg_5_7_trai_202211040903252764_d5f289c453.jpg",
+				"createdAt": "2023-02-10T09:27:06.963Z",
+				"updatedAt": "2023-02-10T09:27:06.963Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"8": {
+				"id": 8,
+				"name": "tao-gala-phap-hop-1kg-5-7-trai-202211040903257463.jpg",
+				"alternativeText": "tao-gala-phap-hop-1kg-5-7-trai-202211040903257463.jpg",
+				"caption": "tao-gala-phap-hop-1kg-5-7-trai-202211040903257463.jpg",
+				"hash": "tao_gala_phap_hop_1kg_5_7_trai_202211040903257463_65249fc2b3",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/tao_gala_phap_hop_1kg_5_7_trai_202211040903257463_65249fc2b3.jpg",
+				"createdAt": "2023-02-10T09:27:07.041Z",
+				"updatedAt": "2023-02-10T09:27:07.041Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"9": {
+				"id": 9,
+				"name": "cam-sanh-tui-1kg-3-4-trai-202205111923334110.jpg",
+				"alternativeText": "cam-sanh-tui-1kg-3-4-trai-202205111923334110.jpg",
+				"caption": "cam-sanh-tui-1kg-3-4-trai-202205111923334110.jpg",
+				"hash": "cam_sanh_tui_1kg_3_4_trai_202205111923334110_d3483b3fc2",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cam_sanh_tui_1kg_3_4_trai_202205111923334110_d3483b3fc2.jpg",
+				"createdAt": "2023-02-10T09:31:22.720Z",
+				"updatedAt": "2023-02-10T09:31:22.720Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"10": {
+				"id": 10,
+				"name": "cam-sanh-tui-1kg-3-4-trai-202208130923589790.jpg",
+				"alternativeText": "cam-sanh-tui-1kg-3-4-trai-202208130923589790.jpg",
+				"caption": "cam-sanh-tui-1kg-3-4-trai-202208130923589790.jpg",
+				"hash": "cam_sanh_tui_1kg_3_4_trai_202208130923589790_ced261064a",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cam_sanh_tui_1kg_3_4_trai_202208130923589790_ced261064a.jpg",
+				"createdAt": "2023-02-10T09:31:22.743Z",
+				"updatedAt": "2023-02-10T09:31:22.743Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"11": {
+				"id": 11,
+				"name": "1407865.png",
+				"alternativeText": "1407865.png",
+				"caption": "1407865.png",
+				"hash": "1407865_8501dc59b6",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/1407865_8501dc59b6.png",
+				"createdAt": "2023-02-10T09:34:57.299Z",
+				"updatedAt": "2023-02-10T09:34:57.299Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"13": {
+				"id": 13,
+				"name": "2217419.png",
+				"alternativeText": "2217419.png",
+				"caption": "2217419.png",
+				"hash": "2217419_18056034e3",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/2217419_18056034e3.png",
+				"createdAt": "2023-02-10T09:37:28.331Z",
+				"updatedAt": "2023-02-10T09:37:28.331Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"14": {
+				"id": 14,
+				"name": "2518176.png",
+				"alternativeText": "2518176.png",
+				"caption": "2518176.png",
+				"hash": "2518176_b77e0bd655",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/2518176_b77e0bd655.png",
+				"createdAt": "2023-02-10T09:38:37.223Z",
+				"updatedAt": "2023-02-10T09:38:37.223Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"15": {
+				"id": 15,
+				"name": "7035189.png",
+				"alternativeText": "7035189.png",
+				"caption": "7035189.png",
+				"hash": "7035189_44e297e099",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/7035189_44e297e099.png",
+				"createdAt": "2023-02-10T09:40:17.804Z",
+				"updatedAt": "2023-02-10T09:40:17.804Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"19": {
+				"id": 19,
+				"name": "3387299.png",
+				"alternativeText": "3387299.png",
+				"caption": "3387299.png",
+				"hash": "3387299_85d39746c7",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/3387299_85d39746c7.png",
+				"createdAt": "2023-02-10T09:44:26.633Z",
+				"updatedAt": "2023-02-10T09:44:26.633Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"22": {
+				"id": 22,
+				"name": "quyt-co-bao-nhieu-loai-cung-tim-hieu-trong-bai-viet-nay-201906291608305253.jpg",
+				"alternativeText": "quyt-co-bao-nhieu-loai-cung-tim-hieu-trong-bai-viet-nay-201906291608305253.jpg",
+				"caption": "quyt-co-bao-nhieu-loai-cung-tim-hieu-trong-bai-viet-nay-201906291608305253.jpg",
+				"hash": "quyt_co_bao_nhieu_loai_cung_tim_hieu_trong_bai_viet_nay_201906291608305253_14bc8d8d81",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/quyt_co_bao_nhieu_loai_cung_tim_hieu_trong_bai_viet_nay_201906291608305253_14bc8d8d81.jpg",
+				"createdAt": "2023-02-10T09:58:45.189Z",
+				"updatedAt": "2023-02-10T09:58:45.189Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"23": {
+				"id": 23,
+				"name": "quyt-mini-hop-500g-15-18-trai-202211281513087051.jpg",
+				"alternativeText": "quyt-mini-hop-500g-15-18-trai-202211281513087051.jpg",
+				"caption": "quyt-mini-hop-500g-15-18-trai-202211281513087051.jpg",
+				"hash": "quyt_mini_hop_500g_15_18_trai_202211281513087051_4cbb3f7787",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/quyt_mini_hop_500g_15_18_trai_202211281513087051_4cbb3f7787.jpg",
+				"createdAt": "2023-02-10T09:58:45.379Z",
+				"updatedAt": "2023-02-10T09:58:45.379Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"24": {
+				"id": 24,
+				"name": "quyt-mini-thung-95kg-202301141511293214.jpg",
+				"alternativeText": "quyt-mini-thung-95kg-202301141511293214.jpg",
+				"caption": "quyt-mini-thung-95kg-202301141511293214.jpg",
+				"hash": "quyt_mini_thung_95kg_202301141511293214_5a4f22207c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/quyt_mini_thung_95kg_202301141511293214_5a4f22207c.jpg",
+				"createdAt": "2023-02-10T09:58:45.391Z",
+				"updatedAt": "2023-02-10T09:58:45.391Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"25": {
+				"id": 25,
+				"name": "nho-do-ninh-thuan-hop-500gr-202211040838233107.jpg",
+				"alternativeText": "nho-do-ninh-thuan-hop-500gr-202211040838233107.jpg",
+				"caption": "nho-do-ninh-thuan-hop-500gr-202211040838233107.jpg",
+				"hash": "nho_do_ninh_thuan_hop_500gr_202211040838233107_835015b3b6",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nho_do_ninh_thuan_hop_500gr_202211040838233107_835015b3b6.jpg",
+				"createdAt": "2023-02-10T10:05:29.910Z",
+				"updatedAt": "2023-02-10T10:05:29.910Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"26": {
+				"id": 26,
+				"name": "nho-do-ninh-thuan-hop-500gr-202207080951363162.jpg",
+				"alternativeText": "nho-do-ninh-thuan-hop-500gr-202207080951363162.jpg",
+				"caption": "nho-do-ninh-thuan-hop-500gr-202207080951363162.jpg",
+				"hash": "nho_do_ninh_thuan_hop_500gr_202207080951363162_c9bcd7d3e7",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nho_do_ninh_thuan_hop_500gr_202207080951363162_c9bcd7d3e7.jpg",
+				"createdAt": "2023-02-10T10:05:29.914Z",
+				"updatedAt": "2023-02-10T10:05:29.914Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"27": {
+				"id": 27,
+				"name": "nho-do-ninh-thuan-hop-500gr-202211040838225392.jpg",
+				"alternativeText": "nho-do-ninh-thuan-hop-500gr-202211040838225392.jpg",
+				"caption": "nho-do-ninh-thuan-hop-500gr-202211040838225392.jpg",
+				"hash": "nho_do_ninh_thuan_hop_500gr_202211040838225392_b72246ba9a",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nho_do_ninh_thuan_hop_500gr_202211040838225392_b72246ba9a.jpg",
+				"createdAt": "2023-02-10T10:05:29.930Z",
+				"updatedAt": "2023-02-10T10:05:29.930Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"28": {
+				"id": 28,
+				"name": "xoai-dai-loan-trai-tu-600g-202301090853319871.jpg",
+				"alternativeText": "xoai-dai-loan-trai-tu-600g-202301090853319871.jpg",
+				"caption": "xoai-dai-loan-trai-tu-600g-202301090853319871.jpg",
+				"hash": "xoai_dai_loan_trai_tu_600g_202301090853319871_d01dbd53c3",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/xoai_dai_loan_trai_tu_600g_202301090853319871_d01dbd53c3.jpg",
+				"createdAt": "2023-02-10T10:07:47.638Z",
+				"updatedAt": "2023-02-10T10:07:47.638Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"29": {
+				"id": 29,
+				"name": "xoai-dai-loan-trai-tu-600g-202301090855096013.jpg",
+				"alternativeText": "xoai-dai-loan-trai-tu-600g-202301090855096013.jpg",
+				"caption": "xoai-dai-loan-trai-tu-600g-202301090855096013.jpg",
+				"hash": "xoai_dai_loan_trai_tu_600g_202301090855096013_17d02ada57",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/xoai_dai_loan_trai_tu_600g_202301090855096013_17d02ada57.jpg",
+				"createdAt": "2023-02-10T10:07:47.708Z",
+				"updatedAt": "2023-02-10T10:07:47.708Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"30": {
+				"id": 30,
+				"name": "xoai-dai-loan-trai-tu-600g-202301090850100156.jpg",
+				"alternativeText": "xoai-dai-loan-trai-tu-600g-202301090850100156.jpg",
+				"caption": "xoai-dai-loan-trai-tu-600g-202301090850100156.jpg",
+				"hash": "xoai_dai_loan_trai_tu_600g_202301090850100156_a5b6bafe21",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/xoai_dai_loan_trai_tu_600g_202301090850100156_a5b6bafe21.jpg",
+				"createdAt": "2023-02-10T10:07:47.729Z",
+				"updatedAt": "2023-02-10T10:07:47.729Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"31": {
+				"id": 31,
+				"name": "trai-cay-say-gion-vinamit-tui-250g-201907041033204353.jpg",
+				"alternativeText": "trai-cay-say-gion-vinamit-tui-250g-201907041033204353.jpg",
+				"caption": "trai-cay-say-gion-vinamit-tui-250g-201907041033204353.jpg",
+				"hash": "trai_cay_say_gion_vinamit_tui_250g_201907041033204353_f229fa5218",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/trai_cay_say_gion_vinamit_tui_250g_201907041033204353_f229fa5218.jpg",
+				"createdAt": "2023-02-10T10:13:43.014Z",
+				"updatedAt": "2023-02-10T10:13:43.014Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"32": {
+				"id": 32,
+				"name": "trai-cay-say-gion-vinamit-tui-250g-201907041033208143.jpg",
+				"alternativeText": "trai-cay-say-gion-vinamit-tui-250g-201907041033208143.jpg",
+				"caption": "trai-cay-say-gion-vinamit-tui-250g-201907041033208143.jpg",
+				"hash": "trai_cay_say_gion_vinamit_tui_250g_201907041033208143_d530c36b15",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/trai_cay_say_gion_vinamit_tui_250g_201907041033208143_d530c36b15.jpg",
+				"createdAt": "2023-02-10T10:13:43.139Z",
+				"updatedAt": "2023-02-10T10:13:43.139Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"33": {
+				"id": 33,
+				"name": "trai-cay-say-gion-vinamit-tui-250g-201907041033212273.jpg",
+				"alternativeText": "trai-cay-say-gion-vinamit-tui-250g-201907041033212273.jpg",
+				"caption": "trai-cay-say-gion-vinamit-tui-250g-201907041033212273.jpg",
+				"hash": "trai_cay_say_gion_vinamit_tui_250g_201907041033212273_1817f28755",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/trai_cay_say_gion_vinamit_tui_250g_201907041033212273_1817f28755.jpg",
+				"createdAt": "2023-02-10T10:13:43.147Z",
+				"updatedAt": "2023-02-10T10:13:43.147Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"34": {
+				"id": 34,
+				"name": "chuoi-say-gion-vinamit-goi-250g-201907041009206699.jpg",
+				"alternativeText": "chuoi-say-gion-vinamit-goi-250g-201907041009206699.jpg",
+				"caption": "chuoi-say-gion-vinamit-goi-250g-201907041009206699.jpg",
+				"hash": "chuoi_say_gion_vinamit_goi_250g_201907041009206699_ed768ee195",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/chuoi_say_gion_vinamit_goi_250g_201907041009206699_ed768ee195.jpg",
+				"createdAt": "2023-02-10T10:14:52.075Z",
+				"updatedAt": "2023-02-10T10:14:52.075Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"35": {
+				"id": 35,
+				"name": "chuoi-say-gion-vinamit-goi-250g-201907041009213887.jpg",
+				"alternativeText": "chuoi-say-gion-vinamit-goi-250g-201907041009213887.jpg",
+				"caption": "chuoi-say-gion-vinamit-goi-250g-201907041009213887.jpg",
+				"hash": "chuoi_say_gion_vinamit_goi_250g_201907041009213887_89f9136920",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/chuoi_say_gion_vinamit_goi_250g_201907041009213887_89f9136920.jpg",
+				"createdAt": "2023-02-10T10:14:52.125Z",
+				"updatedAt": "2023-02-10T10:14:52.125Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"36": {
+				"id": 36,
+				"name": "chuoi-say-gion-vinamit-goi-250g-201907041009209131.jpg",
+				"alternativeText": "chuoi-say-gion-vinamit-goi-250g-201907041009209131.jpg",
+				"caption": "chuoi-say-gion-vinamit-goi-250g-201907041009209131.jpg",
+				"hash": "chuoi_say_gion_vinamit_goi_250g_201907041009209131_4eff731555",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/chuoi_say_gion_vinamit_goi_250g_201907041009209131_4eff731555.jpg",
+				"createdAt": "2023-02-10T10:14:52.153Z",
+				"updatedAt": "2023-02-10T10:14:52.153Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"37": {
+				"id": 37,
+				"name": "khoai-lang-say-gion-vinamit-goi-250g-201907041023125650.jpg",
+				"alternativeText": "khoai-lang-say-gion-vinamit-goi-250g-201907041023125650.jpg",
+				"caption": "khoai-lang-say-gion-vinamit-goi-250g-201907041023125650.jpg",
+				"hash": "khoai_lang_say_gion_vinamit_goi_250g_201907041023125650_189dbe37de",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/khoai_lang_say_gion_vinamit_goi_250g_201907041023125650_189dbe37de.jpg",
+				"createdAt": "2023-02-10T10:16:21.575Z",
+				"updatedAt": "2023-02-10T10:16:21.575Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"38": {
+				"id": 38,
+				"name": "khoai-lang-say-gion-vinamit-goi-250g-201907041023124117.jpg",
+				"alternativeText": "khoai-lang-say-gion-vinamit-goi-250g-201907041023124117.jpg",
+				"caption": "khoai-lang-say-gion-vinamit-goi-250g-201907041023124117.jpg",
+				"hash": "khoai_lang_say_gion_vinamit_goi_250g_201907041023124117_4a9dc4ddb8",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/khoai_lang_say_gion_vinamit_goi_250g_201907041023124117_4a9dc4ddb8.jpg",
+				"createdAt": "2023-02-10T10:16:21.641Z",
+				"updatedAt": "2023-02-10T10:16:21.641Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"39": {
+				"id": 39,
+				"name": "khoai-lang-say-gion-vinamit-goi-250g-201907041023129146.jpg",
+				"alternativeText": "khoai-lang-say-gion-vinamit-goi-250g-201907041023129146.jpg",
+				"caption": "khoai-lang-say-gion-vinamit-goi-250g-201907041023129146.jpg",
+				"hash": "khoai_lang_say_gion_vinamit_goi_250g_201907041023129146_b7a5e8ee1f",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/khoai_lang_say_gion_vinamit_goi_250g_201907041023129146_b7a5e8ee1f.jpg",
+				"createdAt": "2023-02-10T10:16:21.650Z",
+				"updatedAt": "2023-02-10T10:16:21.650Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"40": {
+				"id": 40,
+				"name": "man-say-deo-vinamit-goi-100g-2-org.jpg",
+				"alternativeText": "man-say-deo-vinamit-goi-100g-2-org.jpg",
+				"caption": "man-say-deo-vinamit-goi-100g-2-org.jpg",
+				"hash": "man_say_deo_vinamit_goi_100g_2_org_db723c455a",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/man_say_deo_vinamit_goi_100g_2_org_db723c455a.jpg",
+				"createdAt": "2023-02-10T10:17:52.910Z",
+				"updatedAt": "2023-02-10T10:17:52.910Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"41": {
+				"id": 41,
+				"name": "man-say-deo-vinamit-goi-100g-4-org.jpg",
+				"alternativeText": "man-say-deo-vinamit-goi-100g-4-org.jpg",
+				"caption": "man-say-deo-vinamit-goi-100g-4-org.jpg",
+				"hash": "man_say_deo_vinamit_goi_100g_4_org_0caea575a4",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/man_say_deo_vinamit_goi_100g_4_org_0caea575a4.jpg",
+				"createdAt": "2023-02-10T10:17:53.067Z",
+				"updatedAt": "2023-02-10T10:17:53.067Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"42": {
+				"id": 42,
+				"name": "man-say-deo-vinamit-goi-100g-3-org.jpg",
+				"alternativeText": "man-say-deo-vinamit-goi-100g-3-org.jpg",
+				"caption": "man-say-deo-vinamit-goi-100g-3-org.jpg",
+				"hash": "man_say_deo_vinamit_goi_100g_3_org_09c654104c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/man_say_deo_vinamit_goi_100g_3_org_09c654104c.jpg",
+				"createdAt": "2023-02-10T10:17:53.083Z",
+				"updatedAt": "2023-02-10T10:17:53.083Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"43": {
+				"id": 43,
+				"name": "vai-thieu-nuoc-duong-ha-long-560g-202002211341365959.jpg",
+				"alternativeText": "vai-thieu-nuoc-duong-ha-long-560g-202002211341365959.jpg",
+				"caption": "vai-thieu-nuoc-duong-ha-long-560g-202002211341365959.jpg",
+				"hash": "vai_thieu_nuoc_duong_ha_long_560g_202002211341365959_a857795bbc",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/vai_thieu_nuoc_duong_ha_long_560g_202002211341365959_a857795bbc.jpg",
+				"createdAt": "2023-02-10T10:19:51.617Z",
+				"updatedAt": "2023-02-10T10:19:51.617Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"44": {
+				"id": 44,
+				"name": "vai-thieu-nuoc-duong-ha-long-560g-202002211341318899.jpg",
+				"alternativeText": "vai-thieu-nuoc-duong-ha-long-560g-202002211341318899.jpg",
+				"caption": "vai-thieu-nuoc-duong-ha-long-560g-202002211341318899.jpg",
+				"hash": "vai_thieu_nuoc_duong_ha_long_560g_202002211341318899_2c1a70b92f",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/vai_thieu_nuoc_duong_ha_long_560g_202002211341318899_2c1a70b92f.jpg",
+				"createdAt": "2023-02-10T10:19:51.683Z",
+				"updatedAt": "2023-02-10T10:19:51.683Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"45": {
+				"id": 45,
+				"name": "vai-thieu-nuoc-duong-ha-long-560g-202002211341340073.jpg",
+				"alternativeText": "vai-thieu-nuoc-duong-ha-long-560g-202002211341340073.jpg",
+				"caption": "vai-thieu-nuoc-duong-ha-long-560g-202002211341340073.jpg",
+				"hash": "vai_thieu_nuoc_duong_ha_long_560g_202002211341340073_fcbc50724c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/vai_thieu_nuoc_duong_ha_long_560g_202002211341340073_fcbc50724c.jpg",
+				"createdAt": "2023-02-10T10:19:51.701Z",
+				"updatedAt": "2023-02-10T10:19:51.701Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"46": {
+				"id": 46,
+				"name": "upload_cd5a14b723ab4286baf9702b21f4a07b_compact.jpg",
+				"alternativeText": "upload_cd5a14b723ab4286baf9702b21f4a07b_compact.jpg",
+				"caption": "upload_cd5a14b723ab4286baf9702b21f4a07b_compact.jpg",
+				"hash": "upload_cd5a14b723ab4286baf9702b21f4a07b_compact_9767532a48",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/upload_cd5a14b723ab4286baf9702b21f4a07b_compact_9767532a48.jpg",
+				"createdAt": "2023-02-10T10:24:35.314Z",
+				"updatedAt": "2023-02-10T10:24:35.314Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"47": {
+				"id": 47,
+				"name": "upload_626ae3e8f9b0452582e5acae4c22b830_compact.jpg",
+				"alternativeText": "upload_626ae3e8f9b0452582e5acae4c22b830_compact.jpg",
+				"caption": "upload_626ae3e8f9b0452582e5acae4c22b830_compact.jpg",
+				"hash": "upload_626ae3e8f9b0452582e5acae4c22b830_compact_d61297b9ca",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/upload_626ae3e8f9b0452582e5acae4c22b830_compact_d61297b9ca.jpg",
+				"createdAt": "2023-02-10T10:24:35.339Z",
+				"updatedAt": "2023-02-10T10:24:35.339Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"48": {
+				"id": 48,
+				"name": "mit-say-vinamit-goi-250g-201907110846053483.jpg",
+				"alternativeText": "mit-say-vinamit-goi-250g-201907110846053483.jpg",
+				"caption": "mit-say-vinamit-goi-250g-201907110846053483.jpg",
+				"hash": "mit_say_vinamit_goi_250g_201907110846053483_713ba31663",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/mit_say_vinamit_goi_250g_201907110846053483_713ba31663.jpg",
+				"createdAt": "2023-02-10T10:27:06.653Z",
+				"updatedAt": "2023-02-10T10:27:06.653Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"49": {
+				"id": 49,
+				"name": "mit-say-vinamit-goi-250g-201907110846055024.jpg",
+				"alternativeText": "mit-say-vinamit-goi-250g-201907110846055024.jpg",
+				"caption": "mit-say-vinamit-goi-250g-201907110846055024.jpg",
+				"hash": "mit_say_vinamit_goi_250g_201907110846055024_8d4bfa2f50",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/mit_say_vinamit_goi_250g_201907110846055024_8d4bfa2f50.jpg",
+				"createdAt": "2023-02-10T10:27:06.704Z",
+				"updatedAt": "2023-02-10T10:27:06.704Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"50": {
+				"id": 50,
+				"name": "mit-say-vinamit-goi-250g-201907110846056705.jpg",
+				"alternativeText": "mit-say-vinamit-goi-250g-201907110846056705.jpg",
+				"caption": "mit-say-vinamit-goi-250g-201907110846056705.jpg",
+				"hash": "mit_say_vinamit_goi_250g_201907110846056705_627119e599",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/mit_say_vinamit_goi_250g_201907110846056705_627119e599.jpg",
+				"createdAt": "2023-02-10T10:27:06.707Z",
+				"updatedAt": "2023-02-10T10:27:06.707Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"51": {
+				"id": 51,
+				"name": "rau-hung-que-goi-100g-202212090838565509.jpg",
+				"alternativeText": "rau-hung-que-goi-100g-202212090838565509.jpg",
+				"caption": "rau-hung-que-goi-100g-202212090838565509.jpg",
+				"hash": "rau_hung_que_goi_100g_202212090838565509_b0ae289581",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/rau_hung_que_goi_100g_202212090838565509_b0ae289581.jpg",
+				"createdAt": "2023-02-10T10:31:29.965Z",
+				"updatedAt": "2023-02-10T10:31:29.965Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"52": {
+				"id": 52,
+				"name": "rau-hung-que-goi-100g-202212090838571162.jpg",
+				"alternativeText": "rau-hung-que-goi-100g-202212090838571162.jpg",
+				"caption": "rau-hung-que-goi-100g-202212090838571162.jpg",
+				"hash": "rau_hung_que_goi_100g_202212090838571162_d0570c0c17",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/rau_hung_que_goi_100g_202212090838571162_d0570c0c17.jpg",
+				"createdAt": "2023-02-10T10:31:29.988Z",
+				"updatedAt": "2023-02-10T10:31:29.988Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"53": {
+				"id": 53,
+				"name": "gung-goi-100g-1-2-cu-202212051006267702.jpg",
+				"alternativeText": "gung-goi-100g-1-2-cu-202212051006267702.jpg",
+				"caption": "gung-goi-100g-1-2-cu-202212051006267702.jpg",
+				"hash": "gung_goi_100g_1_2_cu_202212051006267702_67b56f9f69",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/gung_goi_100g_1_2_cu_202212051006267702_67b56f9f69.jpg",
+				"createdAt": "2023-02-10T10:36:28.835Z",
+				"updatedAt": "2023-02-10T10:36:28.835Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"54": {
+				"id": 54,
+				"name": "gung-goi-100g-1-2-cu-202212051006265515.jpg",
+				"alternativeText": "gung-goi-100g-1-2-cu-202212051006265515.jpg",
+				"caption": "gung-goi-100g-1-2-cu-202212051006265515.jpg",
+				"hash": "gung_goi_100g_1_2_cu_202212051006265515_134ceacb58",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/gung_goi_100g_1_2_cu_202212051006265515_134ceacb58.jpg",
+				"createdAt": "2023-02-10T10:36:28.880Z",
+				"updatedAt": "2023-02-10T10:36:28.880Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"55": {
+				"id": 55,
+				"name": "2314660.png",
+				"alternativeText": "2314660.png",
+				"caption": "2314660.png",
+				"hash": "2314660_b40e9e93c6",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/2314660_b40e9e93c6.png",
+				"createdAt": "2023-02-10T10:37:40.745Z",
+				"updatedAt": "2023-02-10T10:37:40.745Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"56": {
+				"id": 56,
+				"name": "chanh-khong-hat-tui-500g-5-8-trai-202205181624597531.jpg",
+				"alternativeText": "chanh-khong-hat-tui-500g-5-8-trai-202205181624597531.jpg",
+				"caption": "chanh-khong-hat-tui-500g-5-8-trai-202205181624597531.jpg",
+				"hash": "chanh_khong_hat_tui_500g_5_8_trai_202205181624597531_b82275ee01",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/chanh_khong_hat_tui_500g_5_8_trai_202205181624597531_b82275ee01.jpg",
+				"createdAt": "2023-02-10T10:39:53.874Z",
+				"updatedAt": "2023-02-10T10:39:53.874Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"57": {
+				"id": 57,
+				"name": "chanh-khong-hat-tui-500g-5-8-trai-202205181625001612.jpg",
+				"alternativeText": "chanh-khong-hat-tui-500g-5-8-trai-202205181625001612.jpg",
+				"caption": "chanh-khong-hat-tui-500g-5-8-trai-202205181625001612.jpg",
+				"hash": "chanh_khong_hat_tui_500g_5_8_trai_202205181625001612_cdffd4e248",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/chanh_khong_hat_tui_500g_5_8_trai_202205181625001612_cdffd4e248.jpg",
+				"createdAt": "2023-02-10T10:39:53.988Z",
+				"updatedAt": "2023-02-10T10:39:53.988Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"58": {
+				"id": 58,
+				"name": "buoi-da-xanh-trai-tu-17kg-tro-len-202205111921599930.jpg",
+				"alternativeText": "buoi-da-xanh-trai-tu-17kg-tro-len-202205111921599930.jpg",
+				"caption": "buoi-da-xanh-trai-tu-17kg-tro-len-202205111921599930.jpg",
+				"hash": "buoi_da_xanh_trai_tu_17kg_tro_len_202205111921599930_03f7f7b5b7",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/buoi_da_xanh_trai_tu_17kg_tro_len_202205111921599930_03f7f7b5b7.jpg",
+				"createdAt": "2023-02-10T10:41:41.262Z",
+				"updatedAt": "2023-02-10T10:41:41.262Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"59": {
+				"id": 59,
+				"name": "buoi-da-xanh-trai-tu-17kg-tro-len-202211160927469440.jpg",
+				"alternativeText": "buoi-da-xanh-trai-tu-17kg-tro-len-202211160927469440.jpg",
+				"caption": "buoi-da-xanh-trai-tu-17kg-tro-len-202211160927469440.jpg",
+				"hash": "buoi_da_xanh_trai_tu_17kg_tro_len_202211160927469440_a25c9b4237",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/buoi_da_xanh_trai_tu_17kg_tro_len_202211160927469440_a25c9b4237.jpg",
+				"createdAt": "2023-02-10T10:41:41.276Z",
+				"updatedAt": "2023-02-10T10:41:41.276Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"60": {
+				"id": 60,
+				"name": "buoi-da-xanh-trai-tu-17kg-tro-len-202211030916158049.jpg",
+				"alternativeText": "buoi-da-xanh-trai-tu-17kg-tro-len-202211030916158049.jpg",
+				"caption": "buoi-da-xanh-trai-tu-17kg-tro-len-202211030916158049.jpg",
+				"hash": "buoi_da_xanh_trai_tu_17kg_tro_len_202211030916158049_dede51c04a",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/buoi_da_xanh_trai_tu_17kg_tro_len_202211030916158049_dede51c04a.jpg",
+				"createdAt": "2023-02-10T10:41:41.335Z",
+				"updatedAt": "2023-02-10T10:41:41.335Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"61": {
+				"id": 61,
+				"name": "tac-trai-tui-200g-202205201627434670.jpg",
+				"alternativeText": "tac-trai-tui-200g-202205201627434670.jpg",
+				"caption": "tac-trai-tui-200g-202205201627434670.jpg",
+				"hash": "tac_trai_tui_200g_202205201627434670_866705d9b5",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/tac_trai_tui_200g_202205201627434670_866705d9b5.jpg",
+				"createdAt": "2023-02-10T10:45:35.091Z",
+				"updatedAt": "2023-02-10T10:45:35.091Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"62": {
+				"id": 62,
+				"name": "tac-trai-tui-200g-202205201627437340.jpg",
+				"alternativeText": "tac-trai-tui-200g-202205201627437340.jpg",
+				"caption": "tac-trai-tui-200g-202205201627437340.jpg",
+				"hash": "tac_trai_tui_200g_202205201627437340_dd76359b11",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/tac_trai_tui_200g_202205201627437340_dd76359b11.jpg",
+				"createdAt": "2023-02-10T10:45:35.097Z",
+				"updatedAt": "2023-02-10T10:45:35.097Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"63": {
+				"id": 63,
+				"name": "buoi-dien-1.jpg",
+				"alternativeText": "buoi-dien-1.jpg",
+				"caption": "buoi-dien-1.jpg",
+				"hash": "buoi_dien_1_c2b6976af4",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/buoi_dien_1_c2b6976af4.jpg",
+				"createdAt": "2023-02-10T10:53:52.331Z",
+				"updatedAt": "2023-02-10T10:53:52.331Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"64": {
+				"id": 64,
+				"name": "buoi-dien-trai-tu-700g-tro-len-202212280820103772.jpg",
+				"alternativeText": "buoi-dien-trai-tu-700g-tro-len-202212280820103772.jpg",
+				"caption": "buoi-dien-trai-tu-700g-tro-len-202212280820103772.jpg",
+				"hash": "buoi_dien_trai_tu_700g_tro_len_202212280820103772_dcff2cb8d3",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/buoi_dien_trai_tu_700g_tro_len_202212280820103772_dcff2cb8d3.jpg",
+				"createdAt": "2023-02-10T10:53:52.393Z",
+				"updatedAt": "2023-02-10T10:53:52.393Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"65": {
+				"id": 65,
+				"name": "2-JPG_1640693396-1640693680.jpg",
+				"alternativeText": "2-JPG_1640693396-1640693680.jpg",
+				"caption": "2-JPG_1640693396-1640693680.jpg",
+				"hash": "2_JPG_1640693396_1640693680_d8c028c18c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/2_JPG_1640693396_1640693680_d8c028c18c.jpg",
+				"createdAt": "2023-02-10T10:53:52.484Z",
+				"updatedAt": "2023-02-10T10:53:52.484Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"66": {
+				"id": 66,
+				"name": "xa-lach-lo-lo-xanh-goi-500g-202205181606268930.jpg",
+				"alternativeText": "xa-lach-lo-lo-xanh-goi-500g-202205181606268930.jpg",
+				"caption": "xa-lach-lo-lo-xanh-goi-500g-202205181606268930.jpg",
+				"hash": "xa_lach_lo_lo_xanh_goi_500g_202205181606268930_5735415cdb",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/xa_lach_lo_lo_xanh_goi_500g_202205181606268930_5735415cdb.jpg",
+				"createdAt": "2023-02-10T11:10:11.654Z",
+				"updatedAt": "2023-02-10T11:10:11.654Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"67": {
+				"id": 67,
+				"name": "xa-lach-lo-lo-xanh-goi-500g-202205181606265867.jpg",
+				"alternativeText": "xa-lach-lo-lo-xanh-goi-500g-202205181606265867.jpg",
+				"caption": "xa-lach-lo-lo-xanh-goi-500g-202205181606265867.jpg",
+				"hash": "xa_lach_lo_lo_xanh_goi_500g_202205181606265867_b55840f3a6",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/xa_lach_lo_lo_xanh_goi_500g_202205181606265867_b55840f3a6.jpg",
+				"createdAt": "2023-02-10T11:10:11.694Z",
+				"updatedAt": "2023-02-10T11:10:11.694Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"68": {
+				"id": 68,
+				"name": "xa-lach-lo-lo-xanh-goi-500g-202211220937160621.jpg",
+				"alternativeText": "xa-lach-lo-lo-xanh-goi-500g-202211220937160621.jpg",
+				"caption": "xa-lach-lo-lo-xanh-goi-500g-202211220937160621.jpg",
+				"hash": "xa_lach_lo_lo_xanh_goi_500g_202211220937160621_0ef3b6c99d",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/xa_lach_lo_lo_xanh_goi_500g_202211220937160621_0ef3b6c99d.jpg",
+				"createdAt": "2023-02-10T11:10:11.702Z",
+				"updatedAt": "2023-02-10T11:10:11.702Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"69": {
+				"id": 69,
+				"name": "tia-to-goi-100g-202212090843363437.jpg",
+				"alternativeText": "tia-to-goi-100g-202212090843363437.jpg",
+				"caption": "tia-to-goi-100g-202212090843363437.jpg",
+				"hash": "tia_to_goi_100g_202212090843363437_fae1395e89",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/tia_to_goi_100g_202212090843363437_fae1395e89.jpg",
+				"createdAt": "2023-02-10T11:13:36.135Z",
+				"updatedAt": "2023-02-10T11:13:36.135Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"70": {
+				"id": 70,
+				"name": "tia-to-goi-100g-202212090843370111.jpg",
+				"alternativeText": "tia-to-goi-100g-202212090843370111.jpg",
+				"caption": "tia-to-goi-100g-202212090843370111.jpg",
+				"hash": "tia_to_goi_100g_202212090843370111_4e049327dd",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/tia_to_goi_100g_202212090843370111_4e049327dd.jpg",
+				"createdAt": "2023-02-10T11:13:36.157Z",
+				"updatedAt": "2023-02-10T11:13:36.157Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"71": {
+				"id": 71,
+				"name": "nam-huong-kho-nguyen-bao-goi-50g-202110290737083898.jpg",
+				"alternativeText": "nam-huong-kho-nguyen-bao-goi-50g-202110290737083898.jpg",
+				"caption": "nam-huong-kho-nguyen-bao-goi-50g-202110290737083898.jpg",
+				"hash": "nam_huong_kho_nguyen_bao_goi_50g_202110290737083898_5e1cfebfa5",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_huong_kho_nguyen_bao_goi_50g_202110290737083898_5e1cfebfa5.jpg",
+				"createdAt": "2023-02-10T11:16:25.738Z",
+				"updatedAt": "2023-02-10T11:16:25.738Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"72": {
+				"id": 72,
+				"name": "nam-huong-kho-nguyen-bao-goi-50g-202110290737087901.jpg",
+				"alternativeText": "nam-huong-kho-nguyen-bao-goi-50g-202110290737087901.jpg",
+				"caption": "nam-huong-kho-nguyen-bao-goi-50g-202110290737087901.jpg",
+				"hash": "nam_huong_kho_nguyen_bao_goi_50g_202110290737087901_b35a0c5a8c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_huong_kho_nguyen_bao_goi_50g_202110290737087901_b35a0c5a8c.jpg",
+				"createdAt": "2023-02-10T11:16:25.744Z",
+				"updatedAt": "2023-02-10T11:16:25.744Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"73": {
+				"id": 73,
+				"name": "nam-huong-kho-nguyen-bao-goi-50g-202110290737099169.jpg",
+				"alternativeText": "nam-huong-kho-nguyen-bao-goi-50g-202110290737099169.jpg",
+				"caption": "nam-huong-kho-nguyen-bao-goi-50g-202110290737099169.jpg",
+				"hash": "nam_huong_kho_nguyen_bao_goi_50g_202110290737099169_4803bc2ffd",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_huong_kho_nguyen_bao_goi_50g_202110290737099169_4803bc2ffd.jpg",
+				"createdAt": "2023-02-10T11:16:25.855Z",
+				"updatedAt": "2023-02-10T11:16:25.855Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"74": {
+				"id": 74,
+				"name": "nam-meo-den-soi-viet-san-tui-100g-201812041218062757.jpg",
+				"alternativeText": "nam-meo-den-soi-viet-san-tui-100g-201812041218062757.jpg",
+				"caption": "nam-meo-den-soi-viet-san-tui-100g-201812041218062757.jpg",
+				"hash": "nam_meo_den_soi_viet_san_tui_100g_201812041218062757_5351c84a4b",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_meo_den_soi_viet_san_tui_100g_201812041218062757_5351c84a4b.jpg",
+				"createdAt": "2023-02-10T11:17:57.423Z",
+				"updatedAt": "2023-02-10T11:17:57.423Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"75": {
+				"id": 75,
+				"name": "nam-meo-den-soi-viet-san-tui-100g-201812041217551122.jpg",
+				"alternativeText": "nam-meo-den-soi-viet-san-tui-100g-201812041217551122.jpg",
+				"caption": "nam-meo-den-soi-viet-san-tui-100g-201812041217551122.jpg",
+				"hash": "nam_meo_den_soi_viet_san_tui_100g_201812041217551122_ad8aaf1755",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_meo_den_soi_viet_san_tui_100g_201812041217551122_ad8aaf1755.jpg",
+				"createdAt": "2023-02-10T11:17:57.430Z",
+				"updatedAt": "2023-02-10T11:17:57.430Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"76": {
+				"id": 76,
+				"name": "S7mnc6TgRkdIrETWowB8BMk3pV5h6Ur-EhgJpBe97lCtbtq66xv1zXepd9f6z-YC4H4ybBDdROtvhXkMZvOIz4LbnzwwGSDJTZ12N8QXAI3YyLryQagGaJuHZDF-Nf85LaEpWNSq",
+				"alternativeText": "S7mnc6TgRkdIrETWowB8BMk3pV5h6Ur-EhgJpBe97lCtbtq66xv1zXepd9f6z-YC4H4ybBDdROtvhXkMZvOIz4LbnzwwGSDJTZ12N8QXAI3YyLryQagGaJuHZDF-Nf85LaEpWNSq",
+				"caption": "S7mnc6TgRkdIrETWowB8BMk3pV5h6Ur-EhgJpBe97lCtbtq66xv1zXepd9f6z-YC4H4ybBDdROtvhXkMZvOIz4LbnzwwGSDJTZ12N8QXAI3YyLryQagGaJuHZDF-Nf85LaEpWNSq",
+				"hash": "S7mnc6_Tg_Rkd_Ir_ET_Wow_B8_B_Mk3p_V5h6_Ur_Ehg_Jp_Be97l_Ctbtq66xv1z_Xepd9f6z_YC_4_H4yb_B_Dd_R_Otvh_Xk_M_Zv_O_Iz4_Lbnzww_GSDJTZ_12_N8_QXAI_3_Yy_Lry_Qag_Ga_Ju_HZDF_Nf85_La_Ep_WN_Sq_b8053c2843",
+				"ext": ".png",
+				"mime": "image/png",
+				"url": "/uploads/S7mnc6_Tg_Rkd_Ir_ET_Wow_B8_B_Mk3p_V5h6_Ur_Ehg_Jp_Be97l_Ctbtq66xv1z_Xepd9f6z_YC_4_H4yb_B_Dd_R_Otvh_Xk_M_Zv_O_Iz4_Lbnzww_GSDJTZ_12_N8_QXAI_3_Yy_Lry_Qag_Ga_Ju_HZDF_Nf85_La_Ep_WN_Sq_b8053c2843.png",
+				"createdAt": "2023-02-10T11:17:58.436Z",
+				"updatedAt": "2023-02-10T11:17:58.436Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"77": {
+				"id": 77,
+				"name": "nam-kim-cham-han-quoc-goi-150g-202205181701299203.jpg",
+				"alternativeText": "nam-kim-cham-han-quoc-goi-150g-202205181701299203.jpg",
+				"caption": "nam-kim-cham-han-quoc-goi-150g-202205181701299203.jpg",
+				"hash": "nam_kim_cham_han_quoc_goi_150g_202205181701299203_0e6c9fca7f",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_kim_cham_han_quoc_goi_150g_202205181701299203_0e6c9fca7f.jpg",
+				"createdAt": "2023-02-10T11:31:43.422Z",
+				"updatedAt": "2023-02-10T11:31:43.422Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"78": {
+				"id": 78,
+				"name": "nam-kim-cham-han-quoc-goi-150g-202205181701294156.jpg",
+				"alternativeText": "nam-kim-cham-han-quoc-goi-150g-202205181701294156.jpg",
+				"caption": "nam-kim-cham-han-quoc-goi-150g-202205181701294156.jpg",
+				"hash": "nam_kim_cham_han_quoc_goi_150g_202205181701294156_e12bd825b5",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_kim_cham_han_quoc_goi_150g_202205181701294156_e12bd825b5.jpg",
+				"createdAt": "2023-02-10T11:31:43.529Z",
+				"updatedAt": "2023-02-10T11:31:43.529Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"79": {
+				"id": 79,
+				"name": "nam-kim-cham-han-quoc-goi-150g-202205181701296513.jpg",
+				"alternativeText": "nam-kim-cham-han-quoc-goi-150g-202205181701296513.jpg",
+				"caption": "nam-kim-cham-han-quoc-goi-150g-202205181701296513.jpg",
+				"hash": "nam_kim_cham_han_quoc_goi_150g_202205181701296513_73d2311ef9",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_kim_cham_han_quoc_goi_150g_202205181701296513_73d2311ef9.jpg",
+				"createdAt": "2023-02-10T11:31:43.537Z",
+				"updatedAt": "2023-02-10T11:31:43.537Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"80": {
+				"id": 80,
+				"name": "nam-bao-ngu-xam-goi-300g-202211231335451370.jpg",
+				"alternativeText": "nam-bao-ngu-xam-goi-300g-202211231335451370.jpg",
+				"caption": "nam-bao-ngu-xam-goi-300g-202211231335451370.jpg",
+				"hash": "nam_bao_ngu_xam_goi_300g_202211231335451370_56ba0b5290",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_bao_ngu_xam_goi_300g_202211231335451370_56ba0b5290.jpg",
+				"createdAt": "2023-02-10T11:33:52.464Z",
+				"updatedAt": "2023-02-10T11:33:52.464Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"81": {
+				"id": 81,
+				"name": "nam-bao-ngu-xam-goi-300g-202211231335446825.jpg",
+				"alternativeText": "nam-bao-ngu-xam-goi-300g-202211231335446825.jpg",
+				"caption": "nam-bao-ngu-xam-goi-300g-202211231335446825.jpg",
+				"hash": "nam_bao_ngu_xam_goi_300g_202211231335446825_ca5864cd45",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_bao_ngu_xam_goi_300g_202211231335446825_ca5864cd45.jpg",
+				"createdAt": "2023-02-10T11:33:52.470Z",
+				"updatedAt": "2023-02-10T11:33:52.470Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"82": {
+				"id": 82,
+				"name": "nam-bao-ngu-xam-goi-300g-202211231335454987.jpg",
+				"alternativeText": "nam-bao-ngu-xam-goi-300g-202211231335454987.jpg",
+				"caption": "nam-bao-ngu-xam-goi-300g-202211231335454987.jpg",
+				"hash": "nam_bao_ngu_xam_goi_300g_202211231335454987_8e0e6f01ca",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/nam_bao_ngu_xam_goi_300g_202211231335454987_8e0e6f01ca.jpg",
+				"createdAt": "2023-02-10T11:33:52.479Z",
+				"updatedAt": "2023-02-10T11:33:52.479Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"83": {
+				"id": 83,
+				"name": "hanh-tim-tui-300g-202205181644481654.jpg",
+				"alternativeText": "hanh-tim-tui-300g-202205181644481654.jpg",
+				"caption": "hanh-tim-tui-300g-202205181644481654.jpg",
+				"hash": "hanh_tim_tui_300g_202205181644481654_b16bec6e2c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/hanh_tim_tui_300g_202205181644481654_b16bec6e2c.jpg",
+				"createdAt": "2023-02-10T11:36:52.709Z",
+				"updatedAt": "2023-02-10T11:36:52.709Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"84": {
+				"id": 84,
+				"name": "hanh-tim-tui-300g-202205181644478685.jpg",
+				"alternativeText": "hanh-tim-tui-300g-202205181644478685.jpg",
+				"caption": "hanh-tim-tui-300g-202205181644478685.jpg",
+				"hash": "hanh_tim_tui_300g_202205181644478685_f8de2abbfb",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/hanh_tim_tui_300g_202205181644478685_f8de2abbfb.jpg",
+				"createdAt": "2023-02-10T11:36:52.713Z",
+				"updatedAt": "2023-02-10T11:36:52.713Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"85": {
+				"id": 85,
+				"name": "gia-dau-xanh-goi-300g-202205181639188372.jpg",
+				"alternativeText": "gia-dau-xanh-goi-300g-202205181639188372.jpg",
+				"caption": "gia-dau-xanh-goi-300g-202205181639188372.jpg",
+				"hash": "gia_dau_xanh_goi_300g_202205181639188372_034f9d5224",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/gia_dau_xanh_goi_300g_202205181639188372_034f9d5224.jpg",
+				"createdAt": "2023-02-10T11:38:20.273Z",
+				"updatedAt": "2023-02-10T11:38:20.273Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"86": {
+				"id": 86,
+				"name": "gia-dau-xanh-goi-300g-202205181639178187.jpg",
+				"alternativeText": "gia-dau-xanh-goi-300g-202205181639178187.jpg",
+				"caption": "gia-dau-xanh-goi-300g-202205181639178187.jpg",
+				"hash": "gia_dau_xanh_goi_300g_202205181639178187_abf50af37b",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/gia_dau_xanh_goi_300g_202205181639178187_abf50af37b.jpg",
+				"createdAt": "2023-02-10T11:38:20.410Z",
+				"updatedAt": "2023-02-10T11:38:20.410Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"88": {
+				"id": 88,
+				"name": "dau-phong-pmt-goi-250g-201912121605336368.JPG",
+				"alternativeText": "dau-phong-pmt-goi-250g-201912121605336368.JPG",
+				"caption": "dau-phong-pmt-goi-250g-201912121605336368.JPG",
+				"hash": "dau_phong_pmt_goi_250g_201912121605336368_8acb03143e",
+				"ext": ".JPG",
+				"mime": "image/jpeg",
+				"url": "/uploads/dau_phong_pmt_goi_250g_201912121605336368_8acb03143e.JPG",
+				"createdAt": "2023-02-10T11:48:42.979Z",
+				"updatedAt": "2023-02-10T11:48:42.979Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"89": {
+				"id": 89,
+				"name": "dau-phong-pmt-goi-250g-201912121605333036.JPG",
+				"alternativeText": "dau-phong-pmt-goi-250g-201912121605333036.JPG",
+				"caption": "dau-phong-pmt-goi-250g-201912121605333036.JPG",
+				"hash": "dau_phong_pmt_goi_250g_201912121605333036_33d7e00796",
+				"ext": ".JPG",
+				"mime": "image/jpeg",
+				"url": "/uploads/dau_phong_pmt_goi_250g_201912121605333036_33d7e00796.JPG",
+				"createdAt": "2023-02-10T11:48:43.005Z",
+				"updatedAt": "2023-02-10T11:48:43.005Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"90": {
+				"id": 90,
+				"name": "hat-sen-viet-san-150g-201812041624436281.jpg",
+				"alternativeText": "hat-sen-viet-san-150g-201812041624436281.jpg",
+				"caption": "hat-sen-viet-san-150g-201812041624436281.jpg",
+				"hash": "hat_sen_viet_san_150g_201812041624436281_b8d01a82db",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/hat_sen_viet_san_150g_201812041624436281_b8d01a82db.jpg",
+				"createdAt": "2023-02-10T11:50:16.631Z",
+				"updatedAt": "2023-02-10T11:50:16.631Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"91": {
+				"id": 91,
+				"name": "hat-sen-viet-san-150g-201812041634117252.jpg",
+				"alternativeText": "hat-sen-viet-san-150g-201812041634117252.jpg",
+				"caption": "hat-sen-viet-san-150g-201812041634117252.jpg",
+				"hash": "hat_sen_viet_san_150g_201812041634117252_49496f3ab1",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/hat_sen_viet_san_150g_201812041634117252_49496f3ab1.jpg",
+				"createdAt": "2023-02-10T11:50:16.648Z",
+				"updatedAt": "2023-02-10T11:50:16.648Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"92": {
+				"id": 92,
+				"name": "dau-trang-viet-san-500g-201812041508329689.jpg",
+				"alternativeText": "dau-trang-viet-san-500g-201812041508329689.jpg",
+				"caption": "dau-trang-viet-san-500g-201812041508329689.jpg",
+				"hash": "dau_trang_viet_san_500g_201812041508329689_7862d033c5",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/dau_trang_viet_san_500g_201812041508329689_7862d033c5.jpg",
+				"createdAt": "2023-02-10T11:51:25.474Z",
+				"updatedAt": "2023-02-10T11:51:25.474Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"93": {
+				"id": 93,
+				"name": "dau-trang-viet-san-500g-201812041508342837.jpg",
+				"alternativeText": "dau-trang-viet-san-500g-201812041508342837.jpg",
+				"caption": "dau-trang-viet-san-500g-201812041508342837.jpg",
+				"hash": "dau_trang_viet_san_500g_201812041508342837_8c05809b5e",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/dau_trang_viet_san_500g_201812041508342837_8c05809b5e.jpg",
+				"createdAt": "2023-02-10T11:51:25.509Z",
+				"updatedAt": "2023-02-10T11:51:25.509Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"94": {
+				"id": 94,
+				"name": "dau-xanh-hat-viet-san-500g-201812111133162144.jpg",
+				"alternativeText": "dau-xanh-hat-viet-san-500g-201812111133162144.jpg",
+				"caption": "dau-xanh-hat-viet-san-500g-201812111133162144.jpg",
+				"hash": "dau_xanh_hat_viet_san_500g_201812111133162144_6450a12a40",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/dau_xanh_hat_viet_san_500g_201812111133162144_6450a12a40.jpg",
+				"createdAt": "2023-02-10T11:52:17.762Z",
+				"updatedAt": "2023-02-10T11:52:17.762Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"95": {
+				"id": 95,
+				"name": "dau-xanh-hat-viet-san-500g-201812111133105636.jpg",
+				"alternativeText": "dau-xanh-hat-viet-san-500g-201812111133105636.jpg",
+				"caption": "dau-xanh-hat-viet-san-500g-201812111133105636.jpg",
+				"hash": "dau_xanh_hat_viet_san_500g_201812111133105636_b164c10e5b",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/dau_xanh_hat_viet_san_500g_201812111133105636_b164c10e5b.jpg",
+				"createdAt": "2023-02-10T11:52:17.770Z",
+				"updatedAt": "2023-02-10T11:52:17.770Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"96": {
+				"id": 96,
+				"name": "cai-ngot-baby-goi-300g-202212021644322809.jpg",
+				"alternativeText": "cai-ngot-baby-goi-300g-202212021644322809.jpg",
+				"caption": "cai-ngot-baby-goi-300g-202212021644322809.jpg",
+				"hash": "cai_ngot_baby_goi_300g_202212021644322809_379280ab0d",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cai_ngot_baby_goi_300g_202212021644322809_379280ab0d.jpg",
+				"createdAt": "2023-02-10T11:54:13.881Z",
+				"updatedAt": "2023-02-10T11:54:13.881Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"97": {
+				"id": 97,
+				"name": "cai-ngot-baby-goi-300g-202212021644315764.jpg",
+				"alternativeText": "cai-ngot-baby-goi-300g-202212021644315764.jpg",
+				"caption": "cai-ngot-baby-goi-300g-202212021644315764.jpg",
+				"hash": "cai_ngot_baby_goi_300g_202212021644315764_01da33e8c7",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cai_ngot_baby_goi_300g_202212021644315764_01da33e8c7.jpg",
+				"createdAt": "2023-02-10T11:54:13.890Z",
+				"updatedAt": "2023-02-10T11:54:13.890Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"98": {
+				"id": 98,
+				"name": "cai-thia-thuy-canh-tui-300g-202205181538262090.jpg",
+				"alternativeText": "cai-thia-thuy-canh-tui-300g-202205181538262090.jpg",
+				"caption": "cai-thia-thuy-canh-tui-300g-202205181538262090.jpg",
+				"hash": "cai_thia_thuy_canh_tui_300g_202205181538262090_66ae8909ae",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cai_thia_thuy_canh_tui_300g_202205181538262090_66ae8909ae.jpg",
+				"createdAt": "2023-02-10T11:57:15.844Z",
+				"updatedAt": "2023-02-10T11:57:15.844Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"99": {
+				"id": 99,
+				"name": "cai-thia-thuy-canh-tui-300g-202205181537029210.jpg",
+				"alternativeText": "cai-thia-thuy-canh-tui-300g-202205181537029210.jpg",
+				"caption": "cai-thia-thuy-canh-tui-300g-202205181537029210.jpg",
+				"hash": "cai_thia_thuy_canh_tui_300g_202205181537029210_23f2c09c36",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cai_thia_thuy_canh_tui_300g_202205181537029210_23f2c09c36.jpg",
+				"createdAt": "2023-02-10T11:57:15.890Z",
+				"updatedAt": "2023-02-10T11:57:15.890Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"100": {
+				"id": 100,
+				"name": "280px-Ipomoea_aquatica_%282%29.JPG",
+				"alternativeText": "280px-Ipomoea_aquatica_%282%29.JPG",
+				"caption": "280px-Ipomoea_aquatica_%282%29.JPG",
+				"hash": "280px_Ipomoea_aquatica_282_29_eb2e6c6cab",
+				"ext": ".JPG",
+				"mime": "image/jpeg",
+				"url": "/uploads/280px_Ipomoea_aquatica_282_29_eb2e6c6cab.JPG",
+				"createdAt": "2023-02-10T12:03:07.331Z",
+				"updatedAt": "2023-02-10T12:03:07.331Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"101": {
+				"id": 101,
+				"name": "raumuong.jpg",
+				"alternativeText": "raumuong.jpg",
+				"caption": "raumuong.jpg",
+				"hash": "raumuong_eee72c0233",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/raumuong_eee72c0233.jpg",
+				"createdAt": "2023-02-10T12:03:27.487Z",
+				"updatedAt": "2023-02-10T12:03:27.487Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"102": {
+				"id": 102,
+				"name": "he-la-goi-100g-202205181648409161.jpg",
+				"alternativeText": "he-la-goi-100g-202205181648409161.jpg",
+				"caption": "he-la-goi-100g-202205181648409161.jpg",
+				"hash": "he_la_goi_100g_202205181648409161_efe439d26c",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/he_la_goi_100g_202205181648409161_efe439d26c.jpg",
+				"createdAt": "2023-02-10T12:12:07.940Z",
+				"updatedAt": "2023-02-10T12:12:07.940Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"103": {
+				"id": 103,
+				"name": "he-la-goi-100g-202205181647265658.jpg",
+				"alternativeText": "he-la-goi-100g-202205181647265658.jpg",
+				"caption": "he-la-goi-100g-202205181647265658.jpg",
+				"hash": "he_la_goi_100g_202205181647265658_affd16945b",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/he_la_goi_100g_202205181647265658_affd16945b.jpg",
+				"createdAt": "2023-02-10T12:12:07.952Z",
+				"updatedAt": "2023-02-10T12:12:07.952Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"104": {
+				"id": 104,
+				"name": "hanh-la-bich-100g-202205181643240790.jpg",
+				"alternativeText": "hanh-la-bich-100g-202205181643240790.jpg",
+				"caption": "hanh-la-bich-100g-202205181643240790.jpg",
+				"hash": "hanh_la_bich_100g_202205181643240790_1e0457072d",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/hanh_la_bich_100g_202205181643240790_1e0457072d.jpg",
+				"createdAt": "2023-02-10T12:14:37.009Z",
+				"updatedAt": "2023-02-10T12:14:37.009Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"105": {
+				"id": 105,
+				"name": "hanh-la-bich-100g-202205181641428400.jpg",
+				"alternativeText": "hanh-la-bich-100g-202205181641428400.jpg",
+				"caption": "hanh-la-bich-100g-202205181641428400.jpg",
+				"hash": "hanh_la_bich_100g_202205181641428400_7ba4c45027",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/hanh_la_bich_100g_202205181641428400_7ba4c45027.jpg",
+				"createdAt": "2023-02-10T12:14:37.039Z",
+				"updatedAt": "2023-02-10T12:14:37.039Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"106": {
+				"id": 106,
+				"name": "khoai-lang-mat-tui-1kg-3-10-cu-202209180802398976.jpg",
+				"alternativeText": "khoai-lang-mat-tui-1kg-3-10-cu-202209180802398976.jpg",
+				"caption": "khoai-lang-mat-tui-1kg-3-10-cu-202209180802398976.jpg",
+				"hash": "khoai_lang_mat_tui_1kg_3_10_cu_202209180802398976_e2f433a9d8",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/khoai_lang_mat_tui_1kg_3_10_cu_202209180802398976_e2f433a9d8.jpg",
+				"createdAt": "2023-02-10T12:18:59.440Z",
+				"updatedAt": "2023-02-10T12:18:59.440Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"107": {
+				"id": 107,
+				"name": "khoai-lang-mat-tui-1kg-3-10-cu-202209180802395910.jpg",
+				"alternativeText": "khoai-lang-mat-tui-1kg-3-10-cu-202209180802395910.jpg",
+				"caption": "khoai-lang-mat-tui-1kg-3-10-cu-202209180802395910.jpg",
+				"hash": "khoai_lang_mat_tui_1kg_3_10_cu_202209180802395910_4d7cad256e",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/khoai_lang_mat_tui_1kg_3_10_cu_202209180802395910_4d7cad256e.jpg",
+				"createdAt": "2023-02-10T12:18:59.486Z",
+				"updatedAt": "2023-02-10T12:18:59.486Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"108": {
+				"id": 108,
+				"name": "ca-rot-da-lat-tui-500g-2-5-cu-202205201603295625.jpg",
+				"alternativeText": "ca-rot-da-lat-tui-500g-2-5-cu-202205201603295625.jpg",
+				"caption": "ca-rot-da-lat-tui-500g-2-5-cu-202205201603295625.jpg",
+				"hash": "ca_rot_da_lat_tui_500g_2_5_cu_202205201603295625_b2ffd06232",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/ca_rot_da_lat_tui_500g_2_5_cu_202205201603295625_b2ffd06232.jpg",
+				"createdAt": "2023-02-10T12:21:47.148Z",
+				"updatedAt": "2023-02-10T12:21:47.148Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"109": {
+				"id": 109,
+				"name": "ca-rot-da-lat-tui-500g-2-5-cu-202205201603299392.jpg",
+				"alternativeText": "ca-rot-da-lat-tui-500g-2-5-cu-202205201603299392.jpg",
+				"caption": "ca-rot-da-lat-tui-500g-2-5-cu-202205201603299392.jpg",
+				"hash": "ca_rot_da_lat_tui_500g_2_5_cu_202205201603299392_0de5abb6fd",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/ca_rot_da_lat_tui_500g_2_5_cu_202205201603299392_0de5abb6fd.jpg",
+				"createdAt": "2023-02-10T12:21:47.222Z",
+				"updatedAt": "2023-02-10T12:21:47.222Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"110": {
+				"id": 110,
+				"name": "cu-cai-trang-la-gi-tac-dung-luu-y-khi-an-cach-chon-cu-cai-202201230433365818.jpg",
+				"alternativeText": "cu-cai-trang-la-gi-tac-dung-luu-y-khi-an-cach-chon-cu-cai-202201230433365818.jpg",
+				"caption": "cu-cai-trang-la-gi-tac-dung-luu-y-khi-an-cach-chon-cu-cai-202201230433365818.jpg",
+				"hash": "cu_cai_trang_la_gi_tac_dung_luu_y_khi_an_cach_chon_cu_cai_202201230433365818_8a49522fb4",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cu_cai_trang_la_gi_tac_dung_luu_y_khi_an_cach_chon_cu_cai_202201230433365818_8a49522fb4.jpg",
+				"createdAt": "2023-02-10T12:25:42.765Z",
+				"updatedAt": "2023-02-10T12:25:42.765Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"111": {
+				"id": 111,
+				"name": "cu-cai-trang-la-gi-tac-dung-luu-y-khi-an-cach-chon-cu-cai-202201230433509968.jpg",
+				"alternativeText": "cu-cai-trang-la-gi-tac-dung-luu-y-khi-an-cach-chon-cu-cai-202201230433509968.jpg",
+				"caption": "cu-cai-trang-la-gi-tac-dung-luu-y-khi-an-cach-chon-cu-cai-202201230433509968.jpg",
+				"hash": "cu_cai_trang_la_gi_tac_dung_luu_y_khi_an_cach_chon_cu_cai_202201230433509968_f4be6fd7e5",
+				"ext": ".jpg",
+				"mime": "image/jpeg",
+				"url": "/uploads/cu_cai_trang_la_gi_tac_dung_luu_y_khi_an_cach_chon_cu_cai_202201230433509968_f4be6fd7e5.jpg",
+				"createdAt": "2023-02-10T12:25:42.770Z",
+				"updatedAt": "2023-02-10T12:25:42.770Z",
+				"createdBy": null,
+				"updatedBy": null
+			}
+		},
+		"plugin::users-permissions.permission": {},
+		"plugin::upload.folder": {},
+		"api::store-address.store-address": {
+			"1": {
+				"id": 1,
+				"name": "HUS's Fresh Vegetables",
+				"address": "67 Phùng Khoang, Trung Văn, Hà Đông, Hà Nội",
+				"phone": "0836544091",
+				"createdAt": "2023-02-10T09:07:05.835Z",
+				"updatedAt": "2023-02-10T09:11:16.321Z",
+				"createdBy": null,
+				"updatedBy": null
+			}
+		}
+	}
+}
