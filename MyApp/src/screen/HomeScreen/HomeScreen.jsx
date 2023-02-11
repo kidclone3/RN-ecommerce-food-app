@@ -9,6 +9,9 @@ import {useNavigation} from '@react-navigation/native'
 import styles from './styles'
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+  const [search, setSearch] = React.useState('');
+
   function searchBar() {
     return (
       <SearchBar 
@@ -16,10 +19,12 @@ const HomeScreen = () => {
         lightTheme
         platform="ios"
         cancelIcon={{ type: 'font-awesome', name: 'chevron-left' }}
-        showLoading
+        showLoading = {search.length > 0} 
         placeholder='What are you craving?'
         containerStyle={styles.searchBar}
         inputContainerStyle={styles.searchBarInput}
+        onChangeText = {() => navigation.push("SearchScreen")}
+        
       />
     )
   }
@@ -72,7 +77,6 @@ const HomeScreen = () => {
       },
     ]
 
-    const navigation = useNavigation();
 
     const renderItem = ({ item }) => {
       return (
@@ -121,7 +125,7 @@ const HomeScreen = () => {
         keyExtractor={item => `${item.id}`}
         renderItem={renderItem}
         contentContainerStyle={{
-          paddingVertical: SIZES.padding * 2,
+          // paddingVertical: SIZES.padding * 2,
           
         }}
         containerStyle = {styles.flatList}
@@ -143,26 +147,6 @@ const HomeScreen = () => {
     }
     return (
       <SafeAreaView>
-        <View style={styles.header}>
-          <Text style={{...FONTS.h1 }}>
-            Discount Guaranteed! 
-          </Text>
-        </View>
-
-        <FlatList
-          bounces={true}
-          showsVerticalScrollIndicator={true}
-          horizontal
-          data={customData}
-          keyExtractor={item => `${item.id}`}
-          renderItem={renderItem}
-          contentContainerStyle={{
-            paddingVertical: SIZES.padding * 2,
-            padding: SIZES.padding * 2,
-            gap: SIZES.padding * 2,
-          }}
-          containerStyle={styles.flatList}
-        />
         <View style={styles.header}>
           <Text style={{...FONTS.h1 }}>
             Recommend for you! 

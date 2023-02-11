@@ -7,8 +7,6 @@ import { SIZES, COLORS, images } from '../../../constants'
 const MyCartScreen = () => {
   const navigation = useNavigation()
   const [isEmpty, setIsEmpty] = React.useState(false)
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
   const data = [
     {
       id: 1,
@@ -112,14 +110,14 @@ const MyCartScreen = () => {
         )}
         containerStyle= {{
           width:'100%',
-          height: windowHeight/5,
+          height: SIZES.width/5,
           backgroundColor: COLORS.white,
           borderColor: COLORS.lightGray,
           borderWidth: 2,
           borderRadius: SIZES.radius,
           // marginBottom: SIZES.padding*1.5,
         }}
-        leftWidth={windowWidth/4}
+        leftWidth={SIZES.width/4}
       >
         <ListItem.Content 
           style={{

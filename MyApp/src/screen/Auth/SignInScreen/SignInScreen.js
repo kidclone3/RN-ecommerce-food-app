@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet,  ScrollView } from 'react-native'
 import React from 'react'
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
 import styles from '../../../styles/screen';
@@ -21,7 +21,6 @@ const SignInScreen = () => {
         navigation.push('HomeScreen')
     }
 
-    const { height } = useWindowDimensions();
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
