@@ -1,5 +1,5 @@
 import { View, Text, FlatList, ScrollView} from 'react-native'
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import ProductItem from '../../components/ProductItem'
 import {Button, Icon, Image, SearchBar} from '@rneui/themed'
 import HomeHeader from '../../components/Header/HomeHeader'
@@ -7,6 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
 import {useNavigation} from '@react-navigation/native'
 import styles from './styles'
+import CategoriesButton from "../../components/CategoriesButton";
+import {getCategories} from "../../services/categories";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -32,81 +34,22 @@ const HomeScreen = () => {
     const customData = require('../../../demo-data/laptop.json').products;
 
   function renderMainCatagories() {
+      const [categories, setCategories] = useState([]);
 
-    const catagoriesData = [
-      {
-        id: 1,
-        name: 'Hamburger',
-        icon: icons.hamburger,
-      },
-      {
-        id: 2,
-        name: 'Pizza',
-        icon: icons.pizza,
-      },
-      {
-        id: 3,
-        name: 'Noodles',
-        icon: icons.noodle,
-      },
-      {
-        id: 4,
-        name: 'Meat',
-        icon: icons.meat,
-      },
-      {
-        id: 5,
-        name: 'Vegetable',
-        icon: icons.salad,
-      },
-      {
-        id: 6,
-        name: 'Dessert',
-        icon: icons.dessert,
-      },
-      {
-        id: 7,
-        name: 'Drink',
-        icon: icons.drink,
-      },
-      {
-        id: 8,
-        name: 'More',
-        icon: icons.mooncake,
-        screen: "CategoriesScreen"
-      },
-    ]
-
-
-    const renderItem = ({ item }) => {
-      return (
-        <Button
-          color={COLORS.white}
-          containerStyle={styles.buttonContainer}
-          onPress={() => item.screen ? navigation.navigate(item.screen) : console.warn(item.name)}
-          icon={<Image 
-            source={item.icon} 
-            resizeMode="contain" 
-            style={{width: 30, height: 30}} />
+      let loaded = true;
+      useEffect(() => {
+          getCategories().then((res) => {
+              if (loaded) {
+                  setCategories(res)
+              }
+              console.warn(JSON.stringify(categories))
+          }).catch((err) => {
+              console.log(err)
+          })
+          return () => {
+              loaded = false;
           }
-          iconPosition="top"
-          title={
-            <Text numberOfLines={1}
-              style={{
-                marginTop: SIZES.padding,
-                color: COLORS.black,
-                alignSelf: 'center',
-                ...FONTS.body4,
-              }}
-            >
-              {item.name}
-            </Text>
-          }
-        >
-            
-          </Button>
-      )
-    }
+      }, [])
     function catagoriesHeader() {
       return (
         <View style={styles.header}>
@@ -121,15 +64,20 @@ const HomeScreen = () => {
         ListHeaderComponent={catagoriesHeader}
         scrollEnabled={false}
         showsHorizontalScrollIndicator={false}
-        data={catagoriesData}
+        data={categories}
         keyExtractor={item => `${item.id}`}
-        renderItem={renderItem}
-        contentContainerStyle={{
-          // paddingVertical: SIZES.padding * 2,
-          
-        }}
+        renderItem={({item}) =>
+            <CategoriesButton name={item.attributes.name}
+                              icon={item.attributes.icon.data.attributes.url}
+                              action={() => {
+                                console.warn(item.id)
+                              }}
+                              itemPerRows={4}
+                              direction={"column"}
+            />
+        }
         containerStyle = {styles.flatList}
-        numColumns={Math.ceil(catagoriesData.length / 2)}
+        numColumns={4}
       />
     )
   }
