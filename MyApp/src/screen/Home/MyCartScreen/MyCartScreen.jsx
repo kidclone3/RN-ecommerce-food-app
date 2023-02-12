@@ -4,8 +4,7 @@ import { Icon, Button, Image, ListItem } from '@rneui/themed'
 import { useNavigation } from '@react-navigation/native'
 import { SIZES, COLORS, images } from '../../../constants'
 
-const MyCartScreen = () => {
-  const navigation = useNavigation()
+const MyCartScreen = ({navigation}) => {
   const [isEmpty, setIsEmpty] = React.useState(false)
   const data = [
     {
@@ -110,7 +109,6 @@ const MyCartScreen = () => {
         )}
         containerStyle= {{
           width:'100%',
-          height: SIZES.width/5,
           backgroundColor: COLORS.white,
           borderColor: COLORS.lightGray,
           borderWidth: 2,
@@ -243,6 +241,7 @@ const styles = StyleSheet.create({
     height: '90%',
     width: '100%',
     backgroundColor: COLORS.white,
+    gap: 20,
     // position: 'relative',
     // flexDirection: 'column',
   },
