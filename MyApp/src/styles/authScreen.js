@@ -16,10 +16,12 @@ const styles = StyleSheet.create({
         maxHeight: 200,
     },
     title: {
-        paddingVertical: Math.max(Math.round(SIZES.width * 0.05),SIZES.padding * 3),
+        paddingVertical: Math.min(Math.round(SIZES.width * 0.05),SIZES.padding * 3),
         paddingHorizontal: SIZES.padding3,
+        width: SIZES.width * 0.85,
         fontSize: SIZES.h1,
         fontWeight: 'bold',
+        textAlign: 'center',
         color: COLORS.black,
     }
 });

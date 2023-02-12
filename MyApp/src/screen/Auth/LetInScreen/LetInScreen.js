@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
         height: 58,
     },
     title: {
-        color: COLORS.darkgray,
+        color: COLORS.black,
         padding: 30,
         fontSize: 32,
         paddingHorizontal: 20,

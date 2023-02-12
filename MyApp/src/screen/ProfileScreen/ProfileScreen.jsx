@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import styles from './styles'
 import { Avatar, Divider, Icon, ListItem } from '@rneui/themed'
 import { COLORS, SIZES } from '../../constants'
+import {logout} from "../../services/account";
+import navigation from "../../navigation";
 
 const ProfileScreen = () => {
   const avatar = "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg"
@@ -115,7 +117,7 @@ const ProfileScreen = () => {
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
-        <ListItem>
+        <ListItem button onPress={()=>{logout().then(r => navigation.push('LetInScreen')).catch(e=>{console.warn(e)}); }}>
           <Icon 
             type='ionicon'
             name='log-out-outline'

@@ -8,16 +8,38 @@ import PhoneNumberInput from '../../../components/PhoneNumberInput';
 import CustomDivider from '../../../components/CustomDivider';
 import { Button, CheckBox, Icon } from '@rneui/themed';
 import { SIZES } from '../../../constants';
+import {validateEmail, validatePassword} from "../../../constants/validate";
+import {login} from "../../../services/account";
 
 const SignInScreen = ({ navigation }) => {
 
     const [email, setEmail] = React.useState('');
-    const [remember, setRemember] = React.useState(false);
+    const [emailError, setEmailError] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [passwordError, setPasswordError] = React.useState('');
+    // const [remember, setRemember] = React.useState(false);
     // const navigation = useNavigation();
 
 
-    const onSignInPressed = () => {
+    const onSignInPressed = async () => {
         console.warn('Sign up pressed');
+        let isValid = true;
+        if (!validateEmail(email)) {
+            setEmailError('Email is invalid');
+            isValid = false;
+        } else setEmailError('');
+        if (!validatePassword(password)) {
+            setPasswordError('Password must be at least 8 characters and contain at least one number,' +'' +
+                ' one lowercase, one uppercase letter, one special character');
+            isValid = false;
+        } else setPasswordError('');
+        if (!isValid) {
+            return false;
+        }
+        switch (await login(email, password)) {
+            case 2: {setPasswordError('Invalid email or password'); return false;}
+            case 3: {setEmailError('Your account email is not confirmed'); return false;}
+        }
         navigation.push('HomeTab')
     }
 
@@ -35,6 +57,8 @@ const SignInScreen = ({ navigation }) => {
             <CustomInput
                 label='email'
                 placeholder='Email'
+                value={email}
+                setValue={value => setEmail(value)}
                 leftIcon={
                     <Icon
                         type='feather'
@@ -42,10 +66,14 @@ const SignInScreen = ({ navigation }) => {
                         size={SIZES.h3}
                     />
                 }
+                error={emailError}
             />
             <CustomInput
                 label='password'
                 placeholder='Your password'
+                value={password}
+                setValue={value => setPassword(value)}
+                secureTextEntry={true}
                 leftIcon={
                     <Icon
                         type='feather'
@@ -53,19 +81,20 @@ const SignInScreen = ({ navigation }) => {
                         size={SIZES.h3}
                     />
                 }
+                error={passwordError}
             />
 
-            <CheckBox
-                center
-                title='Remember me'
-                iconType='material-community'
-                checkedIcon='checkbox-marked'
-                uncheckedIcon='checkbox-blank-outline'
-                checkedColor='green'
-                checked={remember}
-                onPress={() => setRemember(!remember)}
-                wrapperStyle={{ marginVertical: 10 }}
-            />
+            {/*<CheckBox*/}
+            {/*    center*/}
+            {/*    title='Remember me'*/}
+            {/*    iconType='material-community'*/}
+            {/*    checkedIcon='checkbox-marked'*/}
+            {/*    uncheckedIcon='checkbox-blank-outline'*/}
+            {/*    checkedColor='green'*/}
+            {/*    checked={remember}*/}
+            {/*    onPress={() => setRemember(!remember)}*/}
+            {/*    wrapperStyle={{ margin: 0,padding:0 }}*/}
+            {/*/>*/}
 
             <CustomButton
                 text='Sign In'
