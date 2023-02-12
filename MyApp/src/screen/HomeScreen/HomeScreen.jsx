@@ -8,8 +8,7 @@ import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
 import {useNavigation} from '@react-navigation/native'
 import styles from './styles'
 
-const HomeScreen = () => {
-  const navigation = useNavigation();
+const HomeScreen = ({navigation}) => {
   const [search, setSearch] = React.useState('');
 
   function searchBar() {
@@ -83,7 +82,6 @@ const HomeScreen = () => {
         <Button
           color={COLORS.white}
           containerStyle={styles.buttonContainer}
-          onPress={() => item.screen ? navigation.navigate(item.screen) : console.warn(item.name)}
           icon={<Image 
             source={item.icon} 
             resizeMode="contain" 
@@ -138,10 +136,6 @@ const HomeScreen = () => {
       return (
         <ProductItem
           item={item}
-          // onPress={() => navigation.navigate("ProductDetailScreen", {
-          //   item: item
-          // })}
-          onPress = {() => {console.log("pressed")}}
         />
       )
     }
@@ -161,6 +155,7 @@ const HomeScreen = () => {
             paddingVertical: SIZES.padding * 2,
             padding: SIZES.padding * 2,
           }}
+
         />
         </SafeAreaView>
     )

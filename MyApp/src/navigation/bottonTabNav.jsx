@@ -1,10 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet} from 'react-native'
 import React from 'react'
 import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import HomeScreen from '../screen/HomeScreen';
 import OrderScreen from '../screen/OrderScreen';
-import MessageScreen from '../screen/MessageScreen';
-import EwalletScreen from '../screen/EwalletScreen';
 import ProfileScreen from '../screen/ProfileScreen';
 import HomeNavigator from './homeNav';
 import { Icon } from '@rneui/themed';
@@ -12,62 +9,60 @@ import { Icon } from '@rneui/themed';
 const Tab = createBottomTabNavigator();
 
 
-const BottomTabs
-    = () => {
-        return (
-            <Tab.Navigator
-                initialRouteName='Profile'
-                screenOptions={{
-                    tabBarStyle: styles.tabBar,
-                    headerShown: false,
-                    tabBarShowLabel: false
+function BottomTabs () {
+    return (
+        <Tab.Navigator
+            initialRouteName='HomeNavigator'
+            screenOptions={{
+                tabBarStyle: styles.tabBar,
+                headerShown: false,
+                tabBarShowLabel: false
+            }}
+        >
+            <Tab.Screen
+                name="HomeNavigator"
+                component={HomeNavigator}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Icon
+                            type='ionicon'
+                            name={focused ? 'home-sharp' : 'home-outline'}
+                            size={30}
+                            color={focused ? 'green' : 'black'}
+                        />
+                    ),
                 }}
-                
-            >
-                <Tab.Screen
-                    name="HomeNavigator"
-                    component={HomeNavigator}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <Icon
-                                type='ionicon'
-                                name={focused ? 'home-sharp' : 'home-outline'}
-                                size={30}
-                                color={focused ? 'green' : 'black'}
-                            />
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="Order"
-                    component={OrderScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <Icon
-                                type='ionicon'
-                                name={focused ? 'reader-sharp' : 'reader-outline'}
-                                size={30}
-                                color={focused ? 'green' : 'black'}
-                            />
-                        )
-                    }}
-                />
-                <Tab.Screen name="Profile" component={ProfileScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <Icon
-                                type='ionicon'
-                                name={focused ? 'person-sharp' : 'person-outline'}
-                                size={30}
-                                color={focused ? 'green' : 'black'}
-                            />
-                        )
-                    }}
-                />
+            />
+            <Tab.Screen
+                name="Order"
+                component={OrderScreen}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Icon
+                            type='ionicon'
+                            name={focused ? 'reader-sharp' : 'reader-outline'}
+                            size={30}
+                            color={focused ? 'green' : 'black'}
+                        />
+                    )
+                }}
+            />
+            <Tab.Screen name="Profile" component={ProfileScreen}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        <Icon
+                            type='ionicon'
+                            name={focused ? 'person-sharp' : 'person-outline'}
+                            size={30}
+                            color={focused ? 'green' : 'black'}
+                        />
+                    )
+                }}
+            />
 
-            </Tab.Navigator >
-        )
-    }
+        </Tab.Navigator >
+    )
+}
 
 export default BottomTabs
 

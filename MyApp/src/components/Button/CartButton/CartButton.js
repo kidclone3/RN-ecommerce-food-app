@@ -7,7 +7,6 @@ import { useNavigation } from '@react-navigation/native';
 const CartButton = () => {
     const navigation = useNavigation();
     const onCartButtonPressed = () => {
-        console.warn('Notification button pressed');
         navigation.push('MyCart');
     }
     return (
