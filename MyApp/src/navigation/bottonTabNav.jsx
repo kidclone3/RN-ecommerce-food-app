@@ -52,32 +52,6 @@ const BottomTabs
                         )
                     }}
                 />
-                <Tab.Screen
-                    name="Message"
-                    component={MessageScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <Icon
-                                type='ionicon'
-                                name={focused ? 'chatbubble-ellipses-sharp' : 'chatbubble-ellipses-outline'}
-                                size={30}
-                                color={focused ? 'green' : 'black'}
-                            />
-                        )
-                    }}
-                />
-                <Tab.Screen name="Ewallet" component={EwalletScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <Icon
-                                type='ionicon'
-                                name={focused ? 'wallet-sharp' : 'wallet-outline'}
-                                size={30}
-                                color={focused ? 'green' : 'black'}
-                            />
-                        )
-                    }}
-                />
                 <Tab.Screen name="Profile" component={ProfileScreen}
                     options={{
                         tabBarIcon: ({ focused }) => (
