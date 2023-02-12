@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
-import { SIZES } from "../constants";
+import {COLORS, SIZES} from "../constants";
 const styles = StyleSheet.create({
     root: {
         alignItems: 'center',
         padding: SIZES.padding * 3,
-        marginTop: SIZES.padding * 2,
+        paddingTop: SIZES.padding * 5,
         backgroundColor: 'white',
         height: '100%',
         width: '100%',
@@ -16,9 +16,11 @@ const styles = StyleSheet.create({
         maxHeight: 200,
     },
     title: {
-        padding: SIZES.padding * 3,
+        paddingVertical: SIZES.padding * 3,
+        paddingHorizontal: SIZES.padding3,
         fontSize: SIZES.h1,
         fontWeight: 'bold',
+        color: COLORS.black,
     }
 });
 export default styles;

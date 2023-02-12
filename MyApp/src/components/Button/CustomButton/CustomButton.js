@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import { SocialIcon } from '@rneui/themed'
 
-const CustomButton = ({ onPress, text, icon, bgColor, fgColor, style, type = "PRIMARY" }) => {
+const CustomButton = ({ onPress, text, icon, bgColor, fgColor, style, type = "PRIMARY" ,fontWeight}) => {
     return (
         <Pressable
             onPress={onPress}
@@ -29,7 +29,8 @@ const CustomButton = ({ onPress, text, icon, bgColor, fgColor, style, type = "PR
                     styles.text,
                     styles[`text_${type}`],
                     bgColor ? { backgroundColor: bgColor } : {},
-                    fgColor ? { color: fgColor } : {}
+                    fgColor ? { color: fgColor } : {},
+                    fontWeight ? {fontWeight: fontWeight} : {}
                 ]}>
                 {text}
             </Text>

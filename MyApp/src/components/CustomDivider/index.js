@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
-import { COLORS } from '../../constants'
+import {COLORS, SIZES} from '../../constants'
 
 const CustomDivider = ({ text, style, type = 'DEFAULT' }) => {
     return (
@@ -36,8 +36,9 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: COLORS.lightGray4
     },
-    text_BOX: {
+    text_DEFAULT: {
         color: COLORS.darkgray,
+        fontSize: SIZES.body4,
     }
 
 })

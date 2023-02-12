@@ -5,6 +5,7 @@ import CustomButton from '../../../components/Button/CustomButton/CustomButton';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
 import { CheckBox, Divider, useTheme, Button } from '@rneui/themed';
 import CustomDivider from '../../../components/CustomDivider';
+import {COLORS} from "../../../constants";
 
 const LetInScreen = ({ navigation }) => {
 
@@ -88,12 +89,14 @@ const styles = StyleSheet.create({
         padding: 20,
         alignItems: 'center',
         backgroundColor: 'white',
+        height: '100%',
     },
     logo: {
         width: 66,
         height: 58,
     },
     title: {
+        color: COLORS.darkgray,
         padding: 30,
         fontSize: 32,
         paddingHorizontal: 20,

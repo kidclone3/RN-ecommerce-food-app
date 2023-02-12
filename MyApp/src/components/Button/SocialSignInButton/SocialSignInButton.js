@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import CustomButton from '../CustomButton/CustomButton'
 import { SocialIcon } from '@rneui/themed'
+import {COLORS, SIZES} from "../../../constants";
 
 const SocialSignInButton = ({ horizontal }) => {
 
@@ -20,6 +21,8 @@ const SocialSignInButton = ({ horizontal }) => {
                         onPress={onSignInFacebook}
                         type='TERTIARY'
                         icon='facebook'
+                        fgColor={COLORS.darkgray}
+                        fontWeight={'600'}
                     >
                         {/* <SocialIcon
                     type='facebook'
@@ -31,7 +34,8 @@ const SocialSignInButton = ({ horizontal }) => {
                         onPress={onSignInGoogle}
                         type='TERTIARY'
                         icon='google'
-
+                        fgColor={COLORS.darkgray}
+                        fontWeight={'600'}
                     />
 
                 </>
