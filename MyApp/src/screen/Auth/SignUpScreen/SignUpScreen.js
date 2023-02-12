@@ -1,33 +1,62 @@
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
+import {View, Text, Image, StyleSheet, ScrollView, SafeAreaView} from 'react-native'
 import React from 'react'
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton/CustomButton';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
 import CustomDivider from '../../../components/CustomDivider';
-import { SocialIcon, Icon, CheckBox, Button, Header } from '@rneui/themed';
+import {SocialIcon, Icon, CheckBox, Button, Header} from '@rneui/themed';
 import PhoneNumberInput from '../../../components/PhoneNumberInput';
 import styles from '../../../styles/authScreen';
+import {SIZES} from "../../../constants";
+import {validateEmail, validatePassword} from "../../../constants/validate";
+import {login, register} from "../../../services/account";
 
-const SignUpScreen = ({ navigation }) => {
+const SignUpScreen = ({navigation}) => {
 
-    const [phoneNumber, setPhoneNumber] = React.useState('');
     const [email, setEmail] = React.useState('');
+    const [emailError, setEmailError] = React.useState('');
     const [username, setUsername] = React.useState('');
-    const [remember, setRemember] = React.useState(false);
+    const [usernameError, setUsernameError] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [passwordError, setPasswordError] = React.useState('');
 
-    const onRegisterPressed = () => {
+    const onRegisterPressed = async () => {
         console.warn('Sign up pressed');
-        navigation.push('SignIn');
+        let isValid = true;
+        if (!validateEmail(email)) {
+            setEmailError('Email is invalid');
+            isValid = false;
+        } else setEmailError('');
+        if (!validatePassword(password)) {
+            setPasswordError('Password must be at least 8 characters and contain at least one number,'+
+                ' one lowercase, one uppercase letter, one special character');
+            isValid = false;
+        } else setPasswordError('')
+        if (!username) {
+            setUsernameError('Username is required');
+            isValid = false;
+        } else setUsernameError('');
+        if (!isValid) {
+            return false;
+        }
+        switch (await register(username, password, email)) {
+            case 1: return false;
+            case 2: {
+                setEmailError('Email is already in use');
+                return false;
+            }
+        }
+        navigation.push('HomeTab');
     }
 
 
     return (
-        <View style={styles.root}>
+        <View style={{...styles.root}}>
 
 
             <Image
                 style={styles.logo}
-                source={{ uri: 'https://i.imgur.com/TQAOVkU.jpeg' }}
+                source={{uri: 'https://i.imgur.com/TQAOVkU.jpeg'}}
             />
 
             <Text style={styles.title}>
@@ -43,6 +72,8 @@ const SignUpScreen = ({ navigation }) => {
             <CustomInput
                 label='email'
                 placeholder='Email'
+                value={email}
+                setValue={value => setEmail(value)}
                 leftIcon={
                     <Icon
                         type='material-community'
@@ -50,10 +81,13 @@ const SignUpScreen = ({ navigation }) => {
                         size={20}
                     />
                 }
+                error={emailError}
             />
             <CustomInput
                 label='username'
                 placeholder='Full Name'
+                value={username}
+                setValue={value => setUsername(value)}
                 leftIcon={
                     <Icon
                         type='material-community'
@@ -61,19 +95,36 @@ const SignUpScreen = ({ navigation }) => {
                         size={20}
                     />
                 }
+                error={usernameError}
             />
 
-            <CheckBox
-                center
-                title='Remember me'
-                iconType='material-community'
-                checkedIcon='checkbox-marked'
-                uncheckedIcon='checkbox-blank-outline'
-                checkedColor='green'
-                checked={remember}
-                onPress={() => setRemember(!remember)}
-                wrapperStyle={{ marginVertical: 10 }}
+            <CustomInput
+                label='password'
+                secureTextEntry={true}
+                value={password}
+                setValue={value => setPassword(value)}
+                placeholder='Your password'
+                leftIcon={
+                    <Icon
+                        type='feather'
+                        name="key"
+                        size={SIZES.h3}
+                    />
+                }
+                error={passwordError}
             />
+
+            {/*<CheckBox*/}
+            {/*    center*/}
+            {/*    title='Remember me'*/}
+            {/*    iconType='material-community'*/}
+            {/*    checkedIcon='checkbox-marked'*/}
+            {/*    uncheckedIcon='checkbox-blank-outline'*/}
+            {/*    checkedColor='green'*/}
+            {/*    checked={remember}*/}
+            {/*    onPress={() => setRemember(!remember)}*/}
+            {/*    wrapperStyle={{ marginVertical: 10 }}*/}
+            {/*/>*/}
 
             <CustomButton
                 text='Sign Up'
@@ -82,7 +133,7 @@ const SignUpScreen = ({ navigation }) => {
             <CustomDivider
                 text="or continue with"
             />
-            <View style={{ flexDirection: 'row' }}>
+            <View style={{flexDirection: 'row'}}>
                 <SocialIcon
                     //Social Icon using @rneui/themed
                     button
@@ -116,7 +167,7 @@ const SignUpScreen = ({ navigation }) => {
                 }}
                 title="Already have an account? Sign in"
                 type="clear"
-                titleStyle={{ color: 'grey', fontSize: 12, }}
+                titleStyle={{color: 'grey', fontSize: 12,}}
                 onPress={() => navigation.push("SignIn")}
             />
         </View>

@@ -2,16 +2,19 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 import { Input } from '@rneui/themed'
 import React from 'react'
 
-const CustomInput = ({leftIcon, value, setValue, placeholder, secureTextEntry=false}) => {
+const CustomInput = ({leftIcon, value, setValue, placeholder, secureTextEntry=false,error}) => {
   return (
     <>
         <Input 
             placeholder={placeholder}
             value={value}
+            onChangeText={setValue}
             inputContainerStyle={style.container}
             secureTextEntry={secureTextEntry}
             leftIcon = {leftIcon}
             leftIconContainerStyle = {style.leftIconContainerStyle}
+            errorMessage={error}
+            errorStyle={{color: 'red', fontSize: 12, fontWeight: 'bold'}}
         />
     </>
   )

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 8,
     },
     container_DEFAULT: {
-        padding: 50,
+        padding: Math.min(SIZES.width * 0.07,SIZES.padding*3)
     },
     container_BOX: {
         padding: 20,

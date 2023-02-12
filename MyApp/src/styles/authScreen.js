@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         maxHeight: 200,
     },
     title: {
-        paddingVertical: SIZES.padding * 3,
+        paddingVertical: Math.max(Math.round(SIZES.width * 0.05),SIZES.padding * 3),
         paddingHorizontal: SIZES.padding3,
         fontSize: SIZES.h1,
         fontWeight: 'bold',
