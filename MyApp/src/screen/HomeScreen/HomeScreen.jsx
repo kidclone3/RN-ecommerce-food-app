@@ -10,8 +10,7 @@ import styles from './styles'
 import CategoriesButton from "../../components/CategoriesButton";
 import {getCategories} from "../../services/categories";
 
-const HomeScreen = () => {
-  const navigation = useNavigation();
+const HomeScreen = ({navigation}) => {
   const [search, setSearch] = React.useState('');
 
   function searchBar() {
@@ -86,10 +85,6 @@ const HomeScreen = () => {
       return (
         <ProductItem
           item={item}
-          // onPress={() => navigation.navigate("ProductDetailScreen", {
-          //   item: item
-          // })}
-          onPress = {() => {console.log("pressed")}}
         />
       )
     }
@@ -109,6 +104,7 @@ const HomeScreen = () => {
             paddingVertical: SIZES.padding * 2,
             padding: SIZES.padding * 2,
           }}
+
         />
         </SafeAreaView>
     )

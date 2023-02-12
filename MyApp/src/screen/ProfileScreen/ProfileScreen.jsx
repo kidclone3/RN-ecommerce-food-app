@@ -59,13 +59,16 @@ const ProfileScreen = () => {
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
-        <ListItem>
+        <ListItem
+          onPress={() => {console.warn('pressed')}}
+        >
           <Icon 
             type='ionicon'
             name='person-outline'
             size={SIZES.body2}
           />
-          <ListItem.Content>
+          <ListItem.Content
+          >
             <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold'}}>
               Profile
             </ListItem.Title>
