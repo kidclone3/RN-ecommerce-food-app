@@ -3,17 +3,15 @@ import React from 'react'
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton/CustomButton';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
-import { useNavigation } from '@react-navigation/native';
 import { CheckBox, Divider, useTheme, Button } from '@rneui/themed';
 import CustomDivider from '../../../components/CustomDivider';
 
-const LetInScreen = () => {
+const LetInScreen = ({ navigation }) => {
 
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [rememberMe, setRememberMe] = React.useState(false);
     const { theme } = useTheme();
-    const navigation = useNavigation();
 
     const onSignInPressed = () => {
         console.warn('Sign in pressed');
@@ -23,24 +21,23 @@ const LetInScreen = () => {
     }
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.root}>
-                <Image
-                    style={styles.logo}
-                    source={{
-                        uri: 'https://i.imgur.com/TQAOVkU.jpeg',
-                    }}
-                />
-                <Text style={styles.title}>
-                    Let's you in
-                </Text>
-                <SocialSignInButton />
+        <View style={styles.root}>
+            <Image
+                style={styles.logo}
+                source={{
+                    uri: 'https://i.imgur.com/TQAOVkU.jpeg',
+                }}
+            />
+            <Text style={styles.title}>
+                Let's you in
+            </Text>
+            <SocialSignInButton />
 
-                <CustomDivider
-                    text='or'
-                />
+            <CustomDivider
+                text='or'
+            />
 
-                {/* <CustomInput 
+            {/* <CustomInput 
                 placeholder='Username'
                 value={username}
                 setValue={setUsername}
@@ -53,7 +50,7 @@ const LetInScreen = () => {
                 secureTextEntry={true}
             /> */}
 
-                {/* <CheckBox
+            {/* <CheckBox
                 center
                 title='Remember me'
                 iconType="material-community"
@@ -65,24 +62,23 @@ const LetInScreen = () => {
                 onPress={() => setRememberMe(!rememberMe)}
             /> */}
 
-                <CustomButton
-                    text='Sign in with Email'
-                    onPress={() => navigation.push('SignIn')}
-                />
-                <Button
-                    containerStyle={{
-                        width: "80%",
-                        marginHorizontal: 50,
-                        marginVertical: 10,
-                    }}
-                    title="Don't have an account? Sign up"
-                    type="clear"
-                    titleStyle={{ color: 'grey', fontSize: 12, }}
-                    onPress={() => navigation.push("SignUp")}
-                />
+            <CustomButton
+                text='Sign in with Email'
+                onPress={() => navigation.push('SignIn')}
+            />
+            <Button
+                containerStyle={{
+                    width: "80%",
+                    marginHorizontal: 50,
+                    marginVertical: 10,
+                }}
+                title="Don't have an account? Sign up"
+                type="clear"
+                titleStyle={{ color: 'grey', fontSize: 12, }}
+                onPress={() => navigation.push("SignUp")}
+            />
 
-            </View>
-        </ScrollView>
+        </View>
     )
 }
 

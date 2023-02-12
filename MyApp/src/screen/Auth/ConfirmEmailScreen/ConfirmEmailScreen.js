@@ -1,16 +1,15 @@
-import { View, Text, Image, StyleSheet,  ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
-import styles from '../../../styles/screen';
+import styles from '../../../styles/authScreen';
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton';
 import PhoneNumberInput from '../../../components/PhoneNumberInput';
 import CustomDivider from '../../../components/CustomDivider';
 import { Button, CheckBox, Icon } from '@rneui/themed';
 
-import { useNavigation } from '@react-navigation/native';
 
-const ConfirmEmailScreen = () => {
+const ConfirmEmailScreen = ({ navigation }) => {
 
     const [email, setEmail] = React.useState('');
     const [remember, setRemember] = React.useState(false);
