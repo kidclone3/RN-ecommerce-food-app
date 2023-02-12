@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "update": "npx react-native-asset && cd ios && bundler exec pod install"
+    "update": "npx react-native-asset && cd ios && bundler exec pod install",
+    "clean": "cd android && ./gradlew clean && cd ../ios && bundler exec pod cache clean --all && rm -rf build "
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.3",
