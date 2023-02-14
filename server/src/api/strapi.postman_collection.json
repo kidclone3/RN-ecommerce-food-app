@@ -102,6 +102,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "stats2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list\": [\n        \"banh-peo1\",\n        \"banh-peo-1\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/ratings/reviews",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"ratings",
+								"reviews"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"auth": {
@@ -186,7 +214,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/products?populate[image][fields][1]=url&populate[categories][filters][name][$eq]={{category-id}}",
+							"raw": "{{SERVER_URL}}/api/products?populate[image][fields][1]=url&populate[categories][filters][name][$in]=[1]",
 							"host": [
 								"{{SERVER_URL}}"
 							],
@@ -200,8 +228,8 @@
 									"value": "url"
 								},
 								{
-									"key": "populate[categories][filters][name][$eq]",
-									"value": "{{category-id}}"
+									"key": "populate[categories][filters][name][$in]",
+									"value": "[1]"
 								}
 							]
 						}
@@ -305,6 +333,79 @@
 								"auth",
 								"local",
 								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot pass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "{{username}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/forgot-password",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset pass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "{{reset-pass code}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{pass}}",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirmation",
+									"value": "{{pass}}",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{username}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{SERVER_URL}}/api/auth/reset-password",
+							"host": [
+								"{{SERVER_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
 							]
 						}
 					},
@@ -803,12 +904,12 @@
 							"formdata": [
 								{
 									"key": "score",
-									"value": "3",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "comment",
-									"value": "haha",
+									"value": "",
 									"type": "text"
 								}
 							]
@@ -944,47 +1045,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{SERVER_URL}}/api/store-addresses?filters[show][$eq]=true",
+							"raw": "{{SERVER_URL}}/api/store-address",
 							"host": [
 								"{{SERVER_URL}}"
 							],
 							"path": [
 								"api",
-								"store-addresses"
-							],
-							"query": [
-								{
-									"key": "filters[show][$eq]",
-									"value": "true"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get shop detail",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{SERVER_URL}}/api/store-addresses/1?filters[show][$eq]=true",
-							"host": [
-								"{{SERVER_URL}}"
-							],
-							"path": [
-								"api",
-								"store-addresses",
-								"1"
-							],
-							"query": [
-								{
-									"key": "filters[show][$eq]",
-									"value": "true"
-								}
+								"store-address"
 							]
 						}
 					},
@@ -1146,6 +1213,282 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get Pos1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://dev.virtualearth.net/REST/v1/Locations?q=334 đường Nguyễn Trãi, Hà Nội&key=AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf&maxResults=1",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"virtualearth",
+								"net"
+							],
+							"path": [
+								"REST",
+								"v1",
+								"Locations"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "334 đường Nguyễn Trãi, Hà Nội"
+								},
+								{
+									"key": "key",
+									"value": "AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf"
+								},
+								{
+									"key": "maxResults",
+									"value": "1"
+								}
+							]
+						},
+						"description": "The Distance Matrix API is a service that provides travel distance and time for a matrix of origins and destinations. The API returns information based on the recommended route between start and end points, as calculated by the Google Maps API, and consists of rows containing duration and distance values for each pair."
+					},
+					"response": []
+				},
+				{
+					"name": "get Pos2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://dev.virtualearth.net/REST/v1/Locations?q=số nhà 87 ngách 29 ngõ 213 đường Giáp Nhất, Hà Nội&key=AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf&maxResults=1",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"virtualearth",
+								"net"
+							],
+							"path": [
+								"REST",
+								"v1",
+								"Locations"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "số nhà 87 ngách 29 ngõ 213 đường Giáp Nhất, Hà Nội"
+								},
+								{
+									"key": "key",
+									"value": "AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf"
+								},
+								{
+									"key": "maxResults",
+									"value": "1"
+								}
+							]
+						},
+						"description": "The Distance Matrix API is a service that provides travel distance and time for a matrix of origins and destinations. The API returns information based on the recommended route between start and end points, as calculated by the Google Maps API, and consists of rows containing duration and distance values for each pair."
+					},
+					"response": []
+				},
+				{
+					"name": "get Pos3",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://dev.virtualearth.net/REST/v1/Locations?q=số nhà 87 ngách 29 ngõ 213 đường Giáp Nhất quận Thanh Xuân, thành phố Hà Nội, Việt Nam &key=AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf&maxResults=1",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"virtualearth",
+								"net"
+							],
+							"path": [
+								"REST",
+								"v1",
+								"Locations"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "số nhà 87 ngách 29 ngõ 213 đường Giáp Nhất quận Thanh Xuân, thành phố Hà Nội, Việt Nam "
+								},
+								{
+									"key": "key",
+									"value": "AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf"
+								},
+								{
+									"key": "maxResults",
+									"value": "1"
+								}
+							]
+						},
+						"description": "The Distance Matrix API is a service that provides travel distance and time for a matrix of origins and destinations. The API returns information based on the recommended route between start and end points, as calculated by the Google Maps API, and consists of rows containing duration and distance values for each pair."
+					},
+					"response": []
+				},
+				{
+					"name": "send request Distance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"origins\": [{\n        \"latitude\": 20.99539,\n        \"longitude\": 105.80844\n    }],\n    \"destinations\": [{\n        \"latitude\": 21.00494,\n        \"longitude\": 105.8143\n    }],\n    \"travelMode\": \"driving\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrixAsync?key=AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"virtualearth",
+								"net"
+							],
+							"path": [
+								"REST",
+								"v1",
+								"Routes",
+								"DistanceMatrixAsync"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get request Distance",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.virtualearth.net/REST/v1/Routes/DistanceMatrixAsyncCallback?key=AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf&requestId=d96f5ff2-94cb-478c-9466-5046c5613d39&travelMode=Driving",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"virtualearth",
+								"net"
+							],
+							"path": [
+								"REST",
+								"v1",
+								"Routes",
+								"DistanceMatrixAsyncCallback"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "AiELkWhx1xCx0PqKjmn6Xy4IJfSZ5Hpj5kQIz5S4kNWh-IoIyk3YPriaIlHnZFVf"
+								},
+								{
+									"key": "requestId",
+									"value": "d96f5ff2-94cb-478c-9466-5046c5613d39"
+								},
+								{
+									"key": "travelMode",
+									"value": "Driving"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Distance",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://routematrixpremium.blob.core.windows.net/finalresults/d96f5ff2-94cb-478c-9466-5046c5613d39",
+							"protocol": "https",
+							"host": [
+								"routematrixpremium",
+								"blob",
+								"core",
+								"windows",
+								"net"
+							],
+							"path": [
+								"finalresults",
+								"d96f5ff2-94cb-478c-9466-5046c5613d39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get distance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/distancematrix/json?origins=số nhà 151 Lô 7C đường Lê Hồng Phong, quận Ngô Quyền, thành phố Hải Phòng&destinations=334 đường Nguyễn Trãi, Hà Nội&key=AIzaSyD3HRY8frOgrRDxmQ3zQHDg-Cug2U9A3GA",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"distancematrix",
+								"json"
+							],
+							"query": [
+								{
+									"key": "origins",
+									"value": "số nhà 151 Lô 7C đường Lê Hồng Phong, quận Ngô Quyền, thành phố Hải Phòng"
+								},
+								{
+									"key": "destinations",
+									"value": "334 đường Nguyễn Trãi, Hà Nội"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyD3HRY8frOgrRDxmQ3zQHDg-Cug2U9A3GA"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"auth": {
@@ -1203,10 +1546,9 @@
 	"variable": [
 		{
 			"key": "SERVER_URL",
-			"value": "http://localhost:1337",
-			"type": "string"
+			"value": "localhost:1337"
 		},
-		{
+    {
 			"key": "jwt",
 			"value": "jwt token"
 		},
@@ -1247,7 +1589,7 @@
 		},
 		{
 			"key": "slug",
-			"value": "1"
+			"value": "slug-1"
 		},
 		{
 			"key": "comment-id",
@@ -1256,6 +1598,11 @@
 		{
 			"key": "address-id",
 			"value": "1"
+		},
+		{
+			"key": "reset-pass code",
+			"value": "123456",
+			"type": "string"
 		}
 	]
 }
