@@ -4,10 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import styles from './styles'
 import { Avatar, Divider, Icon, ListItem } from '@rneui/themed'
 import { COLORS, SIZES } from '../../constants'
-import {logout} from "../../services/account";
-import navigation from "../../navigation";
+import { logout } from "../../services/account";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({ navigation }) => {
   const avatar = "https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg"
   function header() {
     return (
@@ -16,14 +15,14 @@ const ProfileScreen = () => {
           rounded
           size='medium'
           source={{
-              uri: avatar,
+            uri: avatar,
           }}
-          />
-        
+        />
+
         <Text style={styles.headerText}>
           Profile
         </Text>
-          
+
       </View>
     )
   }
@@ -35,11 +34,11 @@ const ProfileScreen = () => {
             rounded
             size='large'
             source={{
-                uri: avatar,
+              uri: avatar,
             }}
           />
           <ListItem.Content>
-            <ListItem.Title style={{fontSize: SIZES.h2, fontWeight: 'bold'}}> 
+            <ListItem.Title style={{ fontSize: SIZES.h2, fontWeight: 'bold' }}>
               Bui Khanh Duy
             </ListItem.Title>
             <ListItem.Subtitle>
@@ -49,83 +48,86 @@ const ProfileScreen = () => {
         </ListItem>
 
         <ListItem bottomDivider>
-          <Icon 
+          <Icon
             type='ionicon'
             name='wallet-outline'
             size={SIZES.body2}
           />
           <ListItem.Content>
-            <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold'}}>
+            <ListItem.Title style={{ fontSize: SIZES.body2, fontWeight: 'bold' }}>
               Payment Methods
             </ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
         <ListItem
-          onPress={() => {console.warn('pressed')}}
+          onPress={() => { console.warn('pressed') }}
         >
-          <Icon 
+          <Icon
             type='ionicon'
             name='person-outline'
             size={SIZES.body2}
           />
           <ListItem.Content
           >
-            <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold'}}>
+            <ListItem.Title style={{ fontSize: SIZES.body2, fontWeight: 'bold' }}>
               Profile
             </ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
         <ListItem>
-          <Icon 
+          <Icon
             type='ionicon'
             name='location-outline'
             size={SIZES.body2}
           />
           <ListItem.Content>
-            <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold'}}>
+            <ListItem.Title style={{ fontSize: SIZES.body2, fontWeight: 'bold' }}>
               Address
             </ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
         <ListItem>
-          <Icon 
+          <Icon
             type='ionicon'
             name='notifications-outline'
             size={SIZES.body2}
           />
           <ListItem.Content>
-            <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold'}}>
+            <ListItem.Title style={{ fontSize: SIZES.body2, fontWeight: 'bold' }}>
               Notification
             </ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
         <ListItem>
-          <Icon 
+          <Icon
             type='ionicon'
             name='help-outline'
             size={SIZES.body2}
             color='#000'
           />
           <ListItem.Content>
-            <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold'}}>
+            <ListItem.Title style={{ fontSize: SIZES.body2, fontWeight: 'bold' }}>
               Help Center
             </ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
-        <ListItem button onPress={()=>{logout().then(r => navigation.push('LetInScreen')).catch(e=>{console.warn(e)}); }}>
-          <Icon 
+        <ListItem button onPress={async () => {
+          await logout()
+          navigation.push('LetInScreen')
+        }}>
+          <Icon
             type='ionicon'
             name='log-out-outline'
             size={SIZES.body2}
             color={COLORS.red}
           />
           <ListItem.Content>
-            <ListItem.Title style={{fontSize: SIZES.body2, fontWeight: 'bold', color:COLORS.red}}>
+            <ListItem.Title style={{ fontSize: SIZES.body2, fontWeight: 'bold', color: COLORS.red }}>
               Logout
             </ListItem.Title>
           </ListItem.Content>
@@ -135,7 +137,7 @@ const ProfileScreen = () => {
     )
   }
   return (
-    <SafeAreaView style = {styles.container}>
+    <SafeAreaView style={styles.container}>
       {header()}
       {body()}
     </SafeAreaView>

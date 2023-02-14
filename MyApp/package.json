@@ -9,7 +9,9 @@
     "start": "react-native start",
     "test": "jest",
     "update": "npx react-native-asset && cd ios && bundler exec pod install",
-    "clean": "cd android && ./gradlew clean && cd ../ios && bundler exec pod cache clean --all && rm -rf build "
+    "clean": "cd android && ./gradlew clean && cd ../ios && bundler exec pod cache clean --all && rm -rf build ",
+    "build:tailwind": "tailwindcss --input input.css --output tailwind.css --no-autoprefixer && tailwind-rn",
+    "dev:tailwind": "concurrently \"tailwindcss --input input.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.3",
@@ -29,6 +31,7 @@
     "react-native-screens": "^3.19.0",
     "react-native-swipeable-carousel": "^1.0.7",
     "react-native-vector-icons": "^9.2.0"
+    "tailwind-rn": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -40,11 +43,14 @@
     "@types/react": "^18.0.24",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.2.1",
+    "concurrently": "^7.6.0",
     "eslint": "^8.19.0",
     "jest": "^29.2.1",
     "metro-react-native-babel-preset": "0.73.7",
+    "postcss": "^8.4.21",
     "prettier": "^2.4.1",
     "react-test-renderer": "18.2.0",
+    "tailwindcss": "^3.2.6",
     "typescript": "4.8.4"
   },
   "jest": {
