@@ -1,4 +1,3 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Icon } from '@rneui/themed';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -58,6 +57,3 @@ function HomeNavigator(){
 }
 
 export default HomeNavigator
-
-
-const styles = StyleSheet.create({})

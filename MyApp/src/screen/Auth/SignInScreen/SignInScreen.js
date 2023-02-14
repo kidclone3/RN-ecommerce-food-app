@@ -8,8 +8,8 @@ import PhoneNumberInput from '../../../components/PhoneNumberInput';
 import CustomDivider from '../../../components/CustomDivider';
 import { Button, CheckBox, Icon } from '@rneui/themed';
 import { SIZES } from '../../../constants';
-import {validateEmail, validatePassword} from "../../../constants/validate";
-import {login} from "../../../services/account";
+import { validateEmail, validatePassword } from "../../../constants/validate";
+import { login } from "../../../services/account";
 
 const SignInScreen = ({ navigation }) => {
 
@@ -23,13 +23,15 @@ const SignInScreen = ({ navigation }) => {
 
     const onSignInPressed = async () => {
         console.warn('Sign up pressed');
+        navigation.push('HomeTab');
+
         let isValid = true;
         if (!validateEmail(email)) {
             setEmailError('Email is invalid');
             isValid = false;
         } else setEmailError('');
         if (!validatePassword(password)) {
-            setPasswordError('Password must be at least 8 characters and contain at least one number,' +'' +
+            setPasswordError('Password must be at least 8 characters and contain at least one number,' + '' +
                 ' one lowercase, one uppercase letter, one special character');
             isValid = false;
         } else setPasswordError('');
@@ -37,8 +39,8 @@ const SignInScreen = ({ navigation }) => {
             return false;
         }
         switch (await login(email, password)) {
-            case 2: {setPasswordError('Invalid email or password'); return false;}
-            case 3: {setEmailError('Your account email is not confirmed'); return false;}
+            case 2: { setPasswordError('Invalid email or password'); return false; }
+            case 3: { setEmailError('Your account email is not confirmed'); return false; }
         }
         navigation.push('HomeTab')
     }

@@ -38,6 +38,11 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         flex: 1
     },
-    header: { alignItems: 'flex-start', justifyContent: 'space-between', paddingHorizontal: SIZES.padding }
+    header: {
+        alignItems: 'flex-start',
+        justifyContent: 'space-between',
+        paddingHorizontal: SIZES.padding,
+        paddingLeft: SIZES.padding * 2,
+    }
 })
 export default styles;

@@ -1,0 +1,33 @@
+{
+    "id": "",
+    "attributes": {
+        "name": "",
+        "description": "",
+        "price": "",
+        "show": "",
+        "unit": "",
+        "createdAt": "",
+        "updatedAt": "",
+        "image": {
+            "data": [
+                {
+                    "id": "",
+                    "attributes": {
+                        "url": ""
+                    }
+                }
+                
+            ]
+        },
+        "categories": {
+            "data": [
+                {
+                    "id": "",
+                    "attributes": {
+                        "name": ""
+                    }
+                }
+            ]
+        }
+        }
+  }

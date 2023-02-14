@@ -1,9 +1,9 @@
-import {API_URL} from '../index';
+import { API_URL } from '../index';
 import axios from 'axios';
 
-export const getProducts = async (start=0, limit=25) => {
-    let data = [];
-    await
+export const getProducts = async (start = 0, limit = 25) => {
+    let data = {};
+    const res = await
         axios.get(`${API_URL}/api/products`, {
             params: {
                 populate: {
@@ -25,14 +25,10 @@ export const getProducts = async (start=0, limit=25) => {
                 }
             }
         })
-            .then(response => {
-                console.warn('Products retrieved');
-                data = response.data.data
-            })
             .catch(error => {
                 console.warn('Error retrieving products: ' + error.response.data.error.message);
-                data.error=error
+                data.error = error
             });
-    return data;
+    return res.data;
 }
 export default getProducts;
