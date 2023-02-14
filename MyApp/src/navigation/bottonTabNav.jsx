@@ -1,10 +1,12 @@
 import { StyleSheet} from 'react-native'
 import React from 'react'
-import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import {createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-navigation/native';
 import OrderScreen from '../screen/OrderScreen';
 import ProfileScreen from '../screen/ProfileScreen';
 import HomeNavigator from './homeNav';
 import { Icon } from '@rneui/themed';
+import { COLORS, SIZES } from '../constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,16 +24,23 @@ function BottomTabs () {
             <Tab.Screen
                 name="HomeNavigator"
                 component={HomeNavigator}
-                options={{
+                options={({ route }) => ({
+                    tabBarStyle: ((route) => {
+                      const routeName = getFocusedRouteNameFromRoute(route) ?? ""
+                      if (routeName === 'ItemDetails') {
+                        return { display: "none" }
+                      }
+                      return 
+                    })(route),
                     tabBarIcon: ({ focused }) => (
                         <Icon
                             type='ionicon'
                             name={focused ? 'home-sharp' : 'home-outline'}
-                            size={30}
+                            size={SIZES.body1}
                             color={focused ? 'green' : 'black'}
                         />
                     ),
-                }}
+                  })}
             />
             <Tab.Screen
                 name="Order"
@@ -41,7 +50,7 @@ function BottomTabs () {
                         <Icon
                             type='ionicon'
                             name={focused ? 'reader-sharp' : 'reader-outline'}
-                            size={30}
+                            size={SIZES.body1}
                             color={focused ? 'green' : 'black'}
                         />
                     )
@@ -53,7 +62,7 @@ function BottomTabs () {
                         <Icon
                             type='ionicon'
                             name={focused ? 'person-sharp' : 'person-outline'}
-                            size={30}
+                            size={SIZES.body1}
                             color={focused ? 'green' : 'black'}
                         />
                     )
@@ -69,15 +78,13 @@ export default BottomTabs
 
 const styles = StyleSheet.create({
     tabBar: {
-        elevation: 1,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: COLORS.white,
         height: 70,
         bottom: 0,
         borderRadius: 20,
         opacity: 0.95,
         shadowOffset: { width: 1, height: 4 },
         borderTopWidth: 0,
-        backgroundColor: 'transparent',
-        elevation: 0
+        elevation: 1
     }
 })

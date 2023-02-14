@@ -15,6 +15,9 @@ const QuantityButton = ({ name, quantity, setQuantity}) => {
         buttonStyle={{
             width: 50, height: 50, 
             backgroundColor: COLORS.white,
+            borderRadius: SIZES.radius2,
+            borderColor: COLORS.lightGray,
+            borderWidth: 1,
         }}
         icon={
             <Icon

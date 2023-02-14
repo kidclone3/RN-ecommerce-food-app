@@ -1,5 +1,5 @@
 import axios from "axios";
-import {API_URL} from "../index";
+import { API_URL } from "../index";
 export const productDetail = async (id) => {
     let data = {};
     await axios.get(`${API_URL}/api/products/${id}`, {
@@ -19,7 +19,7 @@ export const productDetail = async (id) => {
             }
         }
     }).then(response => {
-        console.warn("Product retrieved");
+        console.warn(`Product ${id} retrieved`);
         data = response.data.data;
     }).catch(error => {
         console.warn("Error retrieving products: " + error.response.data.error.message);

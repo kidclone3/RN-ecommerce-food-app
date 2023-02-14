@@ -1,7 +1,7 @@
-import {API_URL} from '../index';
+import { API_URL } from '../index';
 import axios from 'axios';
 
-export const getCategories = async (start=0, limit=25) => {
+export const getCategories = async (start = 0, limit = 25) => {
     let data = [];
     await
         axios.get(`${API_URL}/api/categories`, {
@@ -18,12 +18,12 @@ export const getCategories = async (start=0, limit=25) => {
             }
         })
             .then(response => {
-                console.warn('Products retrieved');
+                console.warn('Categories retrieved');
                 data = response.data.data
             })
             .catch(error => {
-                console.warn('Error retrieving products: ' + error.response.data.error.message);
-                data.error=error
+                console.warn('Error retrieving categories: ' + error.response.data.error.message);
+                data.error = error
             });
     return data;
 }

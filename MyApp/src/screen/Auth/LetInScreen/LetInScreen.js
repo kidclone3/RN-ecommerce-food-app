@@ -1,12 +1,13 @@
 import { View, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton/CustomButton';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
-import {CheckBox, Divider, useTheme, Button} from '@rneui/themed';
+import { CheckBox, Divider, useTheme, Button } from '@rneui/themed';
 import CustomDivider from '../../../components/CustomDivider';
-import {COLORS} from "../../../constants";
-import {checkToken} from "../../../services/account";
+import { COLORS } from "../../../constants";
+import { checkToken } from "../../../services/account";
+import styles from '../../../styles/authScreen';
 
 const LetInScreen = ({ navigation }) => {
 
@@ -24,16 +25,16 @@ const LetInScreen = ({ navigation }) => {
 
 
     let loaded = true
-    useEffect(()=>{
-        checkToken().then((res)=>{
-            if (loaded){
+    useEffect(() => {
+        checkToken().then((res) => {
+            if (loaded) {
                 if (res === 0)
                     navigation.push('HomeTab')
             }
-        }).catch((err)=>{})
+        }).catch((err) => { })
 
-        return () => {loaded = false}
-    },[])
+        return () => { loaded = false }
+    }, [])
 
     return (
         <View style={styles.root}>
@@ -97,25 +98,5 @@ const LetInScreen = ({ navigation }) => {
     )
 }
 
-const styles = StyleSheet.create({
-    root: {
-        paddingTop: 50,
-        padding: 20,
-        alignItems: 'center',
-        backgroundColor: 'white',
-        height: '100%',
-    },
-    logo: {
-        width: 66,
-        height: 58,
-    },
-    title: {
-        color: COLORS.black,
-        padding: 30,
-        fontSize: 32,
-        paddingHorizontal: 20,
-    },
-
-});
 
 export default LetInScreen

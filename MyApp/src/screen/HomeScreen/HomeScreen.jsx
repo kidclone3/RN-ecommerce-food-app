@@ -1,14 +1,16 @@
 import { View, Text, FlatList, ScrollView} from 'react-native'
+
 import React, {useEffect, useState} from 'react'
 import ProductItem from '../../components/ProductItem'
 import {Button, Icon, Image, SearchBar} from '@rneui/themed'
 import HomeHeader from '../../components/Header/HomeHeader'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
-import {useNavigation} from '@react-navigation/native'
 import styles from './styles'
 import CategoriesButton from "../../components/CategoriesButton";
 import {getCategories} from "../../services/categories";
+import { getProducts } from '../../services/products'
+import { API_URL } from '../../services'
 
 const HomeScreen = ({navigation}) => {
   const [search, setSearch] = React.useState('');
@@ -30,8 +32,6 @@ const HomeScreen = ({navigation}) => {
     )
   }
 
-    const customData = require('../../../demo-data/laptop.json').products;
-
   function renderMainCatagories() {
       const [categories, setCategories] = useState([]);
 
@@ -49,6 +49,7 @@ const HomeScreen = ({navigation}) => {
               loaded = false;
           }
       }, [])
+      
     function catagoriesHeader() {
       return (
         <View style={styles.header}>
@@ -58,38 +59,57 @@ const HomeScreen = ({navigation}) => {
       )
     }
     return (
-      <FlatList
-        bounces={true}
-        ListHeaderComponent={catagoriesHeader}
-        scrollEnabled={false}
-        showsHorizontalScrollIndicator={false}
-        data={categories}
-        keyExtractor={item => `${item.id}`}
-        renderItem={({item}) =>
-            <CategoriesButton name={item.attributes.name}
-                              icon={item.attributes.icon.data.attributes.url}
-                              action={() => {
-                                console.warn(item.id)
-                              }}
-                              itemPerRows={4}
-                              direction={"column"}
-            />
-        }
-        containerStyle = {styles.flatList}
-        numColumns={4}
-      />
+      <View>
+        <FlatList
+          bounces={true}
+          ListHeaderComponent={catagoriesHeader}
+          scrollEnabled={false}
+          showsHorizontalScrollIndicator={false}
+          data={categories}
+          keyExtractor={item => `${item.id}`}
+          renderItem={({item}) =>
+              <CategoriesButton name={item.attributes.name}
+                                icon={item.attributes.icon.data.attributes.url}
+                                action={() => {
+                                  console.warn(item.id)
+                                }}
+                                itemPerRows={4}
+                                direction={"column"}
+              />
+          }
+          containerStyle = {styles.flatList}
+          numColumns={4}
+        />
+      </View>
     )
   }
   function renderProductList() {
+    const [data, setData] = useState([]);
+    let loaded = true;
+    useEffect(() => {
+      getProducts().then((res) => {
+          if (loaded) {
+              setData(res.data)
+          }
+          console.warn(JSON.stringify(data))
+          // console.warn(data.length())
+      })
+      return () => {
+          loaded = false;
+      }
+    }, [])
     const renderItem = ({ item }) => {
       return (
         <ProductItem
-          item={item}
+          itemId = {item.id}
+          itemName = {item.attributes.name}
+          itemPrice = {item.attributes.price}
+          itemImage = {API_URL + item.attributes.image.data[0].attributes.url}
         />
       )
     }
     return (
-      <SafeAreaView>
+      <View>
         <View style={styles.header}>
           <Text style={{...FONTS.h1 }}>
             Recommend for you! 
@@ -97,7 +117,7 @@ const HomeScreen = ({navigation}) => {
         </View>
          <FlatList
           showsVerticalScrollIndicator={false}
-          data={customData}
+          data={data}
           keyExtractor={item => `${item.id}`}
           renderItem={renderItem}
           contentContainerStyle={{
@@ -106,7 +126,7 @@ const HomeScreen = ({navigation}) => {
           }}
 
         />
-        </SafeAreaView>
+        </View>
     )
   }
 

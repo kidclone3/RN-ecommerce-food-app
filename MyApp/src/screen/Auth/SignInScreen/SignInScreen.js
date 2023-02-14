@@ -17,15 +17,36 @@ const SignInScreen = ({navigation}) => {
   const [passwordError, setPasswordError] = React.useState('');
   // const [remember, setRemember] = React.useState(false);
   // const navigation = useNavigation();
+    const [email, setEmail] = React.useState('');
+    const [emailError, setEmailError] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [passwordError, setPasswordError] = React.useState('');
+    // const [remember, setRemember] = React.useState(false);
+    // const navigation = useNavigation();
 
-  const onSignInPressed = async () => {
-    console.warn('Sign up pressed');
-    let isValid = true;
-    if (!validateEmail(email)) {
-      setEmailError('Email is invalid');
-      isValid = false;
-    } else {
-      setEmailError('');
+
+    const onSignInPressed = async () => {
+        console.warn('Sign up pressed');
+        navigation.push('HomeTab');
+
+        let isValid = true;
+        if (!validateEmail(email)) {
+            setEmailError('Email is invalid');
+            isValid = false;
+        } else setEmailError('');
+        if (!validatePassword(password)) {
+            setPasswordError('Password must be at least 8 characters and contain at least one number,' + '' +
+                ' one lowercase, one uppercase letter, one special character');
+            isValid = false;
+        } else setPasswordError('');
+        if (!isValid) {
+            return false;
+        }
+        switch (await login(email, password)) {
+            case 2: { setPasswordError('Invalid email or password'); return false; }
+            case 3: { setEmailError('Your account email is not confirmed'); return false; }
+        }
+        navigation.push('HomeTab')
     }
     if (!validatePassword(password)) {
       setPasswordError(
