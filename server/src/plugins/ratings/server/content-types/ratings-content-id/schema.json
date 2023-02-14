@@ -4,7 +4,8 @@
   "info": {
     "singularName": "r-content-id",
     "pluralName": "r-content-ids",
-    "displayName": "RContentID"
+    "displayName": "RContentID",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false,
@@ -28,10 +29,16 @@
     },
     "average": {
       "type": "decimal",
+      "default": 0,
       "configurable": false
     },
     "slug": {
       "type": "string",
+      "configurable": false
+    },
+    "count": {
+      "type": "integer",
+      "default": 0,
       "configurable": false
     }
   }
