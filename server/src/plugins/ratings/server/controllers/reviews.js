@@ -27,22 +27,21 @@ module.exports = {
     let averageScore = 0
     let userReview = null
 
-      const score = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-        select: ["average","count"],
-        where: {slug}
+    const score = await strapi.db.query("plugin::ratings.r-content-id").findOne({
+      select: ["average", "count"],
+      where: {slug}
+    })
+    if (score) {
+      reviewsCount = score.count
+      averageScore = score.average
+    } else {
+      await strapi.entityService.create("plugin::ratings.r-content-id", {
+        data: {slug},
+        populate: {
+          reviews: {fields: ["id"]}
+        },
       })
-      if (score) {
-        reviewsCount = score.count
-        averageScore = score.average
-      }
-      else {
-        await strapi.entityService.create("plugin::ratings.r-content-id", {
-          data: {slug},
-          populate: {
-            reviews: {fields: ["id"]}
-          },
-        })
-      }
+    }
 
     // Check whether the user has already posted a review
     if (user) {
@@ -83,8 +82,8 @@ module.exports = {
     }
 
     const {comment, score} = ctx.request.body
-    if (!score) {
-      return ctx.badRequest("Score should be between 1-5", {slug, comment, score})
+    if (!score || score < 0 || score > 5) {
+      return ctx.badRequest("Score should be between 0-5", {slug, comment, score})
     }
     // Only one review per user is allowed.
     // Check if the user has already posted a review.
@@ -218,7 +217,7 @@ module.exports = {
     })
     // Update average rating
     const relatedContent = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-      select: ["id", "average","count"],
+      select: ["id", "average", "count"],
       where: {id: review.related_to.id}
     })
     const oldTotalScore = relatedContent.average * relatedContent.count
@@ -252,11 +251,11 @@ module.exports = {
     await strapi.entityService.delete("plugin::ratings.review", ctx.params.id)
 // Update average rating
     const relatedContent = await strapi.db.query("plugin::ratings.r-content-id").findOne({
-      select: ["id", "average","count"],
+      select: ["id", "average", "count"],
       where: {id: review.related_to.id}
     })
     const oldTotalScore = relatedContent.average * relatedContent.count
-    const newAvg = (oldTotalScore - review.score) / (relatedContent.count - 1)
+    const newAvg = relatedContent.count === 1 ? 0 : (oldTotalScore - review.score) / (relatedContent.count - 1)
     await strapi.entityService.update("plugin::ratings.r-content-id", relatedContent.id, {
       data: {
         average: newAvg,

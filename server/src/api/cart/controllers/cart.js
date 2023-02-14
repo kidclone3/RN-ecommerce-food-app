@@ -36,7 +36,7 @@ module.exports = createCoreController('api::cart.cart', ({strapi}) => ({
         user: user.id,
         product: product
       },
-      populate: {product: true, user: true}
+      populate: {product: true}
     });
     if (cart) {
       return await strapi.db.query('api::cart.cart').update({
