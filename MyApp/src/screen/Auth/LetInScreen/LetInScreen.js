@@ -1,11 +1,4 @@
-import {
-    View,
-    Text,
-    Image,
-    StyleSheet,
-    Dimensions,
-    ScrollView,
-} from 'react-native';
+import { View, Text, Image } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton/CustomButton';
@@ -87,6 +80,7 @@ const LetInScreen = ({ navigation }) => {
                 onPress={() => navigation.push('SignIn')}
             />
             <Button
+                // eslint-disable-next-line react-native/no-inline-styles
                 containerStyle={{
                     width: '80%',
                     marginHorizontal: 50,
@@ -94,6 +88,7 @@ const LetInScreen = ({ navigation }) => {
                 }}
                 title="Don't have an account? Sign up"
                 type="clear"
+                // eslint-disable-next-line react-native/no-inline-styles
                 titleStyle={{ color: 'grey', fontSize: 12 }}
                 onPress={() => navigation.push('SignUp')}
             />

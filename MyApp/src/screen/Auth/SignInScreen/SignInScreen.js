@@ -1,4 +1,4 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
 import styles from '../../../styles/authScreen';
@@ -7,76 +7,10 @@ import CustomButton from '../../../components/Button/CustomButton';
 import CustomDivider from '../../../components/CustomDivider';
 import { Button, Icon } from '@rneui/themed';
 import { SIZES } from '../../../constants';
-import { validateEmail, validatePassword } from '../../../constants/validate';
-import { login } from '../../../services/account';
+import { useLogin } from '../../../hooks/useLogin';
 
 const SignInScreen = ({ navigation }) => {
-    // const [remember, setRemember] = React.useState(false);
-    // const navigation = useNavigation();
-    const [email, setEmail] = React.useState('');
-    const [emailError, setEmailError] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [passwordError, setPasswordError] = React.useState('');
-    // const [remember, setRemember] = React.useState(false);
-    // const navigation = useNavigation();
-
-    const onSignInPressed = async () => {
-        console.warn('Sign up pressed');
-        navigation.push('HomeTab');
-
-        let isValid = true;
-        if (!validateEmail(email)) {
-            setEmailError('Email is invalid');
-            isValid = false;
-        } else setEmailError('');
-        if (!validatePassword(password)) {
-            setPasswordError(
-                'Password must be at least 8 characters and contain at least one number,' +
-                    '' +
-                    ' one lowercase, one uppercase letter, one special character'
-            );
-            isValid = false;
-        } else setPasswordError('');
-        if (!isValid) {
-            return false;
-        }
-        switch (await login(email, password)) {
-            case 2: {
-                setPasswordError('Invalid email or password');
-                return false;
-            }
-            case 3: {
-                setEmailError('Your account email is not confirmed');
-                return false;
-            }
-        }
-        navigation.push('HomeTab');
-
-        if (!validatePassword(password)) {
-            setPasswordError(
-                'Password must be at least 8 characters and contain at least one number,' +
-                    '' +
-                    ' one lowercase, one uppercase letter, one special character'
-            );
-            isValid = false;
-        } else {
-            setPasswordError('');
-        }
-        if (!isValid) {
-            return false;
-        }
-        switch (await login(email, password)) {
-            case 2: {
-                setPasswordError('Invalid email or password');
-                return false;
-            }
-            case 3: {
-                setEmailError('Your account email is not confirmed');
-                return false;
-            }
-        }
-        navigation.push('HomeTab');
-    };
+    const hook = useLogin();
 
     return (
         <View style={styles.root}>
@@ -90,34 +24,33 @@ const SignInScreen = ({ navigation }) => {
             <CustomInput
                 label="email"
                 placeholder="Email"
-                value={email}
-                setValue={(value) => setEmail(value)}
+                value={hook.identifier}
+                setValue={(value) => hook.setIdentifier(value)}
                 leftIcon={<Icon type="feather" name="mail" size={SIZES.h3} />}
-                error={emailError}
+                error={hook.identifierError}
             />
             <CustomInput
                 label="password"
                 placeholder="Your password"
-                value={password}
-                setValue={(value) => setPassword(value)}
+                value={hook.password}
+                setValue={(value) => hook.setPassword(value)}
                 secureTextEntry={true}
                 leftIcon={<Icon type="feather" name="key" size={SIZES.h3} />}
-                error={passwordError}
+                error={hook.passwordError}
             />
 
-            {/*<CheckBox*/}
-            {/*    center*/}
-            {/*    title='Remember me'*/}
-            {/*    iconType='material-community'*/}
-            {/*    checkedIcon='checkbox-marked'*/}
-            {/*    uncheckedIcon='checkbox-blank-outline'*/}
-            {/*    checkedColor='green'*/}
-            {/*    checked={remember}*/}
-            {/*    onPress={() => setRemember(!remember)}*/}
-            {/*    wrapperStyle={{ margin: 0,padding:0 }}*/}
-            {/*/>*/}
+            <Text style={[stylesExtends.loginError]}>{hook.loginError}</Text>
 
-            <CustomButton text="Sign In" onPress={onSignInPressed} />
+            <CustomButton
+                text="Sign In"
+                onPress={() => {
+                    hook.submit((user) => {
+                        if (user) {
+                            navigation.push('HomeTab');
+                        }
+                    });
+                }}
+            />
             <CustomDivider text="or continue with" />
             <SocialSignInButton horizontal={true} />
             <Button
@@ -149,5 +82,9 @@ const SignInScreen = ({ navigation }) => {
         </View>
     );
 };
+
+const stylesExtends = StyleSheet.create({
+    loginError: { color: 'red', fontSize: 12, fontWeight: 'bold' },
+});
 
 export default SignInScreen;
