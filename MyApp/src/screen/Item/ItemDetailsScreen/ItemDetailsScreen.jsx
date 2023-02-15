@@ -11,7 +11,7 @@ import { API_URL } from '../../../services';
 const ItemDetailsScreen = ({route, navigation}) => {
   const {itemId} = route.params;
   const interfaceData = require('../../../../demo-data/itemDetails.json')
-  const [data, setData] = React.useState([interfaceData]);
+  const [data, setData] = React.useState(interfaceData);
   let loaded = true;
   React.useEffect(() => {
     productDetail(itemId).then((res) => {
@@ -25,17 +25,11 @@ const ItemDetailsScreen = ({route, navigation}) => {
     return () => {
       loaded = false;
     }
-  }, [interfaceData])
-  function getItemDetails() {
-    // fetch item details from API
-    // const data = require('../../../../demo-data/laptop.json').products;
-    console.log(data);
-    // return data.filter(item => item.id == itemId)[0];
-  }
-  // const item = getItemDetails();
+  }, {})
+  console.log("here!" + JSON.stringify(data))
   function header() {
     return (
-      <Text> {data.attributes}</Text>
+      <Text> {data.attributes.name ?? null}</Text>
       // <ImageBackground
       //   source = {{
       //     uri: API_URL+ data.attributes.image.data[0].attributes.url,
@@ -166,8 +160,8 @@ const ItemDetailsScreen = ({route, navigation}) => {
       style={styles.root}
     >
       {header()}
-      {renderItem()}
-      {addToBasket()}
+      {/* {renderItem()}
+      {addToBasket()} */}
     </View>
   )
 }

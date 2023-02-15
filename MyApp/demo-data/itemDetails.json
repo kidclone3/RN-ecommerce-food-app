@@ -1,19 +1,19 @@
 {
-    "id": "",
+    "id": "1",
     "attributes": {
-        "name": "",
-        "description": "",
-        "price": "",
-        "show": "",
-        "unit": "",
+        "name": "a",
+        "description": "b",
+        "price": "12",
+        "show": true,
+        "unit": 30,
         "createdAt": "",
         "updatedAt": "",
         "image": {
             "data": [
                 {
-                    "id": "",
+                    "id": "1",
                     "attributes": {
-                        "url": ""
+                        "url": "abc"
                     }
                 }
                 
