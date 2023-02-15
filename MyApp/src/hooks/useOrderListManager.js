@@ -8,7 +8,6 @@ export const useOrderListManager = () => {
 
     const [loading, setLoading] = React.useState(false);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     React.useEffect(async () => {
         setLoading(true);
         const username = await EncryptedStorage.getItem('username');

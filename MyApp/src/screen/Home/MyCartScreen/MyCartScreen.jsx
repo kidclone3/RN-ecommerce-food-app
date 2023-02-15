@@ -19,15 +19,21 @@ const MyCartScreen = ({ navigation }) => {
     const [loading, setLoading] = React.useState(true);
     const [dictOrdered, setDictOrdered] = React.useState({});
 
-    React.useEffect(() => {
+    React.useEffect(async () => {
       setLoading(true);
-      listUserCart()
-          .then((res) => {
-            setData(res[0]);
-            setEmpty(res[1] == 0);
-          })
+      const tmp_data = await listUserCart();
+      if (tmp_data) {
+        for (i in tmp_data) {
+          if (Array.isArray(i)) {
+            console.log('!here i ' + JSON.stringify(i));
+
+            setData(i);
+            setEmpty(i.length == 0);
+          }
+        }
+      }
+      console.log('!here1 ' + JSON.stringify(data));
       setLoading(false);
-      return;
   }, []);
     // console.log('!here1 ' + JSON.stringify(data));
     function CartHeader() {

@@ -9,20 +9,16 @@ export const listUserCart = async () => {
         console.warn('Not login yet');
         data.error = 'Not login yet';
     }
-    await axios
-        .get(`${API_URL}/api/users/me/cart`, {
+    try {
+        const response = await axios.get(`${API_URL}/api/users/me/cart`, {
             headers: {
                 Authorization: `Bearer ${jwt}`,
             },
-        })
-        .then((response) => {
-            console.warn('Cart retrieved');
-            data = response.data;
-        })
-        .catch((error) => {
-            console.warn('Error: ' + error);
-            data.error = error;
         });
-    return data;
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        return { error };
+    }
 };
 export default listUserCart;
