@@ -3,15 +3,15 @@ import React from 'react'
 import {Image } from '@rneui/themed'
 import { SIZES, COLORS, images } from '../../../constants'
 
-const EmptyCart = () => {
+const EmptyCart = props => {
     return (
-        <View style={styles.container}>
+        <View style={{...styles.container, ...props.style}}>
             <Image
                 source={images.clipboards}
                 style={{
                     width: 300,
                     height: 300,
-                    resizeMode: 'contain',
+                    resizeMode: 'stretch',
                 }}
             />
             <Text
@@ -33,14 +33,13 @@ const EmptyCart = () => {
 export default EmptyCart
 const styles = StyleSheet.create({
     container: {
-        height: '90%',
-        width: '100%',
+        // height: '80%',
+        // width: '100%',
         backgroundColor: COLORS.white,
         // position: 'relative',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        resizeMode: 'contain',
         // flexDirection: 'column',
     },
 })

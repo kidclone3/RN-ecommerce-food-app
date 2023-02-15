@@ -1,5 +1,5 @@
-import { View, Text, FlatList, ScrollView } from 'react-native';
-
+import { View, Text, FlatList} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
 import ProductItem from '../../components/ProductItem';
 import { Button, Icon, Image, SearchBar } from '@rneui/themed';
@@ -10,7 +10,6 @@ import styles from './styles';
 import CategoriesButton from '../../components/CategoriesButton';
 import { getCategories } from '../../services/categories';
 import { getProducts } from '../../services/products';
-import { API_URL } from '../../services';
 import { Dialog } from '@rneui/themed';
 
 const HomeScreen = ({ navigation }) => {
@@ -99,7 +98,7 @@ const HomeScreen = ({ navigation }) => {
                 if (loaded) {
                     setData(res.data);
                 }
-                console.warn(JSON.stringify(data));
+                // console.warn(JSON.stringify(data));
                 // console.warn(data.length())
             });
             setLoading(false);
@@ -114,7 +113,7 @@ const HomeScreen = ({ navigation }) => {
                     itemName={item.attributes.name}
                     itemPrice={item.attributes.price}
                     itemImage={
-                        API_URL + item.attributes.image.data[0].attributes.url
+                        item.attributes.image.data[0].attributes.url
                     }
                 />
             );
@@ -127,7 +126,7 @@ const HomeScreen = ({ navigation }) => {
                 </View>
                 <FlatList
                     showsVerticalScrollIndicator={false}
-                    data={data}
+                    data={data.filter((item) => item.attributes.show)}
                     keyExtractor={(item) => `${item.id}`}
                     renderItem={renderItem}
                     contentContainerStyle={{

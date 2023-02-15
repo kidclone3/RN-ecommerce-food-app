@@ -9,8 +9,8 @@ import ItemDetailsScreen from '../screen/Item/ItemDetailsScreen/ItemDetailsScree
 import CheckoutOrdersScreen from '../screen/Home/CheckoutOrdersScreen';
 const Stack = createNativeStackNavigator();
 
-function HomeNavigator() {
-    const navigation = useNavigation();
+function HomeNavigator({navigation}) {
+    // const navigation = useNavigation();
     return (
         <Stack.Navigator
             // initialRouteName="ItemDetails"

@@ -18,7 +18,7 @@ export const getCategories = async (start = 0, limit = 25) => {
             },
         })
         .then((response) => {
-            console.warn('Categories retrieved');
+            // console.warn('Categories retrieved');
             data = response.data.data;
         })
         .catch((error) => {

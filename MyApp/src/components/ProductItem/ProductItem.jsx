@@ -6,7 +6,7 @@ import styles from './styles';
 import { COLORS, SIZES, FONTS } from '../../constants';
 import { API_URL } from '../../services';
 
-const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
+const ProductItem = ({ itemName, itemId, itemImage, itemPrice, orderState=null }) => {
     const navigation = useNavigation();
 
     const onPress = () => {
@@ -17,11 +17,10 @@ const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
     };
     return (
         <Pressable onPress={onPress} style={styles.root}>
-            
             <Image
                 style={styles.image}
                 source={{
-                    uri: itemImage,
+                    uri: API_URL + itemImage,
                 }}
             />
             <View style={[styles.rightContainer]}>
@@ -31,7 +30,7 @@ const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
                 >
                     {itemName}
                 </Text>
-                {/* Ratings */}
+                
                 <View
                     style={{
                         flexDirection: 'row',
@@ -83,7 +82,7 @@ const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
                     >
                         ${itemPrice}
                     </Text>
-                    <Icon
+                    {/* <Icon
                         type="font-awesome"
                         name="heart-o"
                         size={SIZES.body3}
@@ -93,7 +92,7 @@ const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
                             justifyContent: 'flex-start',
                             alignItems: 'flex-start',
                         }}
-                    />
+                    /> */}
                 </View>
                 
             </View>
