@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Icon } from '@rneui/themed';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
@@ -8,12 +8,12 @@ import HomeScreen from '../screen/HomeScreen';
 import ItemDetailsScreen from '../screen/Item/ItemDetailsScreen/ItemDetailsScreen';
 const Stack = createNativeStackNavigator();
 
-function HomeNavigator(){
+function HomeNavigator() {
     const navigation = useNavigation();
     return (
         <Stack.Navigator
-            // initialRouteName='ItemDetails'
-            initialRouteName='Home'
+            initialRouteName="ItemDetails"
+            // initialRouteName='Home'
         >
             <Stack.Screen
                 name="Home"
@@ -21,39 +21,39 @@ function HomeNavigator(){
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Icon
-                            type='ionicon'
+                            type="ionicon"
                             name={focused ? 'home-sharp' : 'home-outline'}
                             size={30}
                             color={focused ? 'green' : 'black'}
                         />
                     ),
-                    headerShown: false
+                    headerShown: false,
                 }}
             />
             <Stack.Screen
                 name="MyCart"
                 component={MyCartScreen}
                 options={{
-                    headerShown: false
+                    headerShown: false,
                 }}
             />
             <Stack.Screen
                 name="SearchScreen"
                 component={SearchScreen}
                 options={{
-                    headerShown: false
+                    headerShown: false,
                 }}
             />
-            <Stack.Screen 
+            <Stack.Screen
                 name="ItemDetails"
                 component={ItemDetailsScreen}
                 options={{
-                    headerShown: false
+                    headerShown: false,
                 }}
-                initialParams={{itemId: 1}}
+                initialParams={{ itemId: 1 }}
             />
         </Stack.Navigator>
-    )
+    );
 }
 
-export default HomeNavigator
+export default HomeNavigator;

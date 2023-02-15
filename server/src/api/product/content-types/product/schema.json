@@ -1,62 +1,54 @@
 {
-  "kind": "collectionType",
-  "collectionName": "products",
-  "info": {
-    "singularName": "product",
-    "pluralName": "products",
-    "displayName": "product",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": false,
-    "timestamps": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
+    "kind": "collectionType",
+    "collectionName": "products",
+    "info": {
+        "singularName": "product",
+        "pluralName": "products",
+        "displayName": "product",
+        "description": ""
     },
-    "description": {
-      "type": "text"
+    "options": {
+        "draftAndPublish": false,
+        "timestamps": true
     },
-    "image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
-    },
-    "price": {
-      "type": "biginteger"
-    },
-    "show": {
-      "type": "boolean",
-      "required": true,
-      "default": true
-    },
-    "unit": {
-      "type": "enumeration",
-      "enum": [
-        "kg",
-        "lạng",
-        "quả",
-        "cái"
-      ],
-      "required": true,
-      "default": "cái"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "products"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "image": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": ["images", "videos"]
+        },
+        "price": {
+            "type": "biginteger"
+        },
+        "show": {
+            "type": "boolean",
+            "required": true,
+            "default": true
+        },
+        "unit": {
+            "type": "enumeration",
+            "enum": ["kg", "lạng", "quả", "cái"],
+            "required": true,
+            "default": "cái"
+        },
+        "categories": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::category.category",
+            "inversedBy": "products"
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "name"
+        }
     }
-  }
 }

@@ -1,1 +1,1 @@
-export { default } from './QuantityButton'
+export { default } from './QuantityButton';

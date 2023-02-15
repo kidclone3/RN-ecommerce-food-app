@@ -3,5 +3,5 @@
 const review = require('./review');
 
 module.exports = {
-  review,
+    review,
 };

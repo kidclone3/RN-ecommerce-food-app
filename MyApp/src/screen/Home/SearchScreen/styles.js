@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { COLORS, SIZES } from '../../../constants'
+import { StyleSheet } from 'react-native';
+import { COLORS, SIZES } from '../../../constants';
 const styles = StyleSheet.create({
     container: {
         backgroundColor: COLORS.white,
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         padding: SIZES.h3,
         paddingBottom: 10,
-        height: "30%",
+        height: '30%',
         // width: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -30,5 +30,5 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.lightGray,
         borderColor: COLORS.white,
     },
-})
+});
 export default styles;

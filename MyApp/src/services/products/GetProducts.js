@@ -3,32 +3,35 @@ import axios from 'axios';
 
 export const getProducts = async (start = 0, limit = 25) => {
     let data = {};
-    const res = await
-        axios.get(`${API_URL}/api/products`, {
+    const res = await axios
+        .get(`${API_URL}/api/products`, {
             params: {
                 populate: {
                     categories: {
-                        filter: "name"
+                        filter: 'name',
                     },
                     image: {
-                        fields: "url"
-                    }
+                        fields: 'url',
+                    },
                 },
                 filters: {
                     show: {
-                        $eq: true
-                    }
+                        $eq: true,
+                    },
                 },
                 pagination: {
                     start: start,
-                    limit: limit
-                }
-            }
+                    limit: limit,
+                },
+            },
         })
-            .catch(error => {
-                console.warn('Error retrieving products: ' + error.response.data.error.message);
-                data.error = error
-            });
+        .catch((error) => {
+            console.warn(
+                'Error retrieving products: ' +
+                    error.response.data.error.message
+            );
+            data.error = error;
+        });
     return res.data;
-}
+};
 export default getProducts;

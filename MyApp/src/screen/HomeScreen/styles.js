@@ -1,6 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { icons, images, SIZES, COLORS, FONTS } from '../../constants'
-
+import { StyleSheet } from 'react-native';
+import { icons, images, SIZES, COLORS, FONTS } from '../../constants';
 
 const styles = StyleSheet.create({
     searchBar: {
@@ -36,13 +35,13 @@ const styles = StyleSheet.create({
     },
     container: {
         backgroundColor: COLORS.white,
-        flex: 1
+        flex: 1,
     },
     header: {
         alignItems: 'flex-start',
         justifyContent: 'space-between',
         paddingHorizontal: SIZES.padding,
         paddingLeft: SIZES.padding * 2,
-    }
-})
+    },
+});
 export default styles;

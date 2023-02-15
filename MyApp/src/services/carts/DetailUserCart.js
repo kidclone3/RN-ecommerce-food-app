@@ -1,6 +1,6 @@
-import axios from "axios";
-import {API_URL} from "../index";
-import EncryptedStorage from "react-native-encrypted-storage";
+import axios from 'axios';
+import { API_URL } from '../index';
+import EncryptedStorage from 'react-native-encrypted-storage';
 
 export const detailUserCart = async (id) => {
     let data = {};
@@ -8,17 +8,20 @@ export const detailUserCart = async (id) => {
     if (!jwt) {
         data.error = 'Not login yet';
     }
-    await axios.get(`${API_URL}/api/carts/` + id, {
-        headers: {
-            Authorization: `Bearer ${jwt}`,
-        }
-    }).then(response => {
-        console.warn("Address created");
-        data = response.data;
-    }).catch(error => {
-        console.warn("Error: " + error);
-        data.error = error;
-    })
+    await axios
+        .get(`${API_URL}/api/carts/` + id, {
+            headers: {
+                Authorization: `Bearer ${jwt}`,
+            },
+        })
+        .then((response) => {
+            console.warn('Address created');
+            data = response.data;
+        })
+        .catch((error) => {
+            console.warn('Error: ' + error);
+            data.error = error;
+        });
     return data;
-}
-export default detailUserCart
+};
+export default detailUserCart;

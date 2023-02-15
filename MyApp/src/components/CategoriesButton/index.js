@@ -1,1 +1,1 @@
-export {default} from './CategoriesButton'
+export { default } from './CategoriesButton';
