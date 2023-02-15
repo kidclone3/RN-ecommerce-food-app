@@ -6,8 +6,7 @@ import {
     FlatList,
 } from 'react-native';
 import React from 'react';
-import { Icon, Button, Image, ListItem, CheckBox } from '@rneui/themed';
-import { useNavigation } from '@react-navigation/native';
+import { Icon, Button, Image, ListItem, CheckBox, Dialog } from '@rneui/themed';
 import { SIZES, COLORS, images } from '../../../constants';
 import { listUserCart } from '../../../services/carts';
 import SwipeableItem from '../../../components/Button/SwipeableItem';
@@ -15,21 +14,19 @@ import EmptyCart from '../../../components/Button/EmptyCart';
 import PlaceOrder from '../../../components/Button/PlaceOrder';
 
 const MyCartScreen = ({ navigation }) => {
-    const [isEmpty, setIsEmpty] = React.useState(false);
+    const [empty, setEmpty] = React.useState(true);
     const [data, setData] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
     React.useEffect(() => {
-        listUserCart()
-            .then((res) => {
-                if (res[0].length === 0) {
-                    setIsEmpty(true);
-                } else {
-                    setData(res[0]);
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
+      setLoading(true);
+      listUserCart()
+          .then((res) => {
+            setData(res[0]);
+            setEmpty(res[1] == 0);
+          })
+      setLoading(false);
+      return;
+  }, []);
     // console.log('!here1 ' + JSON.stringify(data));
     function CartHeader() {
         return (
@@ -60,6 +57,8 @@ const MyCartScreen = ({ navigation }) => {
     function body() {
         const [listOrdered, setListOrdered] = React.useState({});
         return (
+          loading? <Dialog.Loading/> : (
+            empty ? <EmptyCart/> : (
             <View style={styles.containerSwipeable}>
                 <FlatList
                     horizontal={false}
@@ -82,12 +81,13 @@ const MyCartScreen = ({ navigation }) => {
                 {console.log(listOrdered)}
                 <PlaceOrder orderId={1}/>
             </View>
+        ))
         );
     }
     return (
         <SafeAreaView>
             {CartHeader()}
-            {isEmpty ? <EmptyCart/> : body()}
+            {body()}
         </SafeAreaView>
     );
 };
