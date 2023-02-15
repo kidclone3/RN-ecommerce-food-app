@@ -1,24 +1,27 @@
-import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, ScrollView, StyleSheet, Text, View,  } from 'react-native'
 import React from 'react'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { Icon, Button, ListItem, BottomSheet } from '@rneui/themed';
+import { Icon, Button, ListItem, BottomSheet, Image } from '@rneui/themed';
 import { COLORS, SIZES, FONTS } from '../../../constants';
 import CustomDivider from '../../../components/CustomDivider';
 import QuantityButton from '../../../components/Button/QuantityButton';
 import productDetail from '../../../services/products/ProductDetail';
 import { API_URL } from '../../../services';
+import Carousel from 'react-native-snap-carousel';
 
 const ItemDetailsScreen = ({route, navigation}) => {
   const {itemId} = route.params;
   const interfaceData = require('../../../../demo-data/itemDetails.json')
-  const [data, setData] = React.useState(interfaceData);
   let loaded = true;
+  // const {isLoading, data} = React.((id) => {return productDetail(id)})
+
+  const [data, setData] = React.useState(interfaceData);
   React.useEffect(() => {
     productDetail(itemId).then((res) => {
       if (loaded) {
         setData(res)
       }
-      console.log("here!" + JSON.stringify(data))
+      console.log("!here" + JSON.stringify(data))
     }).catch((err) => {
       console.log(err)
     })
@@ -26,10 +29,33 @@ const ItemDetailsScreen = ({route, navigation}) => {
       loaded = false;
     }
   }, {})
-  console.log("here!" + JSON.stringify(data))
+  console.log("!here1" + JSON.stringify(data));
+  function _renderItem({item}) {
+    return (
+        <View style={styles.slide}>
+            <Image
+                source = {{
+                    uri: API_URL + item,
+                    cache: 'only-if-cached'
+                }}
+                style = {{width: '100%', minWidth:SIZES.width/2, height: 400}}
+            />
+        </View>
+    );
+  }
+  
   function header() {
     return (
-      <Text> {data.attributes.name ?? null}</Text>
+      <View>
+        
+      <Carousel 
+        layout={'default'}
+        data={data.attributes.image.data.map(item => item.attributes.url)}
+        sliderWidth={SIZES.width}
+        itemWidth={SIZES.width}
+        renderItem={_renderItem}
+        />
+      </View>
       // <ImageBackground
       //   source = {{
       //     uri: API_URL+ data.attributes.image.data[0].attributes.url,
@@ -80,8 +106,8 @@ const ItemDetailsScreen = ({route, navigation}) => {
         {/* Review */}
         <ListItem bottomDivider>
           <Icon 
-            type='antdesign'
-            name='star'
+            type='ionicon'
+            name='cash-outline'
             size={SIZES.h2}
             color={COLORS.orange}
           />
@@ -90,7 +116,7 @@ const ItemDetailsScreen = ({route, navigation}) => {
             <ListItem.Title
               style={{fontWeight: 'bold', fontSize: SIZES.h2}}
             >
-              {/* {data.ratings.toFixed(1)} */}
+              {data.attributes.price} / {data.attributes.unit}
               </ListItem.Title>
           </ListItem.Content>
           <ListItem.Chevron 
@@ -110,7 +136,7 @@ const ItemDetailsScreen = ({route, navigation}) => {
     return (
       <View>
         <Button
-          title="Add to Basket"
+          title={`Add to Basket ${quantity}`}
           buttonStyle={styles.addToBasketStyle}
           titleStyle={{
             ...FONTS.h2,
@@ -160,8 +186,8 @@ const ItemDetailsScreen = ({route, navigation}) => {
       style={styles.root}
     >
       {header()}
-      {/* {renderItem()}
-      {addToBasket()} */}
+      {renderItem()}
+      {addToBasket()}
     </View>
   )
 }
