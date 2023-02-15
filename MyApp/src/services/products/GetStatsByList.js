@@ -1,5 +1,5 @@
-import axios from "axios";
-import {API_URL} from "../index";
+import axios from 'axios';
+import { API_URL } from '../index';
 
 export const getStatsByList = async (list) => {
     let data = [];
@@ -7,15 +7,20 @@ export const getStatsByList = async (list) => {
     for (let i = 0; i < list.length; i++) {
         slugList.push(list[i].attributes.slug);
     }
-    await axios.post(`${API_URL}/api/ratings/reviews`, {
-        list: slugList
-    }).then(response => {
-        console.warn("Stats retrieved");
-        data = response.data;
-    }).catch(error => {
-        console.warn("Error retrieving stats: " + error.response.data.error.message);
-        data.error = error
-    });
+    await axios
+        .post(`${API_URL}/api/ratings/reviews`, {
+            list: slugList,
+        })
+        .then((response) => {
+            console.warn('Stats retrieved');
+            data = response.data;
+        })
+        .catch((error) => {
+            console.warn(
+                'Error retrieving stats: ' + error.response.data.error.message
+            );
+            data.error = error;
+        });
     return data;
     // eg: let products = await getProducts();
     //     let stats = await getStatsByList(products);
@@ -27,5 +32,5 @@ export const getStatsByList = async (list) => {
     //         }
     //     })
     //     console.log(JSON.stringify(res));
-}
+};
 export default getStatsByList;

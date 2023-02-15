@@ -1,5 +1,5 @@
 {
-  "plugin.name": "Ratings",
-  "Settings.section-label": "Ratings plugin",
-  "Settings.pagination": "Pagination"
+    "plugin.name": "Ratings",
+    "Settings.section-label": "Ratings plugin",
+    "Settings.pagination": "Pagination"
 }

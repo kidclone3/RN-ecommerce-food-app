@@ -1,58 +1,58 @@
 {
-  "kind": "collectionType",
-  "collectionName": "orders",
-  "info": {
-    "singularName": "order",
-    "pluralName": "orders",
-    "displayName": "Order",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": false,
-    "timestamps": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
+    "kind": "collectionType",
+    "collectionName": "orders",
+    "info": {
+        "singularName": "order",
+        "pluralName": "orders",
+        "displayName": "Order",
+        "description": ""
     },
-    "address": {
-      "type": "text"
+    "options": {
+        "draftAndPublish": false,
+        "timestamps": true
     },
-    "phone": {
-      "type": "string"
-    },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "chờ duyệt",
-        "chờ thanh toán",
-        "đã thanh toán",
-        "đang đóng hàng",
-        "đang giao",
-        "đã nhận",
-        "đã hủy"
-      ],
-      "default": "chờ duyệt",
-      "required": true
-    },
-    "order_items": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order-item.order-item",
-      "mappedBy": "order"
-    },
-    "total_price": {
-      "type": "float"
-    },
-    "note": {
-      "type": "text"
-    },
-    "shop_address": {
-      "type": "string"
+    "pluginOptions": {},
+    "attributes": {
+        "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "orders"
+        },
+        "address": {
+            "type": "text"
+        },
+        "phone": {
+            "type": "string"
+        },
+        "status": {
+            "type": "enumeration",
+            "enum": [
+                "chờ duyệt",
+                "chờ thanh toán",
+                "đã thanh toán",
+                "đang đóng hàng",
+                "đang giao",
+                "đã nhận",
+                "đã hủy"
+            ],
+            "default": "chờ duyệt",
+            "required": true
+        },
+        "order_items": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::order-item.order-item",
+            "mappedBy": "order"
+        },
+        "total_price": {
+            "type": "float"
+        },
+        "note": {
+            "type": "text"
+        },
+        "shop_address": {
+            "type": "string"
+        }
     }
-  }
 }

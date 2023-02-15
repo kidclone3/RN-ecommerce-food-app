@@ -1,32 +1,32 @@
 {
-  "kind": "collectionType",
-  "collectionName": "carts",
-  "info": {
-    "singularName": "cart",
-    "pluralName": "carts",
-    "displayName": "cart",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": false,
-    "timestamps": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "quantity": {
-      "type": "float",
-      "required": true
+    "kind": "collectionType",
+    "collectionName": "carts",
+    "info": {
+        "singularName": "cart",
+        "pluralName": "carts",
+        "displayName": "cart",
+        "description": ""
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "carts"
+    "options": {
+        "draftAndPublish": false,
+        "timestamps": true
     },
-    "product": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product.product"
+    "pluginOptions": {},
+    "attributes": {
+        "quantity": {
+            "type": "float",
+            "required": true
+        },
+        "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "carts"
+        },
+        "product": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::product.product"
+        }
     }
-  }
 }

@@ -1,16 +1,22 @@
-import { View, Text, Image, StyleSheet, Dimensions, ScrollView } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import {
+    View,
+    Text,
+    Image,
+    StyleSheet,
+    Dimensions,
+    ScrollView,
+} from 'react-native';
+import React, { useEffect, useState } from 'react';
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton/CustomButton';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
 import { CheckBox, Divider, useTheme, Button } from '@rneui/themed';
 import CustomDivider from '../../../components/CustomDivider';
-import { COLORS } from "../../../constants";
-import { checkToken } from "../../../services/account";
+import { COLORS } from '../../../constants';
+import { checkToken } from '../../../services/account';
 import styles from '../../../styles/authScreen';
 
 const LetInScreen = ({ navigation }) => {
-
     // const [username, setUsername] = React.useState('');
     // const [password, setPassword] = React.useState('');
     // const [rememberMe, setRememberMe] = React.useState(false);
@@ -23,18 +29,20 @@ const LetInScreen = ({ navigation }) => {
     //
     // }
 
-
-    let loaded = true
+    let loaded = true;
     useEffect(() => {
-        checkToken().then((res) => {
-            if (loaded) {
-                if (res === 0)
-                    navigation.push('HomeTab')
-            }
-        }).catch((err) => { })
+        checkToken()
+            .then((res) => {
+                if (loaded) {
+                    if (res === 0) navigation.push('HomeTab');
+                }
+            })
+            .catch((err) => {});
 
-        return () => { loaded = false }
-    }, [])
+        return () => {
+            loaded = false;
+        };
+    }, []);
 
     return (
         <View style={styles.root}>
@@ -44,14 +52,10 @@ const LetInScreen = ({ navigation }) => {
                     uri: 'https://i.imgur.com/TQAOVkU.jpeg',
                 }}
             />
-            <Text style={styles.title}>
-                Let's you in
-            </Text>
+            <Text style={styles.title}>Let's you in</Text>
             <SocialSignInButton />
 
-            <CustomDivider
-                text='or'
-            />
+            <CustomDivider text="or" />
 
             {/* <CustomInput 
                 placeholder='Username'
@@ -79,24 +83,22 @@ const LetInScreen = ({ navigation }) => {
             /> */}
 
             <CustomButton
-                text='Sign in with Email'
+                text="Sign in with Email"
                 onPress={() => navigation.push('SignIn')}
             />
             <Button
                 containerStyle={{
-                    width: "80%",
+                    width: '80%',
                     marginHorizontal: 50,
                     marginVertical: 10,
                 }}
                 title="Don't have an account? Sign up"
                 type="clear"
-                titleStyle={{ color: 'grey', fontSize: 12, }}
-                onPress={() => navigation.push("SignUp")}
+                titleStyle={{ color: 'grey', fontSize: 12 }}
+                onPress={() => navigation.push('SignUp')}
             />
-
         </View>
-    )
-}
+    );
+};
 
-
-export default LetInScreen
+export default LetInScreen;

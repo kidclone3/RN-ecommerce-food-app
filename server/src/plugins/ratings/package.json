@@ -1,34 +1,34 @@
 {
-  "name": "strapi-plugin-ratings",
-  "version": "1.0.0",
-  "keywords": [
-    "strapi",
-    "strapi-plugin",
-    "ratings",
-    "reviews",
-    "api"
-  ],
-  "description": "Strapi plugin to enable and manage reviews for your content",
-  "strapi": {
-    "displayName": "Ratings",
-    "name": "ratings",
-    "description": "Enable and manage reviews for your content",
-    "kind": "plugin"
-  },
-  "dependencies": {
-    "@babel/core": "^7.20.12",
-    "@strapi/helper-plugin": "^4.6.0",
-    "date-fns": "^2.29.3",
-    "immer": "^9.0.19",
-    "qs": "^6.11.0",
-    "react-awesome-stars-rating": "^0.13.5",
-    "react-select": "^5.7.0"
-  },
-  "peerDependencies": {
-    "@strapi/strapi": "^4.6.0"
-  },
-  "engines": {
-    "node": ">=12.x. <=16.x.x",
-    "npm": ">=6.0.0"
-  }
+    "name": "strapi-plugin-ratings",
+    "version": "1.0.0",
+    "keywords": [
+        "strapi",
+        "strapi-plugin",
+        "ratings",
+        "reviews",
+        "api"
+    ],
+    "description": "Strapi plugin to enable and manage reviews for your content",
+    "strapi": {
+        "displayName": "Ratings",
+        "name": "ratings",
+        "description": "Enable and manage reviews for your content",
+        "kind": "plugin"
+    },
+    "dependencies": {
+        "@babel/core": "^7.20.12",
+        "@strapi/helper-plugin": "^4.6.0",
+        "date-fns": "^2.29.3",
+        "immer": "^9.0.19",
+        "qs": "^6.11.0",
+        "react-awesome-stars-rating": "^0.13.5",
+        "react-select": "^5.7.0"
+    },
+    "peerDependencies": {
+        "@strapi/strapi": "^4.6.0"
+    },
+    "engines": {
+        "node": ">=12.x. <=16.x.x",
+        "npm": ">=6.0.0"
+    }
 }

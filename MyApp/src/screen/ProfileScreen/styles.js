@@ -1,12 +1,12 @@
-import { StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../../constants";
+import { StyleSheet } from 'react-native';
+import { COLORS, SIZES } from '../../constants';
 const styles = StyleSheet.create({
     header: {
         flexDirection: 'row',
         backgroundColor: 'transparent',
         padding: SIZES.h3,
         paddingBottom: 10,
-        height: "10%",
+        height: '10%',
         // width: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -21,14 +21,13 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white,
         // alignItems: 'center',
         justifyContent: 'space-between',
-
     },
 
     body: {
         padding: SIZES.padding * 2,
-        height: "90%",
+        height: '90%',
         backgroundColor: COLORS.white,
-        display: "flex",
+        display: 'flex',
     },
     bodyText: {
         fontSize: SIZES.body2,
@@ -40,8 +39,6 @@ const styles = StyleSheet.create({
         marginTop: SIZES.padding * 2,
         marginBottom: SIZES.padding * 2,
     },
-    paymentContainer: {
-
-    },
-})
+    paymentContainer: {},
+});
 export default styles;

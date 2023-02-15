@@ -1,23 +1,22 @@
-
 {
-    "products":
-    [{
-        "id": 1,
-        "title": "Macbook Air M2",
-        "image": "https://www.apple.com/vn/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large_2x.jpg",
-        "ratings": 5,
-        "price": 1000,
-        "distance": "1.2 km",
-        "description": "Macbook Air M2 is the best laptop in the world"
-    },
-    {
-        "id": 2,
-        "title": "Macbook Air M1",
-        "image": "https://www.apple.com/vn/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large_2x.jpg",
-        "ratings": 5,
-        "price": 900,
-        "distance": "800 m",
-        "description": "ABCD"
-    }
+    "products": [
+        {
+            "id": 1,
+            "title": "Macbook Air M2",
+            "image": "https://www.apple.com/vn/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large_2x.jpg",
+            "ratings": 5,
+            "price": 1000,
+            "distance": "1.2 km",
+            "description": "Macbook Air M2 is the best laptop in the world"
+        },
+        {
+            "id": 2,
+            "title": "Macbook Air M1",
+            "image": "https://www.apple.com/vn/macbook-air/images/overview/hero_mba_m2__ejbs627dj7ee_large_2x.jpg",
+            "ratings": 5,
+            "price": 900,
+            "distance": "800 m",
+            "description": "ABCD"
+        }
     ]
 }

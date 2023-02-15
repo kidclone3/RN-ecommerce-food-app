@@ -1,1 +1,1 @@
-export {default} from './LetInScreen'
+export { default } from './LetInScreen';

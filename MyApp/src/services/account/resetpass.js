@@ -1,8 +1,13 @@
 import axios from 'axios';
-import {API_URL} from '../index';
-import {validateError} from './index';
+import { API_URL } from '../index';
+import { validateError } from './index';
 
-export const resetPass = async (email, code, password, passwordConfirmation) => {
+export const resetPass = async (
+    email,
+    code,
+    password,
+    passwordConfirmation
+) => {
     let returnCode = 0;
     if (password !== passwordConfirmation) {
         console.warn('Passwords do not match');
@@ -19,7 +24,7 @@ export const resetPass = async (email, code, password, passwordConfirmation) => 
             // Reset password successful
             console.warn('Success');
         })
-        .catch(error => {
+        .catch((error) => {
             // Reset password failed
             const errors = validateError(error);
             if (errors.length > 0) {
@@ -31,5 +36,5 @@ export const resetPass = async (email, code, password, passwordConfirmation) => 
             }
         });
     return returnCode;
-}
+};
 export default resetPass;

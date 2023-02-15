@@ -1,25 +1,25 @@
 {
-  "kind": "singleType",
-  "collectionName": "store_addresses",
-  "info": {
-    "singularName": "store-address",
-    "pluralName": "store-addresses",
-    "displayName": "Store Address",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": false
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "name": {
-      "type": "string"
+    "kind": "singleType",
+    "collectionName": "store_addresses",
+    "info": {
+        "singularName": "store-address",
+        "pluralName": "store-addresses",
+        "displayName": "Store Address",
+        "description": ""
     },
-    "address": {
-      "type": "string"
+    "options": {
+        "draftAndPublish": false
     },
-    "phone": {
-      "type": "string"
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "address": {
+            "type": "string"
+        },
+        "phone": {
+            "type": "string"
+        }
     }
-  }
 }

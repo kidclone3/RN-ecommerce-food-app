@@ -1,41 +1,44 @@
-import {API_URL} from '../index';
+import { API_URL } from '../index';
 import axios from 'axios';
 
-export const findProducts = async (name,start=0, limit=25) => {
+export const findProducts = async (name, start = 0, limit = 25) => {
     let data = [];
-    await
-        axios.get(`${API_URL}/api/products`, {
+    await axios
+        .get(`${API_URL}/api/products`, {
             params: {
                 populate: {
                     categories: {
-                        filter: "name"
+                        filter: 'name',
                     },
                     image: {
-                        fields: "url"
-                    }
+                        fields: 'url',
+                    },
                 },
                 filters: {
                     show: {
-                        $eq: true
+                        $eq: true,
                     },
-                    name:{
-                        $contains:name
-                    }
+                    name: {
+                        $contains: name,
+                    },
                 },
                 pagination: {
                     start: start,
-                    limit: limit
-                }
-            }
+                    limit: limit,
+                },
+            },
         })
-            .then(response => {
-                console.warn('Products retrieved');
-                data = response.data.data
-            })
-            .catch(error => {
-                console.warn('Error retrieving products: ' + error.response.data.error.message);
-                data.error=error
-            });
+        .then((response) => {
+            console.warn('Products retrieved');
+            data = response.data.data;
+        })
+        .catch((error) => {
+            console.warn(
+                'Error retrieving products: ' +
+                    error.response.data.error.message
+            );
+            data.error = error;
+        });
     return data;
-}
+};
 export default findProducts;

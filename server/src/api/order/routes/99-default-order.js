@@ -6,10 +6,10 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::order.order',{
-  config: {
-    findOne: {
-      auth: false
-    }
-  }
+module.exports = createCoreRouter('api::order.order', {
+    config: {
+        findOne: {
+            auth: false,
+        },
+    },
 });
