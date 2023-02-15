@@ -4,10 +4,9 @@ import {
     SafeAreaView,
     View,
     FlatList,
-    Dimensions,
 } from 'react-native';
 import React from 'react';
-import { Icon, Button, Image, ListItem } from '@rneui/themed';
+import { Icon, Button, Image, ListItem, CheckBox } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { SIZES, COLORS, images } from '../../../constants';
 import { listUserCart } from '../../../services/carts';
@@ -21,7 +20,7 @@ const MyCartScreen = ({ navigation }) => {
     React.useEffect(() => {
         listUserCart()
             .then((res) => {
-                if (res.length === 0) {
+                if (res[0].length === 0) {
                     setIsEmpty(true);
                 } else {
                     setData(res[0]);
@@ -31,7 +30,7 @@ const MyCartScreen = ({ navigation }) => {
                 console.log(err);
             });
     }, []);
-    console.log('!here1 ' + JSON.stringify(data));
+    // console.log('!here1 ' + JSON.stringify(data));
     function CartHeader() {
         return (
             <View style={styles.header}>
@@ -58,7 +57,8 @@ const MyCartScreen = ({ navigation }) => {
         );
     }
     
-    function listOrdered() {
+    function body() {
+        const [listOrdered, setListOrdered] = React.useState({});
         return (
             <View style={styles.containerSwipeable}>
                 <FlatList
@@ -66,26 +66,28 @@ const MyCartScreen = ({ navigation }) => {
                     showsVerticalScrollIndicator={false}
                     data={data}
                     renderItem={({item}) => (
-                      // console.log('!here2 ' + JSON.stringify(item.product))
                         <SwipeableItem
                             cartId={item.id}
                             name={item.product.name}
                             price={item.product.price}
                             image={item.product.image}
                             quantity={item.quantity}
+                            // listOrdered={listOrdered}
+                            // setListOrdered={setListOrdered}
                             // distance={item.distance}
                         />
                     )}
                     keyExtractor={(item) => item.id}
                 />
-                <PlaceOrder />
+                {console.log(listOrdered)}
+                <PlaceOrder orderId={1}/>
             </View>
         );
     }
     return (
         <SafeAreaView>
             {CartHeader()}
-            {isEmpty ? <EmptyCart/> : listOrdered()}
+            {isEmpty ? <EmptyCart/> : body()}
         </SafeAreaView>
     );
 };

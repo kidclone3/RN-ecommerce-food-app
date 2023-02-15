@@ -4,10 +4,10 @@ import { Button, Icon } from '@rneui/themed';
 import { COLORS, SIZES } from '../../../constants';
 import { useNavigation } from '@react-navigation/native';
 
-const CartButton = () => {
+const CartButton = ({ ref }) => {
     const navigation = useNavigation();
     const onCartButtonPressed = () => {
-        navigation.push('MyCart');
+        navigation.push('MyCart', { ref: ref });
     };
     return (
         <>

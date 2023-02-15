@@ -3,8 +3,9 @@ import React from 'react'
 import { Button } from '@rneui/themed'
 import { SIZES, COLORS, FONTS } from '../../../constants'
 import { useNavigation } from '@react-navigation/native'
-const PlaceOrder = () => {
+const PlaceOrder = ({orderId}) => {
     const navigation = useNavigation()
+    console.log('orderId: ' + orderId)
   return (
     <Button
         title={"Place Order"}
@@ -15,9 +16,9 @@ const PlaceOrder = () => {
         containerStyle={{
             position: 'relative',
             padding: SIZES.padding * 2,
-            paddingBottom: 0,
+            paddingBottom: SIZES.padding*1.5,
         }}
-        onPress={() => navigation.navigate('Checkout')}
+        onPress={() => navigation.navigate('Checkout', {id: orderId})}
     />
   )
 }

@@ -1,11 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Button, Icon } from '@rneui/themed'
+import { Button, Icon, ListItem } from '@rneui/themed'
 import { COLORS, SIZES } from '../../../constants'
-
-
-const CheckoutOrderScreen = ({navigation}) => {
+import BoxContainer from '../../../components/BoxContainer'
+import { detailUserOrder } from '../../../services/orders'
+import ProductItemMinimize from '../../../components/ProductItemMinimize'
+import { FlatList } from 'react-native-gesture-handler'
+import PlaceOrder from '../../../components/Button/PlaceOrder'
+const CheckoutOrderScreen = ({route, navigation}) => {
     function Header() {
         return (
             <View style={styles.header}>
@@ -27,15 +30,73 @@ const CheckoutOrderScreen = ({navigation}) => {
                     onPress={() => navigation.goBack()}
                     size="sm"
                 />
-                <Text style={styles.headerText}>My Cart</Text>
+                <Text style={styles.headerText}>Checkout Orders</Text>
             </View>
         );
     }
+    
     function body() {
+        const [data, setData] = React.useState([]);
+        const [isEmpty, setIsEmpty] = React.useState(true);
+        const { id } = route.params
+        React.useEffect(() => {
+            let mounted = true;
+            detailUserOrder(id)
+              .then(res => {
+                if(mounted) {
+                  setIsEmpty(res.total === 0);
+                  setData(res);
+                }
+              })
+            return () => mounted = false;
+          }, [])
+        console.log('!here1 ' + JSON.stringify(data));
+        // console.log('!here1 ' + Array.isArray(data.item));
         return (
-            <View>
-                <Text>Body</Text>
-            </View>
+            <ScrollView style={styles.root}>
+                {/* <BoxContainer style={styles.container}>
+                    <Text>Deliver TO</Text>
+                </BoxContainer> */}
+                <BoxContainer style={styles.container}>
+
+                 <Text style={styles.boxHeaderText}>
+                    Order summary
+                </Text>
+                {!isEmpty ? (
+                    <FlatList
+                        data={data.item}
+                        renderItem={({item}) => (
+                            <ProductItemMinimize
+                                name={item.product_name}
+                                id={item.id}
+                                price={item.price}
+                                quantity={item.quantity}
+                            />
+                        )}
+                        keyExtractor={item => `${item.product_name}`}
+                        contentContainerStyle={{
+                        }}
+                    />
+                ) : null}
+                </BoxContainer>
+
+                {/* <BoxContainer style={styles.container}>
+
+                <Text>Payment Method</Text>
+                </BoxContainer>
+
+                <BoxContainer style={styles.container}>
+
+                <Text>Subtotal + fee | Total</Text>
+                </BoxContainer>
+
+                <BoxContainer style={styles.container}>
+
+                <Text> button place order + price</Text>
+                </BoxContainer> */}
+                <PlaceOrder />
+
+            </ScrollView>
         );
     }
   return (
@@ -49,6 +110,10 @@ const CheckoutOrderScreen = ({navigation}) => {
 export default CheckoutOrderScreen
 
 const styles = StyleSheet.create({
+    root: {
+        width: '100%',
+        height: '100%',
+    },
     header: {
         flexDirection: 'row',
         backgroundColor: COLORS.white,
@@ -64,4 +129,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         flex: 1,
     },
+    container: {
+        backgroundColor: COLORS.white,
+        borderRadius: SIZES.radius3
+    },
+    boxHeaderText: {
+        fontSize: SIZES.h2, 
+        alignSelf:'flex-start',
+        padding: SIZES.padding*2,
+    }
 })

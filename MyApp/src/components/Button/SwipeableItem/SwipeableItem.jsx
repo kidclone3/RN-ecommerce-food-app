@@ -1,10 +1,16 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { Icon, Button, ListItem, Image } from '@rneui/themed'
+import { Icon, Button, ListItem, Image, CheckBox } from '@rneui/themed'
 import { SIZES, COLORS, images } from '../../../constants'
 import { deleteUserCart } from '../../../services/carts'
 import { useNavigation } from '@react-navigation/native'
 const SwipeableItem = ({cartId, name, price, quantity}) => {
+    const [checked, setChecked] = React.useState(false);
+    const toggleCheckbox = () => {
+        setChecked(!checked);
+       
+    }
+
     const navigation = useNavigation()
     function onDelete() {
         console.log("Delete cart " + cartId);
@@ -44,6 +50,18 @@ const SwipeableItem = ({cartId, name, price, quantity}) => {
             }}
             leftWidth={SIZES.width / 4}
         >
+            <ListItem.CheckBox
+                iconType="material-community"
+                checkedIcon="checkbox-marked"
+                uncheckedIcon="checkbox-blank-outline"
+                checkedColor={COLORS.primary}
+                checked={checked}
+                onIconPress={() => toggleCheckbox()}
+                containerStyle={{
+                    backgroundColor: COLORS.white,
+                    borderColor: COLORS.white,
+                }}
+            />
             <ListItem.Content
                 style={{
                     justifyContent: 'space-between',

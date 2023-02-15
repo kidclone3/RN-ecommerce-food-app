@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import {Image } from '@rneui/themed'
 import { SIZES, COLORS, images } from '../../../constants'
@@ -31,3 +31,16 @@ const EmptyCart = () => {
 }
 
 export default EmptyCart
+const styles = StyleSheet.create({
+    container: {
+        height: '90%',
+        width: '100%',
+        backgroundColor: COLORS.white,
+        // position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        resizeMode: 'contain',
+        // flexDirection: 'column',
+    },
+})

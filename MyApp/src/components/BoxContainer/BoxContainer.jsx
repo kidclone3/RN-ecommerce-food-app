@@ -14,8 +14,8 @@ export default BoxContainer;
 const styles = StyleSheet.create({
     boxContainer: {
         // shadowOpacity: 0.8,
-        height:200,
-        margin: 20,
-        alignItems: 'center',
+        height:"100%",
+        // margin: 20,
+        // alignItems: 'center',
     }
 })
