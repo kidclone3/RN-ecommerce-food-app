@@ -1,15 +1,30 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, FlatList } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Button, Icon, ListItem } from '@rneui/themed'
+import { Button, ButtonGroup, Icon, ListItem } from '@rneui/themed'
 import { COLORS, SIZES } from '../../../constants'
 import BoxContainer from '../../../components/BoxContainer'
-import { detailUserOrder } from '../../../services/orders'
+import { createUserOrder, detailUserOrder } from '../../../services/orders'
 import ProductItemMinimize from '../../../components/ProductItemMinimize'
-import { FlatList } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native'
 import PlaceOrder from '../../../components/Button/PlaceOrder'
 import productDetail from '../../../services/products/ProductDetail'
-const CheckoutOrderScreen = ({route, navigation}) => {
+const CheckoutOrderScreen = ({route}) => {
+    const navigation = useNavigation();
+    const [loading, setLoading] = React.useState(false);
+    const [success, setSuccess] = React.useState(false);
+    const {ref, ref_price} = route.params;
+    // React.useEffect(() => {
+    //     setLoading(true);
+    //     const tmp = createUserOrder(route.params.ref.current);
+    //     tmp.then((res) => {
+    //         console.log("STATUS " + res);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     });
+    //     setTimeout(() => setLoading(false), 1000);
+    //     return;
+    //   }, [])
     function Header() {
         return (
             <View style={styles.header}>
@@ -37,65 +52,32 @@ const CheckoutOrderScreen = ({route, navigation}) => {
     }
     
     function body() {
-        const [data, setData] = React.useState([]);
-        const [isEmpty, setIsEmpty] = React.useState(true);
-        const [loading, setLoading] = React.useState(false);
-        const { listId } = route.params
-        React.useEffect(() => {
-            setLoading(true);
-            const listData = listId.map((id) =>
-                productDetail(id))
-            setData(listData);
-            setLoading(false);
-            return;
-          }, [])
-        console.log('!here1 ' + JSON.stringify(data));
+        
+        
         // console.log('!here1 ' + Array.isArray(data.item));
         return (
-            <ScrollView style={styles.root}>
-                {/* <BoxContainer style={styles.container}>
-                    <Text>Deliver TO</Text>
-                </BoxContainer> */}
-                <BoxContainer style={styles.container}>
-
-                 <Text style={styles.boxHeaderText}>
-                    Order summary
-                </Text>
-                {!isEmpty ? (
-                    <FlatList
-                        data={data.item}
-                        renderItem={({item}) => (
-                            <ProductItemMinimize
-                                name={item.product_name}
-                                id={item.id}
-                                price={item.price}
-                                quantity={item.quantity}
-                            />
-                        )}
-                        keyExtractor={item => `${item.product_name}`}
-                        contentContainerStyle={{
-                        }}
-                    />
-                ) : null}
-                </BoxContainer>
-
-                {/* <BoxContainer style={styles.container}>
-
-                <Text>Payment Method</Text>
-                </BoxContainer>
-
-                <BoxContainer style={styles.container}>
-
-                <Text>Subtotal + fee | Total</Text>
-                </BoxContainer>
-
-                <BoxContainer style={styles.container}>
-
-                <Text> button place order + price</Text>
-                </BoxContainer> */}
-                <PlaceOrder />
-
-            </ScrollView>
+            <View>
+            <Text>Your orders is {parseInt(ref_price.current).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</Text>
+            <ButtonGroup
+                buttons={['Place Order']}
+                containerStyle={{ height: 50 }}
+                onPress={() => {
+                    setLoading(true);
+                    const tmp = createUserOrder(ref.current, "aaa", "123456789");
+                    tmp.then((res) => {
+                        console.log("STATUS " + res);
+                        if (res == 0) {
+                            setSuccess(true);
+                        }
+                    }).catch((err) => {
+                        console.log(err);
+                    });
+                    setTimeout(() => setLoading(false), 1000);
+                    navigation.navigate("Order")
+                    return;
+                }}
+            />
+           </View>
         );
     }
   return (

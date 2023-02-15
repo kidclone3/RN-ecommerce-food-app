@@ -17,8 +17,8 @@ import { TailwindProvider } from 'tailwind-rn';
 import utilities from './tailwind.json';
 
 // active to hide debug
-// import { LogBox } from 'react-native';
-// LogBox.ignoreAllLogs();
+import { LogBox } from 'react-native';
+LogBox.ignoreAllLogs();
 
 const App = () => {
     const isDarkMode = useColorScheme() === 'dark';

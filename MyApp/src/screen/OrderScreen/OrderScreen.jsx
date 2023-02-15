@@ -1,16 +1,16 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, ScrollView, RefreshControl } from 'react-native';
 import React from 'react';
-import { useOrderListManager } from '../../hooks/useOrderListManager';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button, Icon, Avatar, TabView, Tab } from '@rneui/themed';
+import { Button, Icon, Avatar, Tab, Dialog } from '@rneui/themed';
 import { COLORS, SIZES, FONTS } from '../../constants';
 import EmptyCart from '../../components/Button/EmptyCart';
-import { getProducts } from '../../services/products';
-import ProductItem from '../../components/ProductItem';
+import {listUserOrder } from '../../services/orders';
+import OrderList from '../../components/OrderList';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 
 const OrderScreen = ({ navigation }) => {
-    // const hook = useOrderListManager();
     const [loading, setLoading] = React.useState(false);
+    const [refreshing, setRefreshing] = React.useState(false);
     const avatar =
         'https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg';
 
@@ -28,96 +28,170 @@ const OrderScreen = ({ navigation }) => {
             </View>
         );
     }
-    function renderProductList() {
-        const [data, setData] = React.useState([]);
-        let loaded = true;
-        React.useEffect(() => {
-            setLoading(true);
-            getProducts().then((res) => {
-                if (loaded) {
-                    setData(res.data);
-                }
-                console.warn(JSON.stringify(data));
-                // console.warn(data.length())
-            });
-            setLoading(false);
-            return () => {
-                loaded = false;
-            };
-        }, []);
+    const [OrderedData, setOrderedData] = React.useState([]);
+    const [index, setIndex] = React.useState(0);
+    const status = {"ACTIVE":"","COMPLETED":"đã nhận","CANCELLED":"đã hủy"}
+    const [activeOrder, setActiveOrder] = React.useState([]);
+    const [completedOrder, setCompletedOrder] = React.useState([]);
+    const [cancelledOrder, setCancelledOrder] = React.useState([]);
+
+    
+      
+    const [routes] = React.useState([
+        { key: 'first', title: 'Active' },
+        { key: 'second', title: 'Complete' },
+        { key: 'third', title: 'Cancel' },
+      ]);
+
+    React.useEffect(() => {
+        setLoading(true);
+        const tmp = listUserOrder();
+        tmp.then((res) => {
+            setOrderedData(res);
+            console.log("res ",JSON.stringify(OrderedData))
+        });
+       
+        setTimeout(() => setLoading(false), 1000);
+        return () => {};
+    }, []);
+    React.useEffect(() => {
+        setLoading(true);
+        if (OrderedData.data == undefined) return;
+        setActiveOrder(OrderedData.data.filter((item) => item.status != status["COMPLETED" && item.status != status["CANCELLED"]]));
+        setCompletedOrder(OrderedData.data.filter((item) => item.status == status["COMPLETED"]));
+        setCancelledOrder(OrderedData.data.filter((item) => item.status == status["CANCELLED"]));
+        setTimeout(() => setLoading(false), 1000);
+        return () => {};
+    }, [OrderedData]);
+    function RenderProductList({orderState}) {
+        
         const renderItem = ({ item }) => {
             return (
-                <ProductItem
-                    itemId={item.id}
-                    itemName={item.attributes.name}
-                    itemPrice={item.attributes.price}
-                    itemImage={
-                        item.attributes.image.data[0].attributes.url
-                    }
-                />
+                <View>
+                    <OrderList orderId = {item.id} total_price = {item.total_price}/>
+                </View>
             );
         };
-        return loading ? (
-            <Dialog.Loading />
-        ) : (
-            <View>
-                
+        
+        function chooseData(orderState){
+            if (OrderedData.data == undefined) return (<Text> BUG </Text>);
+            if (orderState == "ACTIVE") return (
+                activeOrder?.length == 0 ? (
+                    <EmptyCart style={styles.emptyCart} />
+                ) : (
                 <FlatList
                     showsVerticalScrollIndicator={false}
-                    data={data}
+                    // data={(orderState) => {if (orderState == "ACTIVE") return activeOrder; else if (orderState == "COMPLETED") return completedOrder; else return cancelledOrder;}}
+                    data={activeOrder}
                     keyExtractor={(item) => `${item.id}`}
                     renderItem={renderItem}
                     contentContainerStyle={{
                         paddingVertical: SIZES.padding * 2,
                         padding: SIZES.padding * 2,
+                        rowGap: SIZES.padding * 2,
+                        width: '100%',
+
+                    }}
+                />)
+            );
+            else if (orderState == "COMPLETED") return (
+                completedOrder?.length == 0 ? (
+                    <EmptyCart style={styles.emptyCart} />
+                ) : (
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={completedOrder}
+                    keyExtractor={(item) => `${item.id}`}
+                    renderItem={renderItem}
+                    contentContainerStyle={{
+                        paddingVertical: SIZES.padding * 2,
+                        padding: SIZES.padding * 2,
+                        rowGap: SIZES.padding * 2,
+                        width: '100%',
+
+                    }}
+                />)
+            );
+            else return (
+                cancelledOrder?.length == 0 ? (
+                    <EmptyCart style={styles.emptyCart} />
+                ) : (
+                <FlatList
+                    showsVerticalScrollIndicator={false}
+                    data={cancelledOrder}
+                    keyExtractor={(item) => `${item.id}`}
+                    renderItem={renderItem}
+                    contentContainerStyle={{
+                        paddingVertical: SIZES.padding * 2,
+                        padding: SIZES.padding * 2,
+                        rowGap: SIZES.padding * 2,
+                        width: '100%',
+
                     }}
                 />
-            </View>
+                )
+            );
+        }
+        return loading ? (
+            <Dialog.Loading />
+        ) : (
+            (
+                <SafeAreaView>
+                    {/* <Text> {JSON.stringify(activeOrder)} </Text> */}
+                    {chooseData(orderState)}
+                </SafeAreaView>
+            ) 
         );
     }
-    function RneTab() {
-        const [index, setIndex] = React.useState(0);
-        return (
-            <>
-                <Tab
-                    value={index}
-                    onChange={setIndex}
-                    dense
-                    titleStyle={styles.TabTitle}
-                    indicatorStyle={styles.TabIndicator}
-                >
-                    <Tab.Item>Active</Tab.Item>
-                    <Tab.Item>Completed</Tab.Item>
-                    <Tab.Item>Cancelled</Tab.Item>
-                </Tab>
-                <TabView
-                    value={index}
-                    onChange={setIndex}
-                    dense
-                    titleStyle={styles.TabTitle}
-                    indicatorStyle={styles.TabIndicator}
-                >
-                    <TabView.Item style={{ ...styles.root, ...styles.TabView }}>
-                        {/* <EmptyCart /> */}
-                        {renderProductList()}
-                    </TabView.Item>
-                    <TabView.Item style={{ ...styles.root, ...styles.TabView }}>
-                        <EmptyCart />
-                    </TabView.Item>
-                    <TabView.Item style={{ ...styles.root, ...styles.TabView }}>
-                        <EmptyCart />
-                    </TabView.Item>
-                </TabView>
-            </>
-        );
-    }
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+        setRefreshing(false);
+        }, 1000);
+    }, []);
 
+    const Active = () => (
+        <View style={{ flex: 1}} >
+            <RenderProductList orderState = "ACTIVE"/>
+        </View>
+
+    );
+    
+    const Complete = () => (
+    <View style={{ flex: 1}} >
+        <RenderProductList orderState = "COMPLETED"/>
+    </View>
+    );
+    const Cancel = () => (
+    <View style={{ flex: 1}} >
+        <RenderProductList orderState = "CANCELLED"/>
+    </View>
+    );
+    
+    const renderScene = SceneMap({
+        first: Active,
+        second: Complete,
+        third: Cancel,
+    });
     return (
         <SafeAreaView style={styles.root}>
             <Header />
-            {/* <Text>{JSON.stringify(hook)}</Text> */}
-            {RneTab()}
-            {/* <EmptyCart /> */}
+            <TabView
+                navigationState={{ index, routes }}
+                renderScene={renderScene}
+                onIndexChange={setIndex}
+                initialLayout={{ width: SIZES.width, height: SIZES.height }}
+                renderTabBar={(props) => (
+                    <TabBar
+                        {...props}
+                        indicatorStyle={styles.TabIndicator}
+                        style={{ backgroundColor: 'transparent' }}
+                        labelStyle={styles.TabTitle}
+                        activeColor={COLORS.primary}
+                        inactiveColor={COLORS.darkgray}
+                        />
+                )}
+            />
         </SafeAreaView>
     );
 };

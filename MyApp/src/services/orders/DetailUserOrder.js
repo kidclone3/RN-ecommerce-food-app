@@ -4,8 +4,8 @@ import EncryptedStorage from 'react-native-encrypted-storage';
 
 export const detailUserOrder = async (id, start, limit) => {
     const jwt = await EncryptedStorage.getItem('jwt');
-    let data = {};
     if (!jwt) data.error = 'Not logged in';
+    let data = [];
     await axios
         .get(`${API_URL}/api/users/me/receipts/` + id, {
             headers: {
@@ -19,15 +19,15 @@ export const detailUserOrder = async (id, start, limit) => {
             },
         })
         .then((response) => {
-            console.warn('Success');
             data = response.data;
         })
         .catch((error) => {
-            console.warn(
+            console.log(
                 'Error when get order detail: ' +
+                    id +
+                    ' ' +
                     error.response.data.error.message
             );
-            data.error = error;
         });
     return data;
 };

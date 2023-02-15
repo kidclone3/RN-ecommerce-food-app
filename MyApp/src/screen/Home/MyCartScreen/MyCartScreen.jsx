@@ -12,30 +12,38 @@ import { listUserCart } from '../../../services/carts';
 import SwipeableItem from '../../../components/Button/SwipeableItem';
 import EmptyCart from '../../../components/Button/EmptyCart';
 import PlaceOrder from '../../../components/Button/PlaceOrder';
+import { pickOrder } from '../../../hooks/pickOrder';
 
 const MyCartScreen = ({ navigation }) => {
-    const [empty, setEmpty] = React.useState(true);
+    const [empty, setEmpty] = React.useState(false);
     const [data, setData] = React.useState([]);
-    const [loading, setLoading] = React.useState(true);
-    const [dictOrdered, setDictOrdered] = React.useState({});
+    const [loading, setLoading] = React.useState(false);
+    const hook = pickOrder();
+    const ref = React.useRef([]);
+    const ref_price = React.useRef(0);
+    React.useLayoutEffect(() => {
+        let loaded = true;
+        setLoading(true);
+        const tmp =  listUserCart();
+        tmp.then((res) => {
+            console.log("responeEff " + JSON.stringify(res));
+            if (loaded) {
+                if (!res || res[1]==0) {
+                    setEmpty(true);
+                }
+                setData(res[0]);
+            }
+            console.log("effect " + JSON.stringify(data));
 
-    React.useEffect(async () => {
-      setLoading(true);
-      const tmp_data = await listUserCart();
-      if (tmp_data) {
-        for (i in tmp_data) {
-          if (Array.isArray(i)) {
-            console.log('!here i ' + JSON.stringify(i));
-
-            setData(i);
-            setEmpty(i.length == 0);
-          }
+        });
+        setTimeout(() => setLoading(false), 1000);
+        console.log("loaded " + loaded);
+        
+        return () => {
+            console.log("isEmpty " + empty);
+            loaded = false;
         }
-      }
-      console.log('!here1 ' + JSON.stringify(data));
-      setLoading(false);
-  }, []);
-    // console.log('!here1 ' + JSON.stringify(data));
+    }, []);
     function CartHeader() {
         return (
             <View style={styles.header}>
@@ -61,12 +69,11 @@ const MyCartScreen = ({ navigation }) => {
             </View>
         );
     }
-    
     function body() {
         
         return (
           loading? <Dialog.Loading/> : (
-            empty ? <EmptyCart/> : (
+            empty ? <EmptyCart style={styles.emptyCart}/> : (
             <View style={styles.containerSwipeable}>
                 <FlatList
                     horizontal={false}
@@ -79,15 +86,17 @@ const MyCartScreen = ({ navigation }) => {
                             price={item.product.price}
                             image={item.product.image}
                             quantity={item.quantity}
-                            listOrdered={dictOrdered}
-                            setListOrdered={setDictOrdered}
+                            refs = {ref}
+                            refs_price = {ref_price}
                         />
                     )}
                     keyExtractor={(item) => item.id}
                 />
                 {/* {dictToList()} */}
                 {/* {console.log("listOrdered " + JSON.stringify(dictOrdered))} */}
-                <PlaceOrder dictOrdered={dictOrdered}/>
+                {/* <PlaceOrder dictOrdered={dictOrdered}/> */}
+                <PlaceOrder refs={ref} refs_price = {ref_price}/>
+                
             </View>
         ))
         );
@@ -95,8 +104,10 @@ const MyCartScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.root}>
             {CartHeader()}
-            <EmptyCart style={styles.emptyCart}/>
-            {/* {body()} */}
+            {/* <EmptyCart style={styles.emptyCart}/> */}
+            {body()}
+            
+            
         </SafeAreaView>
     );
 };

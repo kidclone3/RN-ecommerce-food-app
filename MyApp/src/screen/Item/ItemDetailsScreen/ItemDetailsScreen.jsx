@@ -130,9 +130,9 @@ const ItemDetailsScreen = ({ route, navigation }) => {
                     />
                     <ListItem.Content>
                         <ListItem.Title
-                            style={{ fontWeight: 'bold', fontSize: SIZES.h2 }}
+                            style={{ fontWeight: 'bold', fontSize: SIZES.h2, alignItems:'baseline' }}
                         >
-                            {data.attributes.price} / {data.attributes.unit}
+                            {parseInt(data.attributes.price).toLocaleString('vi-VN',{style:'currency', currency:'VND'})} / {data.attributes.unit}
                         </ListItem.Title>
                     </ListItem.Content>
                     <ListItem.Chevron size={SIZES.h2} />

@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { SIZES } from '../../constants';
 
 const styles = StyleSheet.create({
     root: {
@@ -14,13 +15,13 @@ const styles = StyleSheet.create({
     image: {
         height: 100,
         width: 100,
-        flex: 1,
-        justifyContent: 'space-around',
 
-        resizeMode: 'contain',
+        // flex: 1,
+        justifyContent: 'space-around',
+        resizeMode: 'cover',
         aspectRatio: 1,
-        margin: 10,
-        borderRadius: 50,
+        margin: SIZES.margin,
+        borderRadius: SIZES.radius,
     },
     rightContainer: {
         padding: 10,

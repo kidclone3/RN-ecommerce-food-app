@@ -21,7 +21,9 @@ function BottomTabs() {
                 tabBarStyle: styles.tabBar,
                 headerShown: false,
                 tabBarShowLabel: false,
+                tabBarHideOnKeyboard: true,
             }}
+            
         >
             <Tab.Screen
                 name="HomeNavigator"

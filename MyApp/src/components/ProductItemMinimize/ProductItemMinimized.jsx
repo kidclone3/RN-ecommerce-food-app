@@ -7,17 +7,21 @@ import { COLORS, SIZES, FONTS } from '../../constants';
 import { getProductDetail } from '../../services/products';
 import { API_URL } from '../../services';
 
-const ProductItem = ({ name, id, price, quantity }) => {
+const ProductItem = ({id}) => {
     const navigation = useNavigation();
     const [image, setImage] = React.useState("");
+    const [data, setData] = React.useState({});
+    const [loading, setLoading] = React.useState(false);
     React.useEffect(() => {
+        setLoading(true);
         getProductDetail(id).then((res) => {
             // console.log(res);
-            setImage(API_URL + res.image.data[0].attributes.url)
+            setData(res);
         }
         ).catch((err) => {
             console.log(err);
         });
+        setTimeout(() => setLoading(false), 1000);
     }, []);
     const onPress = () => {
         // navigation.navigate('ItemDetails', {
@@ -27,23 +31,25 @@ const ProductItem = ({ name, id, price, quantity }) => {
     };
     return (
         <View style={styles.root}>
+            <Text>{JSON.stringify(data)} </Text>
             <ListItem bottomDivider>
-                <Image
+                {/* <Image
                     style={styles.image}
                     source={{
-                        uri: image,
+                        uri: API_URL + data.attributes.image.data[0].attributes.url,
                         // cache: 'only-if-cached',
                     }}
-                />
+                /> */}
                 <ListItem.Content>
                     <ListItem.Title style={{ alignSelf: 'flex-start', ...FONTS.h3, padding: 5 }}>
-                        {name}
+                        {data.attributes.name}
                     </ListItem.Title>
                     <ListItem.Subtitle style={{ alignSelf: 'flex-start', ...FONTS.body3, padding: 5 }}>
                         {quantity}
                     </ListItem.Subtitle>
                     <ListItem.Subtitle style={{ alignSelf: 'flex-start', ...FONTS.h3, padding: 5, color:COLORS.primary }}>
-                        {price}
+                        {parseInt(price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
+
                     </ListItem.Subtitle>
                     
 

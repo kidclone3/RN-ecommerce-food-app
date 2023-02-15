@@ -1,5 +1,4 @@
-import { View, Text, FlatList} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { View, Text, FlatList, RefreshControl, ScrollView} from 'react-native';
 import React, { useEffect, useState } from 'react';
 import ProductItem from '../../components/ProductItem';
 import { Button, Icon, Image, SearchBar } from '@rneui/themed';
@@ -13,6 +12,14 @@ import { getProducts } from '../../services/products';
 import { Dialog } from '@rneui/themed';
 
 const HomeScreen = ({ navigation }) => {
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+        setRefreshing(false);
+        }, 1000);
+    }, []);
     const [search, setSearch] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     function searchBar() {
@@ -42,7 +49,6 @@ const HomeScreen = ({ navigation }) => {
                     if (loaded) {
                         setCategories(res);
                     }
-                    console.warn(JSON.stringify(categories));
                 })
                 .catch((err) => {
                     console.log(err);
@@ -63,10 +69,15 @@ const HomeScreen = ({ navigation }) => {
         }
         return (
             loading ? <Dialog.Loading/> : (
-            <View>
-                <FlatList
+            <View style={{
+                flexDirection:'row', 
+                justifyContent:'center', 
+                alignItems:'center',
+                flexWrap:'wrap',
+            }}>
+                {/* <FlatList
                     bounces={true}
-                    ListHeaderComponent={catagoriesHeader}
+                    // ListHeaderComponent={catagoriesHeader}
                     scrollEnabled={false}
                     showsHorizontalScrollIndicator={false}
                     data={categories}
@@ -84,7 +95,22 @@ const HomeScreen = ({ navigation }) => {
                     )}
                     containerStyle={styles.flatList}
                     numColumns={4}
-                />
+                /> */}
+                {categories.map((item) => {
+                    return (
+                        <CategoriesButton
+                            id={item.id}
+                            name={item.attributes.name}
+                            icon={item.attributes.icon.data.attributes.url}
+                            action={() => {
+                                console.warn(item.id);
+                            }}
+                            itemPerRows={4}
+                            direction={'column'}
+                        />
+                    );
+                }
+                )}
             </View>
             )
         );
@@ -141,7 +167,11 @@ const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <HomeHeader />
-            <ScrollView>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                  }
+                >
                 {searchBar()}
                 {renderMainCatagories()}
                 {renderProductList()}

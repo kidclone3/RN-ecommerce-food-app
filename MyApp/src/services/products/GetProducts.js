@@ -32,6 +32,6 @@ export const getProducts = async (start = 0, limit = 25) => {
             );
             data.error = error;
         });
-    return res.data;
+    return await res.data;
 };
 export default getProducts;

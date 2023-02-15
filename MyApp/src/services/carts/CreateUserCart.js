@@ -22,7 +22,9 @@ export const createUserCart = async (product, quantity) => {
             }
         )
         .then((response) => {
-            console.warn('Cart retrieved');
+            console.warn(
+                'Cart added ' + 'product: ' + product + ' quantity: ' + quantity
+            );
             code = 0;
         })
         .catch((error) => {

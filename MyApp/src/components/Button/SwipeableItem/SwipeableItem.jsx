@@ -4,15 +4,30 @@ import { Icon, Button, ListItem, Image, CheckBox } from '@rneui/themed'
 import { SIZES, COLORS, images } from '../../../constants'
 import { deleteUserCart } from '../../../services/carts'
 import { useNavigation } from '@react-navigation/native'
-const SwipeableItem = ({cartId, name, price, quantity, listOrdered, setListOrdered}) => {
+import { pickOrder } from '../../../hooks/pickOrder'
+import ImageProduct from '../../ImageProduct'
+const SwipeableItem = ({cartId, name, price, quantity, refs, refs_price}) => {
     const [checked, setChecked] = React.useState(false);
+    const hook = pickOrder();
+
     const toggleCheckbox = () => {
         setChecked(!checked);
+        // const prevDict = hook.orderedDict;
+        // hook.setOrderedDict({ list: {...prevDict.list, [cartId]: checked}});
+        console.log("CARID " + cartId);
         if (checked) {
-            setListOrdered({...listOrdered, [cartId]: false});
+            if (refs.current.includes(cartId)) {
+                refs.current.splice(refs.current.indexOf(cartId), 1);
+                refs_price.current -= price * quantity;
+            }
         } else {
-            setListOrdered({...listOrdered, [cartId]: true});
+            if (!refs.current.includes(cartId)) {
+                refs.current.push(cartId);
+                refs_price.current += price * quantity;
+            }
         }
+        console.log("CHECKED " + checked + " " + refs.current);
+        console.log("CHECKED " + checked + " " + refs_price.current);
     }
 
     const navigation = useNavigation()
@@ -81,6 +96,12 @@ const SwipeableItem = ({cartId, name, price, quantity, listOrdered, setListOrder
                         resizeMode: 'contain',
                     }}
                 /> */}
+                <ImageProduct itemId={cartId} style={{
+                    width: 100,
+                    height: 100,
+                    resizeMode: 'contain',
+                }}/>
+                
                 <ListItem.Content
                     style={{
                         padding: SIZES.padding * 2,
@@ -119,7 +140,7 @@ const SwipeableItem = ({cartId, name, price, quantity, listOrdered, setListOrder
                             fontWeight: 'bold',
                         }}
                     >
-                        ${price}
+                        {parseInt(price).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
                     </ListItem.Title>
                 </ListItem.Content>
             </ListItem.Content>

@@ -1,18 +1,10 @@
-import {
-    View,
-    Text,
-    Image,
-    StyleSheet,
-    ScrollView,
-    SafeAreaView,
-} from 'react-native';
+import { View, Text, Image } from 'react-native';
 import React from 'react';
 import CustomInput from '../../../components/CustomInput/CustomInput';
 import CustomButton from '../../../components/Button/CustomButton/CustomButton';
 import SocialSignInButton from '../../../components/Button/SocialSignInButton';
 import CustomDivider from '../../../components/CustomDivider';
 import { SocialIcon, Icon, CheckBox, Button, Header } from '@rneui/themed';
-import PhoneNumberInput from '../../../components/PhoneNumberInput';
 import styles from '../../../styles/authScreen';
 import { SIZES } from '../../../constants';
 import { validateEmail, validatePassword } from '../../../constants/validate';

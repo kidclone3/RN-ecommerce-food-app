@@ -3,18 +3,13 @@ import React from 'react'
 import { Button } from '@rneui/themed'
 import { SIZES, COLORS, FONTS } from '../../../constants'
 import { useNavigation } from '@react-navigation/native'
-const PlaceOrder = ({dictOrdered}) => {
+const PlaceOrder = ({refs, refs_price}) => {
+   
     const navigation = useNavigation()
-    const [listIds, setListIds] = React.useState([])
+    // const {refs} = route.params;
     function handlePress() {
-        let res = [];
-        for (let key in dictOrdered) {
-            if (dictOrdered[key] == true) {
-                res.push(key);
-            }
-        }
-        setListIds(res);
-        navigation.navigate('Checkout', {listId: listIds})
+        console.log("REFS " + refs.current);
+        navigation.push("Checkout", {ref: refs, ref_price: refs_price});
     }
   return (
     <Button
@@ -28,7 +23,7 @@ const PlaceOrder = ({dictOrdered}) => {
             padding: SIZES.padding * 2,
             paddingBottom: SIZES.padding*1.5,
         }}
-        onPress={handlePress()}
+        onPress={handlePress}
     />
   )
 }
@@ -44,5 +39,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: SIZES.radius,
+        bottom: SIZES.padding,
     },
 })
