@@ -4,7 +4,7 @@
 
 ### Các thành viên
 
--   Lê Thị Thuỳ Dung - 20001895 (`C`)
+-   Lê Thị Thuỳ Dung - 20001895
 -   Bùi Khánh Duy - 20001898
 -   Phạm Bá Thắng - 20001976
 -   La Thị Anh Thư - 20001980
