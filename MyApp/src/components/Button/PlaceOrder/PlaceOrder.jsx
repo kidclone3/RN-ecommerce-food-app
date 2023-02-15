@@ -2,8 +2,9 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { Button } from '@rneui/themed'
 import { SIZES, COLORS, FONTS } from '../../../constants'
-
+import { useNavigation } from '@react-navigation/native'
 const PlaceOrder = () => {
+    const navigation = useNavigation()
   return (
     <Button
         title={"Place Order"}
@@ -16,6 +17,7 @@ const PlaceOrder = () => {
             padding: SIZES.padding * 2,
             paddingBottom: 0,
         }}
+        onPress={() => navigation.navigate('Checkout')}
     />
   )
 }

@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     headerText: {
-        fontSize: SIZES.h3,
+        fontSize: SIZES.h1,
         fontWeight: 'bold',
         flex: 1,
         paddingLeft: SIZES.padding,

@@ -6,6 +6,7 @@ import SearchScreen from '../screen/Home/SearchScreen';
 import MyCartScreen from '../screen/Home/MyCartScreen';
 import HomeScreen from '../screen/HomeScreen';
 import ItemDetailsScreen from '../screen/Item/ItemDetailsScreen/ItemDetailsScreen';
+import CheckoutOrdersScreen from '../screen/Home/CheckoutOrdersScreen';
 const Stack = createNativeStackNavigator();
 
 function HomeNavigator() {
@@ -51,6 +52,13 @@ function HomeNavigator() {
                     headerShown: false,
                 }}
                 initialParams={{ itemId: 1 }}
+            />
+            <Stack.Screen
+                name="Checkout"
+                component={CheckoutOrdersScreen}
+                options={{
+                    headerShown: false,
+                }}
             />
         </Stack.Navigator>
     );

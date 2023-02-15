@@ -14,6 +14,7 @@ import QuantityButton from '../../../components/Button/QuantityButton';
 import productDetail from '../../../services/products/ProductDetail';
 import { API_URL } from '../../../services';
 import Carousel from 'react-native-snap-carousel';
+import { createUserCart } from '../../../services/carts';
 
 const ItemDetailsScreen = ({ route, navigation }) => {
     const { itemId } = route.params;
@@ -55,7 +56,14 @@ const ItemDetailsScreen = ({ route, navigation }) => {
             </View>
         );
     }
-
+    function addItem({itemId, quantity, setIsVisible}) {
+      setIsVisible(false);
+      createUserCart(itemId, quantity).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      })
+    }
     function header() {
         return (
             <View>
@@ -137,14 +145,14 @@ const ItemDetailsScreen = ({ route, navigation }) => {
             </ScrollView>
         );
     }
-    function addToBasket() {
+    function addToCart() {
         const [isVisible, setIsVisible] = React.useState(false);
         const [quantity, setQuantity] = React.useState(0);
         return (
             <View>
                 <Button
-                    title={`Add to Basket ${quantity}`}
-                    buttonStyle={styles.addToBasketStyle}
+                    title={`Add to Cart ${quantity}`}
+                    buttonStyle={styles.addToCartStyle}
                     titleStyle={{
                         ...FONTS.h2,
                     }}
@@ -183,8 +191,8 @@ const ItemDetailsScreen = ({ route, navigation }) => {
                             />
                         </View>
                         <Button
-                            title="Add to Basket"
-                            buttonStyle={styles.addToBasketStyle}
+                            title="Add to Cart"
+                            buttonStyle={styles.addToCartStyle}
                             titleStyle={{
                                 ...FONTS.h2,
                             }}
@@ -192,7 +200,7 @@ const ItemDetailsScreen = ({ route, navigation }) => {
                                 position: 'relative',
                                 padding: SIZES.padding * 2,
                             }}
-                            onPress={() => setIsVisible(false)}
+                            onPress={() => addItem({itemId, quantity, setIsVisible})}
                         />
                     </View>
                 </BottomSheet>
@@ -203,7 +211,7 @@ const ItemDetailsScreen = ({ route, navigation }) => {
         <View style={styles.root}>
             {header()}
             {renderItem()}
-            {addToBasket()}
+            {addToCart()}
         </View>
     );
 };
@@ -218,7 +226,7 @@ const styles = StyleSheet.create({
     container: {
         padding: SIZES.padding * 1,
     },
-    addToBasketStyle: {
+    addToCartStyle: {
         bottom: 20,
         padding: SIZES.padding * 2,
         width: '100%',
