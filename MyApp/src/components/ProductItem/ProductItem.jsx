@@ -17,11 +17,11 @@ const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
     };
     return (
         <Pressable onPress={onPress} style={styles.root}>
+            
             <Image
                 style={styles.image}
                 source={{
                     uri: itemImage,
-                    cache: 'only-if-cached',
                 }}
             />
             <View style={[styles.rightContainer]}>
@@ -95,6 +95,7 @@ const ProductItem = ({ itemName, itemId, itemImage, itemPrice }) => {
                         }}
                     />
                 </View>
+                
             </View>
         </Pressable>
     );

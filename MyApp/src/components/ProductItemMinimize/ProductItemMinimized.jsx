@@ -32,7 +32,7 @@ const ProductItem = ({ name, id, price, quantity }) => {
                     style={styles.image}
                     source={{
                         uri: image,
-                        cache: 'only-if-cached',
+                        // cache: 'only-if-cached',
                     }}
                 />
                 <ListItem.Content>

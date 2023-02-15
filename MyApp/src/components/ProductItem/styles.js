@@ -12,10 +12,11 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
     },
     image: {
-        flex: 1,
-        justifyContent: 'space-around',
         height: 100,
         width: 100,
+        flex: 1,
+        justifyContent: 'space-around',
+
         resizeMode: 'contain',
         aspectRatio: 1,
         margin: 10,

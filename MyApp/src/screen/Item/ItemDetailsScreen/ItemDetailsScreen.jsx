@@ -44,7 +44,7 @@ const ItemDetailsScreen = ({ route, navigation }) => {
                 <Image
                     source={{
                         uri: API_URL + item,
-                        cache: 'only-if-cached',
+                        // cache: 'only-if-cached',
                     }}
                     style={{
                         width: '100%',

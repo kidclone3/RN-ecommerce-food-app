@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         padding: SIZES.h3,
         paddingBottom: 10,
-        height: '10%',
+        // height: '10%',
         // width: '100%',
         justifyContent: 'space-between',
         alignItems: 'center',

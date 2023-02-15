@@ -15,6 +15,16 @@ function HomeNavigator() {
         <Stack.Navigator
             // initialRouteName="ItemDetails"
             initialRouteName="Home"
+            screenOptions={{
+                headerShown: false,
+                headerStyle: {
+                    backgroundColor: '#f4511e',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }}
         >
             <Stack.Screen
                 name="Home"

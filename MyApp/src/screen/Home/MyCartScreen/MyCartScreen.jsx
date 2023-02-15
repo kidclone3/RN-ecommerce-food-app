@@ -93,9 +93,10 @@ const MyCartScreen = ({ navigation }) => {
         );
     }
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.root}>
             {CartHeader()}
-            {body()}
+            <EmptyCart style={styles.emptyCart}/>
+            {/* {body()} */}
         </SafeAreaView>
     );
 };
@@ -103,6 +104,11 @@ const MyCartScreen = ({ navigation }) => {
 export default MyCartScreen;
 
 const styles = StyleSheet.create({
+    root: {
+        backgroundColor: COLORS.white,
+        height: '100%',
+        width: '100%',
+    },
     header: {
         flexDirection: 'row',
         backgroundColor: COLORS.white,
@@ -138,4 +144,7 @@ const styles = StyleSheet.create({
         // position: 'relative',
         // flexDirection: 'column',
     },
+    emptyCart: {
+        height: '80%',
+    }
 });
