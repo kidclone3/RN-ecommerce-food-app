@@ -11,10 +11,11 @@ import CategoriesButton from '../../components/CategoriesButton';
 import { getCategories } from '../../services/categories';
 import { getProducts } from '../../services/products';
 import { API_URL } from '../../services';
+import { Dialog } from '@rneui/themed';
 
 const HomeScreen = ({ navigation }) => {
     const [search, setSearch] = React.useState('');
-
+    const [loading, setLoading] = React.useState(false);
     function searchBar() {
         return (
             <SearchBar
@@ -36,6 +37,7 @@ const HomeScreen = ({ navigation }) => {
 
         let loaded = true;
         useEffect(() => {
+            setLoading(true);
             getCategories()
                 .then((res) => {
                     if (loaded) {
@@ -46,6 +48,7 @@ const HomeScreen = ({ navigation }) => {
                 .catch((err) => {
                     console.log(err);
                 });
+            setLoading(false);
             return () => {
                 loaded = false;
             };
@@ -60,6 +63,7 @@ const HomeScreen = ({ navigation }) => {
             );
         }
         return (
+            loading ? <Dialog.Loading/> : (
             <View>
                 <FlatList
                     bounces={true}
@@ -83,12 +87,14 @@ const HomeScreen = ({ navigation }) => {
                     numColumns={4}
                 />
             </View>
+            )
         );
     }
     function renderProductList() {
         const [data, setData] = useState([]);
         let loaded = true;
         useEffect(() => {
+            setLoading(true);
             getProducts().then((res) => {
                 if (loaded) {
                     setData(res.data);
@@ -96,6 +102,7 @@ const HomeScreen = ({ navigation }) => {
                 console.warn(JSON.stringify(data));
                 // console.warn(data.length())
             });
+            setLoading(false);
             return () => {
                 loaded = false;
             };
@@ -113,6 +120,7 @@ const HomeScreen = ({ navigation }) => {
             );
         };
         return (
+            loading ? <Dialog.Loading/> :(
             <View>
                 <View style={styles.header}>
                     <Text style={{ ...FONTS.h1 }}>Recommend for you!</Text>
@@ -127,7 +135,7 @@ const HomeScreen = ({ navigation }) => {
                         padding: SIZES.padding * 2,
                     }}
                 />
-            </View>
+            </View>)
         );
     }
 
