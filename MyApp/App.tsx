@@ -12,20 +12,15 @@ import React from 'react';
 import { StatusBar, StyleSheet, useColorScheme } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Navigation from './src/navigation';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { TailwindProvider } from 'tailwind-rn';
 import utilities from './tailwind.json';
 
 // active to hide debug
-// import { LogBox } from 'react-native';
-// LogBox.ignoreAllLogs();
+import { LogBox } from 'react-native';
+LogBox.ignoreAllLogs();
 
 const App = () => {
     const isDarkMode = useColorScheme() === 'dark';
-    const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-        flex: 1,
-    };
 
     return (
         <TailwindProvider utilities={utilities}>
