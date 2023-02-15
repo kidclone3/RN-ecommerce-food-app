@@ -12,8 +12,8 @@ function HomeNavigator() {
     const navigation = useNavigation();
     return (
         <Stack.Navigator
-            initialRouteName="ItemDetails"
-            // initialRouteName='Home'
+            // initialRouteName="ItemDetails"
+            initialRouteName="Home"
         >
             <Stack.Screen
                 name="Home"

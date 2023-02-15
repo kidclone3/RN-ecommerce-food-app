@@ -9,7 +9,8 @@
         "build": "strapi build",
         "strapi": "strapi",
         "export-data": "strapi export --no-encrypt --file initdata",
-        "import-data": "strapi import --file initdata.tar.gz"
+        "import-data": "strapi import --file initdata.tar.gz",
+        "format": "npx prettier -w . --config ./.prettierrc --ignore-path ./.prettierignore"
     },
     "devDependencies": {},
     "dependencies": {
