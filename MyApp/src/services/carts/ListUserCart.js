@@ -3,7 +3,7 @@ import { API_URL } from '../index';
 import EncryptedStorage from 'react-native-encrypted-storage';
 
 export const listUserCart = async () => {
-    let data = {};
+    let data = [];
     const jwt = await EncryptedStorage.getItem('jwt');
     if (!jwt) {
         console.warn('Not login yet');
