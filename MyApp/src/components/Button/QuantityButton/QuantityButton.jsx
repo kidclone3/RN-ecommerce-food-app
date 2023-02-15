@@ -6,7 +6,6 @@ import React, { useEffect } from 'react';
 const QuantityButton = ({ name, quantity, setQuantity }) => {
     function handlePress() {
         if (quantity === 0 && name === 'minus') return;
-        if (quantity === 10 && name === 'plus') return;
         setQuantity(name === 'plus' ? quantity + 1 : quantity - 1);
     }
     return (
