@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { useOrderListManager } from '../../hooks/useOrderListManager';
 
-const OrderScreen = () => {
+const OrderScreen = ({ navigation }) => {
+    const hook = useOrderListManager();
+
     return (
         <View>
-            <Text>OrderScreen</Text>
+            <Text>{hook.orders.length}</Text>
         </View>
     );
 };

@@ -6,7 +6,6 @@ export const createUserCart = async (product, quantity) => {
     let code = 0;
     const jwt = await EncryptedStorage.getItem('jwt');
     if (!jwt) {
-        console.warn('Not login yet');
         return 1;
     }
     await axios

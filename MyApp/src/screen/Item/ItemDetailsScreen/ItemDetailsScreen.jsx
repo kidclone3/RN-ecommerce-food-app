@@ -6,7 +6,6 @@ import {
     View,
 } from 'react-native';
 import React from 'react';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Icon, Button, ListItem, BottomSheet, Image } from '@rneui/themed';
 import { COLORS, SIZES, FONTS } from '../../../constants';
 import CustomDivider from '../../../components/CustomDivider';
