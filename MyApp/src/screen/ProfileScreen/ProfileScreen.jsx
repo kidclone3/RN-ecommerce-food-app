@@ -6,7 +6,7 @@ import { Avatar, Divider, Icon, ListItem } from '@rneui/themed';
 import { COLORS, SIZES } from '../../constants';
 import { logout } from '../../services/account';
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = async ({ navigation }) => {
     const avatar =
         'https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fentries%2Ficons%2Ffacebook%2F000%2F018%2F385%2FRs_634x1024-130605092844-634.DespMe2.mh.060513.jpg';
     function header() {
@@ -39,7 +39,7 @@ const ProfileScreen = ({ navigation }) => {
                         <ListItem.Title
                             style={{ fontSize: SIZES.h2, fontWeight: 'bold' }}
                         >
-                            Bui Khanh Duy
+                            {JSON.stringify()}
                         </ListItem.Title>
                         <ListItem.Subtitle>0123456789</ListItem.Subtitle>
                     </ListItem.Content>

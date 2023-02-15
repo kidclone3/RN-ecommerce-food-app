@@ -1,4 +1,4 @@
-import { View, Text, FlatList} from 'react-native';
+import { View, Text, FlatList, RefreshControl} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
 import ProductItem from '../../components/ProductItem';
@@ -13,6 +13,14 @@ import { getProducts } from '../../services/products';
 import { Dialog } from '@rneui/themed';
 
 const HomeScreen = ({ navigation }) => {
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        setTimeout(() => {
+        setRefreshing(false);
+        }, 2000);
+    }, []);
     const [search, setSearch] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     function searchBar() {
@@ -141,7 +149,11 @@ const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
             <HomeHeader />
-            <ScrollView>
+            <ScrollView
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                  }
+                >
                 {searchBar()}
                 {renderMainCatagories()}
                 {renderProductList()}

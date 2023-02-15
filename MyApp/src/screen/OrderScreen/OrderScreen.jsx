@@ -2,11 +2,12 @@ import { StyleSheet, Text, View, FlatList } from 'react-native';
 import React from 'react';
 import { useOrderListManager } from '../../hooks/useOrderListManager';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button, Icon, Avatar, TabView, Tab } from '@rneui/themed';
+import { Button, Icon, Avatar, TabView, Tab, Dialog } from '@rneui/themed';
 import { COLORS, SIZES, FONTS } from '../../constants';
 import EmptyCart from '../../components/Button/EmptyCart';
 import { getProducts } from '../../services/products';
 import ProductItem from '../../components/ProductItem';
+import { listUserOrder } from '../../services/orders';
 
 const OrderScreen = ({ navigation }) => {
     // const hook = useOrderListManager();
@@ -28,22 +29,23 @@ const OrderScreen = ({ navigation }) => {
             </View>
         );
     }
-    function renderProductList() {
+    function renderProductList({orderState="ACTIVE"}) {
         const [data, setData] = React.useState([]);
+        
         let loaded = true;
-        React.useEffect(() => {
+        const status = {"ACTIVE":"","COMPLETED":"đã nhận","CANCELLED":"đã hủy"}
+        React.useEffect(async () => {
             setLoading(true);
+            let loaded = true;
             getProducts().then((res) => {
                 if (loaded) {
                     setData(res.data);
                 }
-                console.warn(JSON.stringify(data));
+                // console.warn(JSON.stringify(data));
                 // console.warn(data.length())
             });
             setLoading(false);
-            return () => {
-                loaded = false;
-            };
+            return;
         }, []);
         const renderItem = ({ item }) => {
             return (
@@ -54,6 +56,7 @@ const OrderScreen = ({ navigation }) => {
                     itemImage={
                         item.attributes.image.data[0].attributes.url
                     }
+                    orderState={orderState}
                 />
             );
         };
@@ -61,7 +64,6 @@ const OrderScreen = ({ navigation }) => {
             <Dialog.Loading />
         ) : (
             <View>
-                
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={data}
@@ -75,6 +77,7 @@ const OrderScreen = ({ navigation }) => {
             </View>
         );
     }
+    
     function RneTab() {
         const [index, setIndex] = React.useState(0);
         return (
@@ -99,13 +102,15 @@ const OrderScreen = ({ navigation }) => {
                 >
                     <TabView.Item style={{ ...styles.root, ...styles.TabView }}>
                         {/* <EmptyCart /> */}
-                        {renderProductList()}
+                        {renderProductList({orderState:"ACTIVE"})}
                     </TabView.Item>
                     <TabView.Item style={{ ...styles.root, ...styles.TabView }}>
-                        <EmptyCart />
+                        {/* <EmptyCart /> */}
+                        {renderProductList({orderState:"COMPLETED"})}
                     </TabView.Item>
                     <TabView.Item style={{ ...styles.root, ...styles.TabView }}>
-                        <EmptyCart />
+                        {/* <EmptyCart /> */}
+                        {renderProductList({orderState:"CANCELLED"})}
                     </TabView.Item>
                 </TabView>
             </>

@@ -24,8 +24,10 @@ export const listUserOrder = async (status, start = 0, limit = 25) => {
             },
         })
         .then((response) => {
-            console.warn('Success');
+            console.log('Success');
             data = response.data;
+            // console.log(`Bearer ${jwt}`);
+            console.log(data);
         })
         .catch((error) => {
             console.warn(
