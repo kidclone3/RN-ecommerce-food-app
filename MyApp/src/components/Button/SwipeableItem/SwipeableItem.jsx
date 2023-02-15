@@ -4,11 +4,15 @@ import { Icon, Button, ListItem, Image, CheckBox } from '@rneui/themed'
 import { SIZES, COLORS, images } from '../../../constants'
 import { deleteUserCart } from '../../../services/carts'
 import { useNavigation } from '@react-navigation/native'
-const SwipeableItem = ({cartId, name, price, quantity}) => {
+const SwipeableItem = ({cartId, name, price, quantity, listOrdered, setListOrdered}) => {
     const [checked, setChecked] = React.useState(false);
     const toggleCheckbox = () => {
         setChecked(!checked);
-       
+        if (checked) {
+            setListOrdered({...listOrdered, [cartId]: false});
+        } else {
+            setListOrdered({...listOrdered, [cartId]: true});
+        }
     }
 
     const navigation = useNavigation()

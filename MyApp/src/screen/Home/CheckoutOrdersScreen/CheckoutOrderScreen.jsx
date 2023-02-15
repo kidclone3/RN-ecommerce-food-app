@@ -8,6 +8,7 @@ import { detailUserOrder } from '../../../services/orders'
 import ProductItemMinimize from '../../../components/ProductItemMinimize'
 import { FlatList } from 'react-native-gesture-handler'
 import PlaceOrder from '../../../components/Button/PlaceOrder'
+import productDetail from '../../../services/products/ProductDetail'
 const CheckoutOrderScreen = ({route, navigation}) => {
     function Header() {
         return (
@@ -38,17 +39,15 @@ const CheckoutOrderScreen = ({route, navigation}) => {
     function body() {
         const [data, setData] = React.useState([]);
         const [isEmpty, setIsEmpty] = React.useState(true);
-        const { id } = route.params
+        const [loading, setLoading] = React.useState(false);
+        const { listId } = route.params
         React.useEffect(() => {
-            let mounted = true;
-            detailUserOrder(id)
-              .then(res => {
-                if(mounted) {
-                  setIsEmpty(res.total === 0);
-                  setData(res);
-                }
-              })
-            return () => mounted = false;
+            setLoading(true);
+            const listData = listId.map((id) =>
+                productDetail(id))
+            setData(listData);
+            setLoading(false);
+            return;
           }, [])
         console.log('!here1 ' + JSON.stringify(data));
         // console.log('!here1 ' + Array.isArray(data.item));

@@ -3,19 +3,10 @@ import React from 'react'
 import { Button } from '@rneui/themed'
 import { SIZES, COLORS, FONTS } from '../../../constants'
 import { useNavigation } from '@react-navigation/native'
-const PlaceOrder = ({dictOrdered}) => {
+
+const PlaceOrder2 = () => {
     const navigation = useNavigation()
-    const [listIds, setListIds] = React.useState([])
-    function handlePress() {
-        let res = [];
-        for (let key in dictOrdered) {
-            if (dictOrdered[key] == true) {
-                res.push(key);
-            }
-        }
-        setListIds(res);
-        navigation.navigate('Checkout', {listId: listIds})
-    }
+    console.log('orderId: ' + orderId)
   return (
     <Button
         title={"Place Order"}
@@ -28,12 +19,12 @@ const PlaceOrder = ({dictOrdered}) => {
             padding: SIZES.padding * 2,
             paddingBottom: SIZES.padding*1.5,
         }}
-        onPress={handlePress()}
+        onPress={() => navigation.navigate('Checkout', {id: orderId})}
     />
   )
 }
 
-export default PlaceOrder
+export default PlaceOrder2
 const styles = StyleSheet.create({
     addToCartStyle: {
         bottom: 20,

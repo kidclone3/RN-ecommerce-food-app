@@ -17,6 +17,8 @@ const MyCartScreen = ({ navigation }) => {
     const [empty, setEmpty] = React.useState(true);
     const [data, setData] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
+    const [dictOrdered, setDictOrdered] = React.useState({});
+
     React.useEffect(() => {
       setLoading(true);
       listUserCart()
@@ -55,7 +57,7 @@ const MyCartScreen = ({ navigation }) => {
     }
     
     function body() {
-        const [listOrdered, setListOrdered] = React.useState({});
+        
         return (
           loading? <Dialog.Loading/> : (
             empty ? <EmptyCart/> : (
@@ -71,15 +73,15 @@ const MyCartScreen = ({ navigation }) => {
                             price={item.product.price}
                             image={item.product.image}
                             quantity={item.quantity}
-                            // listOrdered={listOrdered}
-                            // setListOrdered={setListOrdered}
-                            // distance={item.distance}
+                            listOrdered={dictOrdered}
+                            setListOrdered={setDictOrdered}
                         />
                     )}
                     keyExtractor={(item) => item.id}
                 />
-                {console.log(listOrdered)}
-                <PlaceOrder orderId={1}/>
+                {/* {dictToList()} */}
+                {/* {console.log("listOrdered " + JSON.stringify(dictOrdered))} */}
+                <PlaceOrder dictOrdered={dictOrdered}/>
             </View>
         ))
         );
