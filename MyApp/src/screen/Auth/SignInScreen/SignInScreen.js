@@ -22,7 +22,6 @@ const SignInScreen = ({ navigation }) => {
 
     const onSignInPressed = async () => {
         console.warn('Sign up pressed');
-        navigation.push('HomeTab');
 
         let isValid = true;
         if (!validateEmail(email)) {
