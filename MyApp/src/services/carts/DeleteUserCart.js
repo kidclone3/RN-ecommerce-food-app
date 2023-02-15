@@ -17,6 +17,7 @@ export const deleteUserCart = async (id) => {
         })
         .then((response) => {
             console.warn('Cart deleted');
+
             code = 0;
         })
         .catch((error) => {

@@ -13,6 +13,7 @@ import { SIZES, COLORS, images } from '../../../constants';
 import { listUserCart } from '../../../services/carts';
 import SwipeableItem from '../../../components/Button/SwipeableItem';
 import EmptyCart from '../../../components/Button/EmptyCart';
+import PlaceOrder from '../../../components/Button/PlaceOrder';
 
 const MyCartScreen = ({ navigation }) => {
     const [isEmpty, setIsEmpty] = React.useState(false);
@@ -67,7 +68,7 @@ const MyCartScreen = ({ navigation }) => {
                     renderItem={({item}) => (
                       // console.log('!here2 ' + JSON.stringify(item.product))
                         <SwipeableItem
-                            productId={item.id}
+                            cartId={item.id}
                             name={item.product.name}
                             price={item.product.price}
                             image={item.product.image}
@@ -77,6 +78,7 @@ const MyCartScreen = ({ navigation }) => {
                     )}
                     keyExtractor={(item) => item.id}
                 />
+                <PlaceOrder />
             </View>
         );
     }

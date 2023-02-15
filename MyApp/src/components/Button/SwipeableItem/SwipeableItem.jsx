@@ -2,10 +2,21 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { Icon, Button, ListItem, Image } from '@rneui/themed'
 import { SIZES, COLORS, images } from '../../../constants'
-const SwipeableItem = ({productId, name, price, quantity}) => {
-    function handleReset() {
+import { deleteUserCart } from '../../../services/carts'
+import { useNavigation } from '@react-navigation/native'
+const SwipeableItem = ({cartId, name, price, quantity}) => {
+    const navigation = useNavigation()
+    function onDelete() {
         console.log("Delete cart " + cartId);
+        deleteUserCart(cartId).then((res) => {
+            console.log("Delete cart " + res);
+            navigation.navigate("MyCart");
+
+        }).catch((err) => {
+            console.log(err);
+        })
         
+
     }
     return (
         <View>
@@ -13,7 +24,7 @@ const SwipeableItem = ({productId, name, price, quantity}) => {
             rightContent={() => (
                 <Button
                     title="Delete"
-                    onPress={() => handleReset()}
+                    onPress={() => onDelete()}
                     icon={{ name: 'delete', color: 'white' }}
                     buttonStyle={{
                         borderRadius: SIZES.radius,
